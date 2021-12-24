@@ -1,0 +1,34 @@
+{
+	pinout // gives graphical visualization of Raspberry Pi pins
+	hostname // checks the hostname
+	ifconfig // Checking internet connections
+	sudo passwd // setting superuser password
+	su // superuser login
+	sudo su // 
+	pwd // shows which directory you are in
+	sudo raspi-config // open setting options
+
+	// Setting network
+	cd /etc/wpa_supplicant/
+	wpa_supplicant.config
+	vi wpa_supplicant.config
+	nano wpa_supplicant.config
+	network={
+		ssid="Joker007"
+		scan_ssid=1
+		psk="admin123@"
+		key_mgmt=WPA-PSK
+		} // then ctr+s and reboot
+	
+	cat filename // just view the file
+	touch filename 	// to create a file
+	sudo nano filename // to edit file or creates and edits if file not exists
+
+
+	// Intalling Visual Studio Code
+	sudo apt install code
+
+	// Opening directory in code, first navigate to the directory
+	code .
+	
+}

@@ -1,0 +1,8 @@
+1.I2C (Synchronous)
+2.SPI (Synchronous)
+3.UART (Asynchronous)
+
+<===Extra information===>
+Important sensors
+1. MQTT
+2. MPU6050
