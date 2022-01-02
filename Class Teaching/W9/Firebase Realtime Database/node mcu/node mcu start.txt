@@ -1,0 +1,15 @@
+Installing the ESP8266 Board
+To install the ESP8266 board in your Arduino IDE, follow these next instructions:
+
+1) Open the preferences window from the Arduino IDE. Go to File > Preferences
+
+2) Enter http://arduino.esp8266.com/stable/package_esp8266com_index.json into the “Additional Board Manager URLs” field as shown in image. Then, click the “OK” button.
+
+3) 3) Open boards manager. Go to Tools > Board > Boards Manager…
+
+4) Scroll down, select the ESP8266 board menu and install “esp8266”
+
+5)5) Choose your ESP8266 board from Tools > Board >ESP 12 E module
+
+6) download driver for serial communication node mcu
+https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers

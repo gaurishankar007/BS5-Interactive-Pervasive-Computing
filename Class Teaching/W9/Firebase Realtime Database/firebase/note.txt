@@ -1,0 +1,27 @@
+in case you are using firebase_esp8266_Client-.3.0.7 liberary use below code to read data
+........................................................
+if (Firebase.getString(ledData, "/FirebaseIOT/led")){
+    Serial.println(ledData.stringData());
+    if (ledData.stringData() == "1") {
+    digitalWrite(led, HIGH);
+    }
+  else if (ledData.stringData() == "0"){
+    digitalWrite(led, LOW);
+    }
+  }
+
+
+///visit https://github.com/mobizt/Firebase-ESP8266 further details and other functions
+
+
+
+...................................................................
+
+in case you are using firebase-ardunio-master liberary change fingerprint 
+in order to change fingerprint visit
+https://www.grc.com/fingerprints.htm
+search firebase.com, copy fingerprint
+open FirebaseHttpClient.h located in C:\Users\HP\Documents\Arduino\libraries\firebase-arduino-master
+static const char kFirebaseFingerprint[] ="6A:10:5D:A7:85:77:70:7E:DD:6B:63:97:ED:73:71:C3:4C:1C:40:93"; 
+change aboove fingerprint with new finger print
+and save file 
