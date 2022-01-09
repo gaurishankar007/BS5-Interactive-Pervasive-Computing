@@ -1,0 +1,33 @@
+Websit Link for ideas:- https://www.electronicsforu.com/iot-projects-ideas
+
+<< High Priority topics >> 
+* Gas leakage and fire detector detector {
+	1. Detects if there is any gas leakage
+	2. Detects if there is any fire
+	3. Automatic power cut if there is any gas leakage or fire
+	4. Sends notification to the owner
+	5. Records the start and end time of the leakage
+	7. Keep records of the leakeage duration and date too
+}
+
+* Energy Monitor and Over current cut-off with Node MCU{
+	1. Keep records of the current overflow.
+	2. Cut of energy in case of current overflow
+	3. 
+}
+
+Exceptional
+* AR {
+	1. Recognizes person's face 
+	2. Gives information about the person in augmented reality
+}
+
+<< Low Priority topics >> 
+* Health Monitoring System {
+	1. Keep records of the user's heart beat 
+	2. Shows the heart beat rate in monitor
+	3. Sends notification if the user'heart beat is to bad
+	4. Also provides a ghaph of heart beat rate quality with date
+}
+* Smart Irrigataion system
+* 
