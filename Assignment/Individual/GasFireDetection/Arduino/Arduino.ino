@@ -1,17 +1,19 @@
 #include <SoftwareSerial.h>
 SoftwareSerial nodemcu(6, 7); // Connect Arduino digital pin 6 to RX and 7 to TX of NodeMCU
-SoftwareSerial sim900();
+SoftwareSerial SIM900(4, 5);
 
 // Pins
 int ledO=11, ledR=12, ledP=13;
 int bzr=8;
-int gas = A0, flame = A1, temp = A2;
+int gas=A0, flame=A1, temp=A2;
 
 // Threshold values
-int gasThres = 250, flameThres = 100;
+int gasThres=250, flameThres=100;
 
 // Sensor information
 String senVal="";
+bool gasAlert=false;
+bool flameAlert=false;
 
 void setup() {
   // OUTPUT Pinmode
@@ -27,6 +29,7 @@ void setup() {
 
   // Start Value
   nodemcu.begin(9600);
+  SIM900.begin(19200);
   Serial.begin(9600);
   Serial.println("<<--Reading Sensors-->>");
 }
@@ -47,9 +50,14 @@ void loop() {
   // Controlling LED and BUZZER
   if(gasRead > gasThres || flameRead < flameThres){  
     digitalWrite(ledP, LOW);    
-    tone(bzr, 500, 300);      
+    tone(bzr, 200, 300); 
+       
     if(gasRead > gasThres) {
       digitalWrite(ledO, HIGH);  
+      if(gasAlert==false) {
+        sendMessage("gas");   
+        gasAlert=true;         
+      }   
     }
     else {
       digitalWrite(ledO, LOW);
@@ -57,6 +65,10 @@ void loop() {
   
     if(flameRead < flameThres) {
       digitalWrite(ledR, HIGH);   
+      if(flameAlert==false) {
+        sendMessage("flame");    
+        flameAlert=true;                 
+      }    
     }
     else {
       digitalWrite(ledR, LOW);    
@@ -67,8 +79,11 @@ void loop() {
     digitalWrite(ledR, LOW);  
     digitalWrite(ledP, HIGH);
     noTone(bzr);  
+    // Avoiding multiple message sending 
+    gasAlert=false;        
+    flameAlert=false;       
   }  
-
+  
   // Printing Sesors data to Serial Monitor 
   Serial.print("Gas:- ");
   Serial.print(gasRead);
@@ -79,4 +94,34 @@ void loop() {
   Serial.println("");
   
   delay(1500);
+}
+
+void sendMessage(String sensor) {
+  String message = "Gas or Fire Detected.";
+  if(sensor = "gas") {
+    message="Gas Detection Alert :(. Check the room or maybe you can run away and save your life.";
+  }
+  if(sensor = "flame") {
+    message="Fire Detection Alert :(. Check the room or maybe you can run away and save your life.";    
+  }
+  
+  // AT command to set SIM900 to SMS mode
+  SIM900.print("AT+CMGF=1\r"); 
+  delay(100);
+
+  // REPLACE THE X's WITH THE RECIPIENT'S MOBILE NUMBER
+  // USE INTERNATIONAL FORMAT CODE FOR MOBILE NUMBERS
+  SIM900.println("AT+CMGS=\"+9779816349292\""); 
+  delay(100);
+  
+  // REPLACE WITH YOUR OWN SMS MESSAGE CONTENT
+  SIM900.println(message); 
+  delay(100);
+
+  // End AT command with a ^Z, ASCII code 26
+  SIM900.println((char)26); 
+  delay(100);
+  SIM900.println();
+  // Give module time to send SMS
+  delay(5000);  
 }
