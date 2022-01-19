@@ -1,0 +1,3166 @@
+{
+	"_type": "Project",
+	"_id": "AAAAAAFF+h6SjaM2Hec=",
+	"name": "Untitled",
+	"ownedElements": [
+		{
+			"_type": "UMLModel",
+			"_id": "AAAAAAFF+qBWK6M3Z8Y=",
+			"_parent": {
+				"$ref": "AAAAAAFF+h6SjaM2Hec="
+			},
+			"name": "Model",
+			"ownedElements": [
+				{
+					"_type": "UMLClassDiagram",
+					"_id": "AAAAAAFF+qBtyKM79qY=",
+					"_parent": {
+						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
+					},
+					"name": "Main",
+					"defaultDiagram": true
+				},
+				{
+					"_type": "FCFlowchart",
+					"_id": "AAAAAAF+cU5OABLTKAU=",
+					"_parent": {
+						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
+					},
+					"name": "Flowchart1",
+					"ownedElements": [
+						{
+							"_type": "FCFlowchartDiagram",
+							"_id": "AAAAAAF+cU5OABLULds=",
+							"_parent": {
+								"$ref": "AAAAAAF+cU5OABLTKAU="
+							},
+							"name": "FlowchartDiagram1",
+							"ownedViews": [
+								{
+									"_type": "FCTerminatorView",
+									"_id": "AAAAAAF+cU+G4xLaHEA=",
+									"_parent": {
+										"$ref": "AAAAAAF+cU5OABLULds="
+									},
+									"model": {
+										"$ref": "AAAAAAF+cU+G4xLYCnQ="
+									},
+									"subViews": [
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF+cU+G4xLb9vo=",
+											"_parent": {
+												"$ref": "AAAAAAF+cU+G4xLaHEA="
+											},
+											"font": "Arial;13;0",
+											"left": 538,
+											"top": 234,
+											"width": 68.63720703125,
+											"height": 13,
+											"text": "Start",
+											"wordWrap": true
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 528,
+									"top": 224,
+									"width": 88.63720703125,
+									"height": 33,
+									"nameLabel": {
+										"$ref": "AAAAAAF+cU+G4xLb9vo="
+									}
+								},
+								{
+									"_type": "FCDataView",
+									"_id": "AAAAAAF+cWTp6xL8uq8=",
+									"_parent": {
+										"$ref": "AAAAAAF+cU5OABLULds="
+									},
+									"model": {
+										"$ref": "AAAAAAF+cWTp6hL6MOc="
+									},
+									"subViews": [
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF+cWTp6xL9dZg=",
+											"_parent": {
+												"$ref": "AAAAAAF+cWTp6xL8uq8="
+											},
+											"font": "Arial;13;0",
+											"left": 208,
+											"top": 338,
+											"width": 137,
+											"height": 13,
+											"text": "Reading Gas Sensor ",
+											"wordWrap": true
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 160,
+									"top": 328,
+									"width": 233,
+									"height": 33,
+									"nameLabel": {
+										"$ref": "AAAAAAF+cWTp6xL9dZg="
+									}
+								},
+								{
+									"_type": "FCDataView",
+									"_id": "AAAAAAF+cXKffRMcGhw=",
+									"_parent": {
+										"$ref": "AAAAAAF+cU5OABLULds="
+									},
+									"model": {
+										"$ref": "AAAAAAF+cXKffRMahu4="
+									},
+									"subViews": [
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF+cXKffRMdwCY=",
+											"_parent": {
+												"$ref": "AAAAAAF+cXKffRMcGhw="
+											},
+											"font": "Arial;13;0",
+											"left": 498,
+											"top": 338,
+											"width": 141,
+											"height": 13,
+											"text": "Reading Flame Sensor",
+											"wordWrap": true
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 448,
+									"top": 328,
+									"width": 241,
+									"height": 33,
+									"nameLabel": {
+										"$ref": "AAAAAAF+cXKffRMdwCY="
+									}
+								},
+								{
+									"_type": "FCDataView",
+									"_id": "AAAAAAF+cXjoXRM9Wdg=",
+									"_parent": {
+										"$ref": "AAAAAAF+cU5OABLULds="
+									},
+									"model": {
+										"$ref": "AAAAAAF+cXjoXBM7J1c="
+									},
+									"subViews": [
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF+cXjoXRM+TE4=",
+											"_parent": {
+												"$ref": "AAAAAAF+cXjoXRM9Wdg="
+											},
+											"font": "Arial;13;0",
+											"left": 818,
+											"top": 338,
+											"width": 173,
+											"height": 13,
+											"text": "Reading Temperature Sensor",
+											"wordWrap": true
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 760,
+									"top": 328,
+									"width": 289,
+									"height": 33,
+									"nameLabel": {
+										"$ref": "AAAAAAF+cXjoXRM+TE4="
+									}
+								},
+								{
+									"_type": "FCDecisionView",
+									"_id": "AAAAAAF+cXwDxBNsrfw=",
+									"_parent": {
+										"$ref": "AAAAAAF+cU5OABLULds="
+									},
+									"model": {
+										"$ref": "AAAAAAF+cXwDwxNq6EY="
+									},
+									"subViews": [
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF+cXwDxhNtJyY=",
+											"_parent": {
+												"$ref": "AAAAAAF+cXwDxBNsrfw="
+											},
+											"font": "Arial;13;0",
+											"left": 548.904052734375,
+											"top": 656,
+											"width": 57.80810546875,
+											"height": 48,
+											"text": "Gas Threshold Crossed",
+											"wordWrap": true
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 520,
+									"top": 632,
+									"width": 115.6162109375,
+									"height": 96,
+									"nameLabel": {
+										"$ref": "AAAAAAF+cXwDxhNtJyY="
+									}
+								},
+								{
+									"_type": "FCDecisionView",
+									"_id": "AAAAAAF+cX26dBN+nHk=",
+									"_parent": {
+										"$ref": "AAAAAAF+cU5OABLULds="
+									},
+									"model": {
+										"$ref": "AAAAAAF+cX26cxN89FY="
+									},
+									"subViews": [
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF+cX26dBN/2ko=",
+											"_parent": {
+												"$ref": "AAAAAAF+cX26dBN+nHk="
+											},
+											"font": "Arial;13;0",
+											"left": 740.904052734375,
+											"top": 858,
+											"width": 57.80810546875,
+											"height": 52,
+											"text": "Flame Threshold Crossed",
+											"wordWrap": true
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 712,
+									"top": 832,
+									"width": 115.6162109375,
+									"height": 104,
+									"nameLabel": {
+										"$ref": "AAAAAAF+cX26dBN/2ko="
+									}
+								},
+								{
+									"_type": "FCDataView",
+									"_id": "AAAAAAF+cYd6RhO+ehQ=",
+									"_parent": {
+										"$ref": "AAAAAAF+cU5OABLULds="
+									},
+									"model": {
+										"$ref": "AAAAAAF+cYd6RhO86Xw="
+									},
+									"subViews": [
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF+cYd6RhO/gD4=",
+											"_parent": {
+												"$ref": "AAAAAAF+cYd6RhO+ehQ="
+											},
+											"font": "Arial;13;0",
+											"left": 502,
+											"top": 962,
+											"width": 93,
+											"height": 26,
+											"text": "Turn Off Flame Detection Led",
+											"wordWrap": true
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 464,
+									"top": 952,
+									"width": 169,
+									"height": 46,
+									"nameLabel": {
+										"$ref": "AAAAAAF+cYd6RhO/gD4="
+									}
+								},
+								{
+									"_type": "FCDataView",
+									"_id": "AAAAAAF+cYeGaxPGNvU=",
+									"_parent": {
+										"$ref": "AAAAAAF+cU5OABLULds="
+									},
+									"model": {
+										"$ref": "AAAAAAF+cYeGaxPEZwk="
+									},
+									"subViews": [
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF+cYeGaxPHw0w=",
+											"_parent": {
+												"$ref": "AAAAAAF+cYeGaxPGNvU="
+											},
+											"font": "Arial;13;0",
+											"left": 295,
+											"top": 746,
+											"width": 67,
+											"height": 26,
+											"text": "Turn Power On",
+											"wordWrap": true
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 264,
+									"top": 736,
+									"width": 129,
+									"height": 46,
+									"nameLabel": {
+										"$ref": "AAAAAAF+cYeGaxPHw0w="
+									}
+								},
+								{
+									"_type": "FCDataView",
+									"_id": "AAAAAAF+cYeKcRPOzvU=",
+									"_parent": {
+										"$ref": "AAAAAAF+cU5OABLULds="
+									},
+									"model": {
+										"$ref": "AAAAAAF+cYeKcRPMfUM="
+									},
+									"subViews": [
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF+cYeKcRPP78A=",
+											"_parent": {
+												"$ref": "AAAAAAF+cYeKcRPOzvU="
+											},
+											"font": "Arial;13;0",
+											"left": 732,
+											"top": 658,
+											"width": 89,
+											"height": 26,
+											"text": "Turn On Gas Detection Led",
+											"wordWrap": true
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 696,
+									"top": 648,
+									"width": 161,
+									"height": 46,
+									"nameLabel": {
+										"$ref": "AAAAAAF+cYeKcRPP78A="
+									}
+								},
+								{
+									"_type": "FCDataView",
+									"_id": "AAAAAAF+cYeNPhPW+kQ=",
+									"_parent": {
+										"$ref": "AAAAAAF+cU5OABLULds="
+									},
+									"model": {
+										"$ref": "AAAAAAF+cYeNPhPUcO0="
+									},
+									"subViews": [
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF+cYeNPhPX5QQ=",
+											"_parent": {
+												"$ref": "AAAAAAF+cYeNPhPW+kQ="
+											},
+											"font": "Arial;13;0",
+											"left": 742,
+											"top": 994,
+											"width": 93,
+											"height": 26,
+											"text": "Turn On Flame Detection Led",
+											"wordWrap": true
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 704,
+									"top": 984,
+									"width": 169,
+									"height": 46,
+									"nameLabel": {
+										"$ref": "AAAAAAF+cYeNPhPX5QQ="
+									}
+								},
+								{
+									"_type": "FCProcessView",
+									"_id": "AAAAAAF+cY78IhQ4ja8=",
+									"_parent": {
+										"$ref": "AAAAAAF+cU5OABLULds="
+									},
+									"model": {
+										"$ref": "AAAAAAF+cY78IhQ2t8o="
+									},
+									"subViews": [
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF+cY78IxQ5CwA=",
+											"_parent": {
+												"$ref": "AAAAAAF+cY78IhQ4ja8="
+											},
+											"font": "Arial;13;0",
+											"left": 490,
+											"top": 418,
+											"width": 148,
+											"height": 39,
+											"text": "Send Gas, Flame, Temperature Data To Blynk App",
+											"wordWrap": true
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 480,
+									"top": 408,
+									"width": 168,
+									"height": 59,
+									"nameLabel": {
+										"$ref": "AAAAAAF+cY78IxQ5CwA="
+									}
+								},
+								{
+									"_type": "FCFlowView",
+									"_id": "AAAAAAF+cY93dRRHtag=",
+									"_parent": {
+										"$ref": "AAAAAAF+cU5OABLULds="
+									},
+									"model": {
+										"$ref": "AAAAAAF+cY93dRRFjLo="
+									},
+									"subViews": [
+										{
+											"_type": "EdgeLabelView",
+											"_id": "AAAAAAF+cY93dRRIFDs=",
+											"_parent": {
+												"$ref": "AAAAAAF+cY93dRRHtag="
+											},
+											"model": {
+												"$ref": "AAAAAAF+cY93dRRFjLo="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": 581,
+											"top": 377,
+											"height": 13,
+											"alpha": 1.5707963267948966,
+											"distance": 15,
+											"hostEdge": {
+												"$ref": "AAAAAAF+cY93dRRHtag="
+											},
+											"edgePosition": 1
+										}
+									],
+									"font": "Arial;13;0",
+									"head": {
+										"$ref": "AAAAAAF+cY78IhQ4ja8="
+									},
+									"tail": {
+										"$ref": "AAAAAAF+cXKffRMcGhw="
+									},
+									"lineStyle": 2,
+									"points": "567:360;567:408",
+									"nameLabel": {
+										"$ref": "AAAAAAF+cY93dRRIFDs="
+									}
+								},
+								{
+									"_type": "FCTerminatorView",
+									"_id": "AAAAAAF+cZOKmRR8O+U=",
+									"_parent": {
+										"$ref": "AAAAAAF+cU5OABLULds="
+									},
+									"model": {
+										"$ref": "AAAAAAF+cZOKmBR6oU8="
+									},
+									"subViews": [
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF+cZOKmRR9E1s=",
+											"_parent": {
+												"$ref": "AAAAAAF+cZOKmRR8O+U="
+											},
+											"font": "Arial;13;0",
+											"left": 554,
+											"top": 1090,
+											"width": 68.63720703125,
+											"height": 13,
+											"text": "End",
+											"wordWrap": true
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 544,
+									"top": 1080,
+									"width": 88.63720703125,
+									"height": 33,
+									"nameLabel": {
+										"$ref": "AAAAAAF+cZOKmRR9E1s="
+									}
+								},
+								{
+									"_type": "FCDataView",
+									"_id": "AAAAAAF+cZU8LhSKvIg=",
+									"_parent": {
+										"$ref": "AAAAAAF+cU5OABLULds="
+									},
+									"model": {
+										"$ref": "AAAAAAF+cZU8LRSIFNU="
+									},
+									"subViews": [
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF+cZU8LhSL2KY=",
+											"_parent": {
+												"$ref": "AAAAAAF+cZU8LhSKvIg="
+											},
+											"font": "Arial;13;0",
+											"left": 907,
+											"top": 554,
+											"width": 83,
+											"height": 13,
+											"text": "Buzzer On",
+											"wordWrap": true
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 872,
+									"top": 544,
+									"width": 153,
+									"height": 33,
+									"nameLabel": {
+										"$ref": "AAAAAAF+cZU8LhSL2KY="
+									}
+								},
+								{
+									"_type": "FCDataView",
+									"_id": "AAAAAAF+cZXPhRSY76g=",
+									"_parent": {
+										"$ref": "AAAAAAF+cU5OABLULds="
+									},
+									"model": {
+										"$ref": "AAAAAAF+cZXPhRSWJPE="
+									},
+									"subViews": [
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF+cZXPhRSZ5YY=",
+											"_parent": {
+												"$ref": "AAAAAAF+cZXPhRSY76g="
+											},
+											"font": "Arial;13;0",
+											"left": 290,
+											"top": 858,
+											"width": 76,
+											"height": 13,
+											"text": "Buzzer Off",
+											"wordWrap": true
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 256,
+									"top": 848,
+									"width": 144,
+									"height": 33,
+									"nameLabel": {
+										"$ref": "AAAAAAF+cZXPhRSZ5YY="
+									}
+								},
+								{
+									"_type": "FCDecisionView",
+									"_id": "AAAAAAF+cZyseBTLMzk=",
+									"_parent": {
+										"$ref": "AAAAAAF+cU5OABLULds="
+									},
+									"model": {
+										"$ref": "AAAAAAF+cZysdxTJeHw="
+									},
+									"subViews": [
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF+cZyseBTMwOg=",
+											"_parent": {
+												"$ref": "AAAAAAF+cZyseBTLMzk="
+											},
+											"font": "Arial;13;0",
+											"left": 540.542236328125,
+											"top": 539.5,
+											"width": 57.08447265625,
+											"height": 39,
+											"text": "Gas or Flame Detected",
+											"wordWrap": true
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 512,
+									"top": 520,
+									"width": 114.1689453125,
+									"height": 78,
+									"nameLabel": {
+										"$ref": "AAAAAAF+cZyseBTMwOg="
+									}
+								},
+								{
+									"_type": "FCFlowView",
+									"_id": "AAAAAAF+cZ61XhTh7ls=",
+									"_parent": {
+										"$ref": "AAAAAAF+cU5OABLULds="
+									},
+									"model": {
+										"$ref": "AAAAAAF+cZ61XhTfjiU="
+									},
+									"subViews": [
+										{
+											"_type": "EdgeLabelView",
+											"_id": "AAAAAAF+cZ61XhTi6Gk=",
+											"_parent": {
+												"$ref": "AAAAAAF+cZ61XhTh7ls="
+											},
+											"model": {
+												"$ref": "AAAAAAF+cZ61XhTfjiU="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": 582,
+											"top": 486,
+											"height": 13,
+											"alpha": 1.5707963267948966,
+											"distance": 15,
+											"hostEdge": {
+												"$ref": "AAAAAAF+cZ61XhTh7ls="
+											},
+											"edgePosition": 1
+										}
+									],
+									"font": "Arial;13;0",
+									"head": {
+										"$ref": "AAAAAAF+cZyseBTLMzk="
+									},
+									"tail": {
+										"$ref": "AAAAAAF+cY78IhQ4ja8="
+									},
+									"lineStyle": 2,
+									"points": "568:466;568:520",
+									"nameLabel": {
+										"$ref": "AAAAAAF+cZ61XhTi6Gk="
+									}
+								},
+								{
+									"_type": "FCFlowView",
+									"_id": "AAAAAAF+caDQNRUBVMM=",
+									"_parent": {
+										"$ref": "AAAAAAF+cU5OABLULds="
+									},
+									"model": {
+										"$ref": "AAAAAAF+caDQNRT/lIg="
+									},
+									"subViews": [
+										{
+											"_type": "EdgeLabelView",
+											"_id": "AAAAAAF+caDQNRUCNyg=",
+											"_parent": {
+												"$ref": "AAAAAAF+caDQNRUBVMM="
+											},
+											"model": {
+												"$ref": "AAAAAAF+caDQNRT/lIg="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": 264,
+											"top": 411,
+											"height": 13,
+											"alpha": 1.5707963267948966,
+											"distance": 15,
+											"hostEdge": {
+												"$ref": "AAAAAAF+caDQNRUBVMM="
+											},
+											"edgePosition": 1
+										}
+									],
+									"font": "Arial;13;0",
+									"head": {
+										"$ref": "AAAAAAF+cY78IhQ4ja8="
+									},
+									"tail": {
+										"$ref": "AAAAAAF+cWTp6xL8uq8="
+									},
+									"lineStyle": 2,
+									"points": "264:360;264:432;480:432",
+									"nameLabel": {
+										"$ref": "AAAAAAF+caDQNRUCNyg="
+									}
+								},
+								{
+									"_type": "FCFlowView",
+									"_id": "AAAAAAF+caEH+xUMHc0=",
+									"_parent": {
+										"$ref": "AAAAAAF+cU5OABLULds="
+									},
+									"model": {
+										"$ref": "AAAAAAF+caEH+xUKzpk="
+									},
+									"subViews": [
+										{
+											"_type": "EdgeLabelView",
+											"_id": "AAAAAAF+caEH+xUN3xY=",
+											"_parent": {
+												"$ref": "AAAAAAF+caEH+xUMHc0="
+											},
+											"model": {
+												"$ref": "AAAAAAF+caEH+xUKzpk="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": 887,
+											"top": 441,
+											"height": 13,
+											"alpha": 1.5707963267948966,
+											"distance": 15,
+											"hostEdge": {
+												"$ref": "AAAAAAF+caEH+xUMHc0="
+											},
+											"edgePosition": 1
+										}
+									],
+									"font": "Arial;13;0",
+									"head": {
+										"$ref": "AAAAAAF+cY78IhQ4ja8="
+									},
+									"tail": {
+										"$ref": "AAAAAAF+cXjoXRM9Wdg="
+									},
+									"lineStyle": 2,
+									"points": "888:360;888:432;647:432",
+									"nameLabel": {
+										"$ref": "AAAAAAF+caEH+xUN3xY="
+									}
+								},
+								{
+									"_type": "FCDataView",
+									"_id": "AAAAAAF+caQJcxUddOs=",
+									"_parent": {
+										"$ref": "AAAAAAF+cU5OABLULds="
+									},
+									"model": {
+										"$ref": "AAAAAAF+caQJchUb3kM="
+									},
+									"subViews": [
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF+caQJcxUe72I=",
+											"_parent": {
+												"$ref": "AAAAAAF+caQJcxUddOs="
+											},
+											"font": "Arial;13;0",
+											"left": 734,
+											"top": 546,
+											"width": 61,
+											"height": 26,
+											"text": "Turn Power Off",
+											"wordWrap": true
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 704,
+									"top": 536,
+									"width": 121,
+									"height": 46,
+									"nameLabel": {
+										"$ref": "AAAAAAF+caQJcxUe72I="
+									}
+								},
+								{
+									"_type": "FCFlowView",
+									"_id": "AAAAAAF+caSCVRUqvEE=",
+									"_parent": {
+										"$ref": "AAAAAAF+cU5OABLULds="
+									},
+									"model": {
+										"$ref": "AAAAAAF+caSCVBUo4JI="
+									},
+									"subViews": [
+										{
+											"_type": "EdgeLabelView",
+											"_id": "AAAAAAF+caSCVhUrabE=",
+											"_parent": {
+												"$ref": "AAAAAAF+caSCVRUqvEE="
+											},
+											"model": {
+												"$ref": "AAAAAAF+caSCVBUo4JI="
+											},
+											"font": "Arial;13;0",
+											"left": 654,
+											"top": 539,
+											"width": 21.20751953125,
+											"height": 13,
+											"alpha": 1.5707963267948966,
+											"distance": 15,
+											"hostEdge": {
+												"$ref": "AAAAAAF+caSCVRUqvEE="
+											},
+											"edgePosition": 1,
+											"text": "Yes"
+										}
+									],
+									"font": "Arial;13;0",
+									"head": {
+										"$ref": "AAAAAAF+caQJcxUddOs="
+									},
+									"tail": {
+										"$ref": "AAAAAAF+cZyseBTLMzk="
+									},
+									"lineStyle": 2,
+									"points": "625:560;704:560",
+									"nameLabel": {
+										"$ref": "AAAAAAF+caSCVhUrabE="
+									}
+								},
+								{
+									"_type": "FCFlowView",
+									"_id": "AAAAAAF+caUpgxU6vqQ=",
+									"_parent": {
+										"$ref": "AAAAAAF+cU5OABLULds="
+									},
+									"model": {
+										"$ref": "AAAAAAF+caUpgxU46Hc="
+									},
+									"subViews": [
+										{
+											"_type": "EdgeLabelView",
+											"_id": "AAAAAAF+caUpgxU73NY=",
+											"_parent": {
+												"$ref": "AAAAAAF+caUpgxU6vqQ="
+											},
+											"model": {
+												"$ref": "AAAAAAF+caUpgxU46Hc="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": 848,
+											"top": 535,
+											"height": 13,
+											"alpha": 1.5707963267948966,
+											"distance": 15,
+											"hostEdge": {
+												"$ref": "AAAAAAF+caUpgxU6vqQ="
+											},
+											"edgePosition": 1
+										}
+									],
+									"font": "Arial;13;0",
+									"head": {
+										"$ref": "AAAAAAF+cZU8LhSKvIg="
+									},
+									"tail": {
+										"$ref": "AAAAAAF+caQJcxUddOs="
+									},
+									"lineStyle": 2,
+									"points": "824:556;872:556",
+									"nameLabel": {
+										"$ref": "AAAAAAF+caUpgxU73NY="
+									}
+								},
+								{
+									"_type": "FCFlowView",
+									"_id": "AAAAAAF+cadoIRVdIGs=",
+									"_parent": {
+										"$ref": "AAAAAAF+cU5OABLULds="
+									},
+									"model": {
+										"$ref": "AAAAAAF+cadoIBVbJm4="
+									},
+									"subViews": [
+										{
+											"_type": "EdgeLabelView",
+											"_id": "AAAAAAF+cadoIRVeY40=",
+											"_parent": {
+												"$ref": "AAAAAAF+cadoIRVdIGs="
+											},
+											"model": {
+												"$ref": "AAAAAAF+cadoIBVbJm4="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": 342,
+											"top": 807,
+											"height": 13,
+											"alpha": 1.5707963267948966,
+											"distance": 15,
+											"hostEdge": {
+												"$ref": "AAAAAAF+cadoIRVdIGs="
+											},
+											"edgePosition": 1
+										}
+									],
+									"font": "Arial;13;0",
+									"head": {
+										"$ref": "AAAAAAF+cZXPhRSY76g="
+									},
+									"tail": {
+										"$ref": "AAAAAAF+cYeGaxPGNvU="
+									},
+									"lineStyle": 2,
+									"points": "328:781;328:848",
+									"nameLabel": {
+										"$ref": "AAAAAAF+cadoIRVeY40="
+									}
+								},
+								{
+									"_type": "FCDataView",
+									"_id": "AAAAAAF+caiZihVnkuM=",
+									"_parent": {
+										"$ref": "AAAAAAF+cU5OABLULds="
+									},
+									"model": {
+										"$ref": "AAAAAAF+caiZihVlSmI="
+									},
+									"subViews": [
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF+caiZihVoitA=",
+											"_parent": {
+												"$ref": "AAAAAAF+caiZihVnkuM="
+											},
+											"font": "Arial;13;0",
+											"left": 278,
+											"top": 650,
+											"width": 93,
+											"height": 26,
+											"text": "Turn Off Flame Detection Led",
+											"wordWrap": true
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 240,
+									"top": 640,
+									"width": 169,
+									"height": 46,
+									"nameLabel": {
+										"$ref": "AAAAAAF+caiZihVoitA="
+									}
+								},
+								{
+									"_type": "FCDataView",
+									"_id": "AAAAAAF+calgTBV7T08=",
+									"_parent": {
+										"$ref": "AAAAAAF+cU5OABLULds="
+									},
+									"model": {
+										"$ref": "AAAAAAF+calgSxV5Rno="
+									},
+									"subViews": [
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF+calgTBV86R4=",
+											"_parent": {
+												"$ref": "AAAAAAF+calgTBV7T08="
+											},
+											"font": "Arial;13;0",
+											"left": 284,
+											"top": 546,
+											"width": 89,
+											"height": 26,
+											"text": "Turn Off Gas Detection Led",
+											"wordWrap": true
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 248,
+									"top": 536,
+									"width": 161,
+									"height": 46,
+									"nameLabel": {
+										"$ref": "AAAAAAF+calgTBV86R4="
+									}
+								},
+								{
+									"_type": "FCFlowView",
+									"_id": "AAAAAAF+catJlRWv45Y=",
+									"_parent": {
+										"$ref": "AAAAAAF+cU5OABLULds="
+									},
+									"model": {
+										"$ref": "AAAAAAF+catJlRWtjWo="
+									},
+									"subViews": [
+										{
+											"_type": "EdgeLabelView",
+											"_id": "AAAAAAF+catJlRWwx08=",
+											"_parent": {
+												"$ref": "AAAAAAF+catJlRWv45Y="
+											},
+											"model": {
+												"$ref": "AAAAAAF+catJlRWtjWo="
+											},
+											"font": "Arial;13;0",
+											"left": 451,
+											"top": 569,
+											"width": 16.6181640625,
+											"height": 13,
+											"alpha": 1.5707963267948966,
+											"distance": 15,
+											"hostEdge": {
+												"$ref": "AAAAAAF+catJlRWv45Y="
+											},
+											"edgePosition": 1,
+											"text": "No"
+										}
+									],
+									"font": "Arial;13;0",
+									"head": {
+										"$ref": "AAAAAAF+calgTBV7T08="
+									},
+									"tail": {
+										"$ref": "AAAAAAF+cZyseBTLMzk="
+									},
+									"lineStyle": 2,
+									"points": "512:560;408:560",
+									"nameLabel": {
+										"$ref": "AAAAAAF+catJlRWwx08="
+									}
+								},
+								{
+									"_type": "FCFlowView",
+									"_id": "AAAAAAF+cavZYBXJiHk=",
+									"_parent": {
+										"$ref": "AAAAAAF+cU5OABLULds="
+									},
+									"model": {
+										"$ref": "AAAAAAF+cavZXxXHBSM="
+									},
+									"subViews": [
+										{
+											"_type": "EdgeLabelView",
+											"_id": "AAAAAAF+cavZYBXK/Qk=",
+											"_parent": {
+												"$ref": "AAAAAAF+cavZYBXJiHk="
+											},
+											"model": {
+												"$ref": "AAAAAAF+cavZXxXHBSM="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": 341,
+											"top": 603,
+											"height": 13,
+											"alpha": 1.5707963267948966,
+											"distance": 15,
+											"hostEdge": {
+												"$ref": "AAAAAAF+cavZYBXJiHk="
+											},
+											"edgePosition": 1
+										}
+									],
+									"font": "Arial;13;0",
+									"head": {
+										"$ref": "AAAAAAF+caiZihVnkuM="
+									},
+									"tail": {
+										"$ref": "AAAAAAF+calgTBV7T08="
+									},
+									"lineStyle": 2,
+									"points": "327:581;327:640",
+									"nameLabel": {
+										"$ref": "AAAAAAF+cavZYBXK/Qk="
+									}
+								},
+								{
+									"_type": "FCFlowView",
+									"_id": "AAAAAAF+cawWfRXVbU4=",
+									"_parent": {
+										"$ref": "AAAAAAF+cU5OABLULds="
+									},
+									"model": {
+										"$ref": "AAAAAAF+cawWfRXTwPw="
+									},
+									"subViews": [
+										{
+											"_type": "EdgeLabelView",
+											"_id": "AAAAAAF+cawWfRXWIpQ=",
+											"_parent": {
+												"$ref": "AAAAAAF+cawWfRXVbU4="
+											},
+											"model": {
+												"$ref": "AAAAAAF+cawWfRXTwPw="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": 342,
+											"top": 703,
+											"height": 13,
+											"alpha": 1.5707963267948966,
+											"distance": 15,
+											"hostEdge": {
+												"$ref": "AAAAAAF+cawWfRXVbU4="
+											},
+											"edgePosition": 1
+										}
+									],
+									"font": "Arial;13;0",
+									"head": {
+										"$ref": "AAAAAAF+cYeGaxPGNvU="
+									},
+									"tail": {
+										"$ref": "AAAAAAF+caiZihVnkuM="
+									},
+									"lineStyle": 2,
+									"points": "328:685;328:736",
+									"nameLabel": {
+										"$ref": "AAAAAAF+cawWfRXWIpQ="
+									}
+								},
+								{
+									"_type": "FCFlowView",
+									"_id": "AAAAAAF+ca6+pBaIRrw=",
+									"_parent": {
+										"$ref": "AAAAAAF+cU5OABLULds="
+									},
+									"model": {
+										"$ref": "AAAAAAF+ca6+pBaGyy0="
+									},
+									"subViews": [
+										{
+											"_type": "EdgeLabelView",
+											"_id": "AAAAAAF+ca6+pBaJ5P0=",
+											"_parent": {
+												"$ref": "AAAAAAF+ca6+pBaIRrw="
+											},
+											"model": {
+												"$ref": "AAAAAAF+ca6+pBaGyy0="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": 582,
+											"top": 285,
+											"height": 13,
+											"alpha": 1.5707963267948966,
+											"distance": 15,
+											"hostEdge": {
+												"$ref": "AAAAAAF+ca6+pBaIRrw="
+											},
+											"edgePosition": 1
+										}
+									],
+									"font": "Arial;13;0",
+									"head": {
+										"$ref": "AAAAAAF+cXKffRMcGhw="
+									},
+									"tail": {
+										"$ref": "AAAAAAF+cU+G4xLaHEA="
+									},
+									"lineStyle": 2,
+									"points": "568:256;568:328",
+									"nameLabel": {
+										"$ref": "AAAAAAF+ca6+pBaJ5P0="
+									}
+								},
+								{
+									"_type": "FCFlowView",
+									"_id": "AAAAAAF+ca8EAxag+E8=",
+									"_parent": {
+										"$ref": "AAAAAAF+cU5OABLULds="
+									},
+									"model": {
+										"$ref": "AAAAAAF+ca8EAxaeUcU="
+									},
+									"subViews": [
+										{
+											"_type": "EdgeLabelView",
+											"_id": "AAAAAAF+ca8EAxah49A=",
+											"_parent": {
+												"$ref": "AAAAAAF+ca8EAxag+E8="
+											},
+											"model": {
+												"$ref": "AAAAAAF+ca8EAxaeUcU="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": 415,
+											"top": 297,
+											"height": 13,
+											"alpha": 1.5707963267948966,
+											"distance": 15,
+											"hostEdge": {
+												"$ref": "AAAAAAF+ca8EAxag+E8="
+											},
+											"edgePosition": 1
+										}
+									],
+									"font": "Arial;13;0",
+									"head": {
+										"$ref": "AAAAAAF+cWTp6xL8uq8="
+									},
+									"tail": {
+										"$ref": "AAAAAAF+cU+G4xLaHEA="
+									},
+									"lineStyle": 2,
+									"points": "568:256;568:288;264:288;264:328",
+									"nameLabel": {
+										"$ref": "AAAAAAF+ca8EAxah49A="
+									}
+								},
+								{
+									"_type": "FCFlowView",
+									"_id": "AAAAAAF+ca+RFxa9zF0=",
+									"_parent": {
+										"$ref": "AAAAAAF+cU5OABLULds="
+									},
+									"model": {
+										"$ref": "AAAAAAF+ca+RFxa7XRY="
+									},
+									"subViews": [
+										{
+											"_type": "EdgeLabelView",
+											"_id": "AAAAAAF+ca+RFxa+SsE=",
+											"_parent": {
+												"$ref": "AAAAAAF+ca+RFxa9zF0="
+											},
+											"model": {
+												"$ref": "AAAAAAF+ca+RFxa7XRY="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": 728,
+											"top": 267,
+											"height": 13,
+											"alpha": 1.5707963267948966,
+											"distance": 15,
+											"hostEdge": {
+												"$ref": "AAAAAAF+ca+RFxa9zF0="
+											},
+											"edgePosition": 1
+										}
+									],
+									"font": "Arial;13;0",
+									"head": {
+										"$ref": "AAAAAAF+cXjoXRM9Wdg="
+									},
+									"tail": {
+										"$ref": "AAAAAAF+cU+G4xLaHEA="
+									},
+									"lineStyle": 2,
+									"points": "568:256;568:288;888:288;888:328",
+									"nameLabel": {
+										"$ref": "AAAAAAF+ca+RFxa+SsE="
+									}
+								},
+								{
+									"_type": "FCFlowView",
+									"_id": "AAAAAAF+cbNjIRbmJQw=",
+									"_parent": {
+										"$ref": "AAAAAAF+cU5OABLULds="
+									},
+									"model": {
+										"$ref": "AAAAAAF+cbNjIRbk2/4="
+									},
+									"subViews": [
+										{
+											"_type": "EdgeLabelView",
+											"_id": "AAAAAAF+cbNjIRbn/yw=",
+											"_parent": {
+												"$ref": "AAAAAAF+cbNjIRbmJQw="
+											},
+											"model": {
+												"$ref": "AAAAAAF+cbNjIRbk2/4="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": 785,
+											"top": 609,
+											"height": 13,
+											"alpha": 1.5707963267948966,
+											"distance": 15,
+											"hostEdge": {
+												"$ref": "AAAAAAF+cbNjIRbmJQw="
+											},
+											"edgePosition": 1
+										}
+									],
+									"font": "Arial;13;0",
+									"head": {
+										"$ref": "AAAAAAF+cXwDxBNsrfw="
+									},
+									"tail": {
+										"$ref": "AAAAAAF+cZU8LhSKvIg="
+									},
+									"lineStyle": 2,
+									"points": "996:576;996:600;577:600;577:632",
+									"nameLabel": {
+										"$ref": "AAAAAAF+cbNjIRbn/yw="
+									}
+								},
+								{
+									"_type": "FCFlowView",
+									"_id": "AAAAAAF+cbYfDhcXg+0=",
+									"_parent": {
+										"$ref": "AAAAAAF+cU5OABLULds="
+									},
+									"model": {
+										"$ref": "AAAAAAF+cbYfDhcVIPE="
+									},
+									"subViews": [
+										{
+											"_type": "EdgeLabelView",
+											"_id": "AAAAAAF+cbYfDhcY1to=",
+											"_parent": {
+												"$ref": "AAAAAAF+cbYfDhcXg+0="
+											},
+											"model": {
+												"$ref": "AAAAAAF+cbYfDhcVIPE="
+											},
+											"font": "Arial;13;0",
+											"left": 655,
+											"top": 655,
+											"width": 21.20751953125,
+											"height": 13,
+											"alpha": 1.5707963267948966,
+											"distance": 15,
+											"hostEdge": {
+												"$ref": "AAAAAAF+cbYfDhcXg+0="
+											},
+											"edgePosition": 1,
+											"text": "Yes"
+										}
+									],
+									"font": "Arial;13;0",
+									"head": {
+										"$ref": "AAAAAAF+cYeKcRPOzvU="
+									},
+									"tail": {
+										"$ref": "AAAAAAF+cXwDxBNsrfw="
+									},
+									"lineStyle": 2,
+									"points": "635:676;696:676",
+									"nameLabel": {
+										"$ref": "AAAAAAF+cbYfDhcY1to="
+									}
+								},
+								{
+									"_type": "FCDataView",
+									"_id": "AAAAAAF+cbcurxclHEM=",
+									"_parent": {
+										"$ref": "AAAAAAF+cU5OABLULds="
+									},
+									"model": {
+										"$ref": "AAAAAAF+cbcurxcjZsc="
+									},
+									"subViews": [
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF+cbcurxcm68Y=",
+											"_parent": {
+												"$ref": "AAAAAAF+cbcurxclHEM="
+											},
+											"font": "Arial;13;0",
+											"left": 532,
+											"top": 794,
+											"width": 89,
+											"height": 26,
+											"text": "Turn Off Gas Detection Led",
+											"wordWrap": true
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 496,
+									"top": 784,
+									"width": 161,
+									"height": 46,
+									"nameLabel": {
+										"$ref": "AAAAAAF+cbcurxcm68Y="
+									}
+								},
+								{
+									"_type": "FCFlowView",
+									"_id": "AAAAAAF+cbg9Vxc+DmE=",
+									"_parent": {
+										"$ref": "AAAAAAF+cU5OABLULds="
+									},
+									"model": {
+										"$ref": "AAAAAAF+cbg9Vhc8ung="
+									},
+									"subViews": [
+										{
+											"_type": "EdgeLabelView",
+											"_id": "AAAAAAF+cbg9Vxc/yu8=",
+											"_parent": {
+												"$ref": "AAAAAAF+cbg9Vxc+DmE="
+											},
+											"model": {
+												"$ref": "AAAAAAF+cbg9Vhc8ung="
+											},
+											"font": "Arial;13;0",
+											"left": 580,
+											"top": 748,
+											"width": 16.6181640625,
+											"height": 13,
+											"alpha": 1.5707963267948966,
+											"distance": 15,
+											"hostEdge": {
+												"$ref": "AAAAAAF+cbg9Vxc+DmE="
+											},
+											"edgePosition": 1,
+											"text": "No"
+										}
+									],
+									"font": "Arial;13;0",
+									"head": {
+										"$ref": "AAAAAAF+cbcurxclHEM="
+									},
+									"tail": {
+										"$ref": "AAAAAAF+cXwDxBNsrfw="
+									},
+									"lineStyle": 2,
+									"points": "574:727;574:784",
+									"nameLabel": {
+										"$ref": "AAAAAAF+cbg9Vxc/yu8="
+									}
+								},
+								{
+									"_type": "FCFlowView",
+									"_id": "AAAAAAF+cbm3PxdZjoY=",
+									"_parent": {
+										"$ref": "AAAAAAF+cU5OABLULds="
+									},
+									"model": {
+										"$ref": "AAAAAAF+cbm3PhdXnhE="
+									},
+									"subViews": [
+										{
+											"_type": "EdgeLabelView",
+											"_id": "AAAAAAF+cbm3Pxdahgo=",
+											"_parent": {
+												"$ref": "AAAAAAF+cbm3PxdZjoY="
+											},
+											"model": {
+												"$ref": "AAAAAAF+cbm3PhdXnhE="
+											},
+											"font": "Arial;13;0",
+											"left": 575,
+											"top": 864,
+											"width": 16.6181640625,
+											"height": 13,
+											"alpha": 2.1587984664002984,
+											"distance": 18.027756377319946,
+											"hostEdge": {
+												"$ref": "AAAAAAF+cbm3PxdZjoY="
+											},
+											"edgePosition": 1,
+											"text": "No"
+										}
+									],
+									"font": "Arial;13;0",
+									"head": {
+										"$ref": "AAAAAAF+cYd6RhO+ehQ="
+									},
+									"tail": {
+										"$ref": "AAAAAAF+cX26dBN+nHk="
+									},
+									"lineStyle": 2,
+									"points": "712:880;568:880;568:952",
+									"nameLabel": {
+										"$ref": "AAAAAAF+cbm3Pxdahgo="
+									}
+								},
+								{
+									"_type": "FCFlowView",
+									"_id": "AAAAAAF+cbnlkRdkW/k=",
+									"_parent": {
+										"$ref": "AAAAAAF+cU5OABLULds="
+									},
+									"model": {
+										"$ref": "AAAAAAF+cbnlkRdip2M="
+									},
+									"subViews": [
+										{
+											"_type": "EdgeLabelView",
+											"_id": "AAAAAAF+cbnlkRdl1e0=",
+											"_parent": {
+												"$ref": "AAAAAAF+cbnlkRdkW/k="
+											},
+											"model": {
+												"$ref": "AAAAAAF+cbnlkRdip2M="
+											},
+											"font": "Arial;13;0",
+											"left": 772,
+											"top": 952,
+											"width": 21.20751953125,
+											"height": 13,
+											"alpha": 1.5707963267948966,
+											"distance": 15,
+											"hostEdge": {
+												"$ref": "AAAAAAF+cbnlkRdkW/k="
+											},
+											"edgePosition": 1,
+											"text": "Yes"
+										}
+									],
+									"font": "Arial;13;0",
+									"head": {
+										"$ref": "AAAAAAF+cYeNPhPW+kQ="
+									},
+									"tail": {
+										"$ref": "AAAAAAF+cX26dBN+nHk="
+									},
+									"lineStyle": 2,
+									"points": "768:935;768:984",
+									"nameLabel": {
+										"$ref": "AAAAAAF+cbnlkRdl1e0="
+									}
+								},
+								{
+									"_type": "FCDataView",
+									"_id": "AAAAAAF+cbr4dhdv3Bw=",
+									"_parent": {
+										"$ref": "AAAAAAF+cU5OABLULds="
+									},
+									"model": {
+										"$ref": "AAAAAAF+cbr4dhdts/E="
+									},
+									"subViews": [
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF+cbr4dhdwwX4=",
+											"_parent": {
+												"$ref": "AAAAAAF+cbr4dhdv3Bw="
+											},
+											"font": "Arial;13;0",
+											"left": 1099,
+											"top": 642,
+											"width": 115,
+											"height": 39,
+											"text": "Send Gas Detection Message To Mobile",
+											"wordWrap": true
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 1056,
+									"top": 632,
+									"width": 201,
+									"height": 59,
+									"nameLabel": {
+										"$ref": "AAAAAAF+cbr4dhdwwX4="
+									}
+								},
+								{
+									"_type": "FCDataView",
+									"_id": "AAAAAAF+cbzWuRePF6s=",
+									"_parent": {
+										"$ref": "AAAAAAF+cU5OABLULds="
+									},
+									"model": {
+										"$ref": "AAAAAAF+cbzWuReNvEA="
+									},
+									"subViews": [
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF+cbzWuReQXMI=",
+											"_parent": {
+												"$ref": "AAAAAAF+cbzWuRePF6s="
+											},
+											"font": "Arial;13;0",
+											"left": 1172,
+											"top": 978,
+											"width": 121,
+											"height": 39,
+											"text": "Send Flame Detection Message To Mobile",
+											"wordWrap": true
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 1128,
+									"top": 968,
+									"width": 209,
+									"height": 59,
+									"nameLabel": {
+										"$ref": "AAAAAAF+cbzWuReQXMI="
+									}
+								},
+								{
+									"_type": "FCDecisionView",
+									"_id": "AAAAAAF+cb3dJRer2O4=",
+									"_parent": {
+										"$ref": "AAAAAAF+cU5OABLULds="
+									},
+									"model": {
+										"$ref": "AAAAAAF+cb3dJRep/RI="
+									},
+									"subViews": [
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF+cb3dJResqHA=",
+											"_parent": {
+												"$ref": "AAAAAAF+cb3dJRer2O4="
+											},
+											"font": "Arial;13;0",
+											"left": 916.90087890625,
+											"top": 642,
+											"width": 57.8017578125,
+											"height": 52,
+											"text": "Check Gas_Alert Variable false",
+											"wordWrap": true
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 888,
+									"top": 616,
+									"width": 115.603515625,
+									"height": 104,
+									"nameLabel": {
+										"$ref": "AAAAAAF+cb3dJResqHA="
+									}
+								},
+								{
+									"_type": "FCFlowView",
+									"_id": "AAAAAAF+cb/FQxe5+Mc=",
+									"_parent": {
+										"$ref": "AAAAAAF+cU5OABLULds="
+									},
+									"model": {
+										"$ref": "AAAAAAF+cb/FQxe3sqE="
+									},
+									"subViews": [
+										{
+											"_type": "EdgeLabelView",
+											"_id": "AAAAAAF+cb/FQxe67yE=",
+											"_parent": {
+												"$ref": "AAAAAAF+cb/FQxe5+Mc="
+											},
+											"model": {
+												"$ref": "AAAAAAF+cb/FQxe3sqE="
+											},
+											"font": "Arial;13;0",
+											"left": 1019,
+											"top": 645,
+											"width": 21.20751953125,
+											"height": 13,
+											"alpha": 1.5707963267948966,
+											"distance": 15,
+											"hostEdge": {
+												"$ref": "AAAAAAF+cb/FQxe5+Mc="
+											},
+											"edgePosition": 1,
+											"text": "Yes"
+										}
+									],
+									"font": "Arial;13;0",
+									"head": {
+										"$ref": "AAAAAAF+cbr4dhdv3Bw="
+									},
+									"tail": {
+										"$ref": "AAAAAAF+cb3dJRer2O4="
+									},
+									"lineStyle": 2,
+									"points": "1003:666;1056:666",
+									"nameLabel": {
+										"$ref": "AAAAAAF+cb/FQxe67yE="
+									}
+								},
+								{
+									"_type": "FCFlowView",
+									"_id": "AAAAAAF+ccC3/BfDGwE=",
+									"_parent": {
+										"$ref": "AAAAAAF+cU5OABLULds="
+									},
+									"model": {
+										"$ref": "AAAAAAF+ccC3/BfBVOw="
+									},
+									"subViews": [
+										{
+											"_type": "EdgeLabelView",
+											"_id": "AAAAAAF+ccC3/BfEFYQ=",
+											"_parent": {
+												"$ref": "AAAAAAF+ccC3/BfDGwE="
+											},
+											"model": {
+												"$ref": "AAAAAAF+ccC3/BfBVOw="
+											},
+											"font": "Arial;13;0",
+											"left": 845,
+											"top": 809,
+											"width": 21.20751953125,
+											"height": 13,
+											"alpha": 1.5707963267948966,
+											"distance": 15,
+											"hostEdge": {
+												"$ref": "AAAAAAF+ccC3/BfDGwE="
+											},
+											"edgePosition": 1,
+											"text": "No"
+										}
+									],
+									"font": "Arial;13;0",
+									"head": {
+										"$ref": "AAAAAAF+cX26dBN+nHk="
+									},
+									"tail": {
+										"$ref": "AAAAAAF+cb3dJRer2O4="
+									},
+									"lineStyle": 2,
+									"points": "944:719;944:800;768:800;768:832",
+									"nameLabel": {
+										"$ref": "AAAAAAF+ccC3/BfEFYQ="
+									}
+								},
+								{
+									"_type": "FCFlowView",
+									"_id": "AAAAAAF+ccD9ghfPX98=",
+									"_parent": {
+										"$ref": "AAAAAAF+cU5OABLULds="
+									},
+									"model": {
+										"$ref": "AAAAAAF+ccD9ghfN/kA="
+									},
+									"subViews": [
+										{
+											"_type": "EdgeLabelView",
+											"_id": "AAAAAAF+ccD9ghfQQ9Q=",
+											"_parent": {
+												"$ref": "AAAAAAF+ccD9ghfPX98="
+											},
+											"model": {
+												"$ref": "AAAAAAF+ccD9ghfN/kA="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": 872,
+											"top": 653,
+											"height": 13,
+											"alpha": 1.5707963267948966,
+											"distance": 15,
+											"hostEdge": {
+												"$ref": "AAAAAAF+ccD9ghfPX98="
+											},
+											"edgePosition": 1
+										}
+									],
+									"font": "Arial;13;0",
+									"head": {
+										"$ref": "AAAAAAF+cb3dJRer2O4="
+									},
+									"tail": {
+										"$ref": "AAAAAAF+cYeKcRPOzvU="
+									},
+									"lineStyle": 2,
+									"points": "856:674;888:674",
+									"nameLabel": {
+										"$ref": "AAAAAAF+ccD9ghfQQ9Q="
+									}
+								},
+								{
+									"_type": "FCProcessView",
+									"_id": "AAAAAAF+ccWgRBf9Zgo=",
+									"_parent": {
+										"$ref": "AAAAAAF+cU5OABLULds="
+									},
+									"model": {
+										"$ref": "AAAAAAF+ccWgRBf74cg="
+									},
+									"subViews": [
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF+ccWgRRf+yic=",
+											"_parent": {
+												"$ref": "AAAAAAF+ccWgRBf9Zgo="
+											},
+											"font": "Arial;13;0",
+											"left": 234,
+											"top": 938,
+											"width": 197,
+											"height": 13,
+											"text": "Make Gas_Alert Variable false",
+											"wordWrap": true
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 224,
+									"top": 928,
+									"width": 217,
+									"height": 33,
+									"nameLabel": {
+										"$ref": "AAAAAAF+ccWgRRf+yic="
+									}
+								},
+								{
+									"_type": "FCProcessView",
+									"_id": "AAAAAAF+ccWwfRgFykI=",
+									"_parent": {
+										"$ref": "AAAAAAF+cU5OABLULds="
+									},
+									"model": {
+										"$ref": "AAAAAAF+ccWwfRgDFpg="
+									},
+									"subViews": [
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF+ccWwfRgGI8o=",
+											"_parent": {
+												"$ref": "AAAAAAF+ccWwfRgFykI="
+											},
+											"font": "Arial;13;0",
+											"left": 922,
+											"top": 874,
+											"width": 181,
+											"height": 13,
+											"text": "Make Gas_Alert Variable true",
+											"wordWrap": true
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 912,
+									"top": 864,
+									"width": 201,
+									"height": 33,
+									"nameLabel": {
+										"$ref": "AAAAAAF+ccWwfRgGI8o="
+									}
+								},
+								{
+									"_type": "FCProcessView",
+									"_id": "AAAAAAF+ccWzMxgN7kw=",
+									"_parent": {
+										"$ref": "AAAAAAF+cU5OABLULds="
+									},
+									"model": {
+										"$ref": "AAAAAAF+ccWzMxgLZx4="
+									},
+									"subViews": [
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF+ccWzMxgOcEg=",
+											"_parent": {
+												"$ref": "AAAAAAF+ccWzMxgN7kw="
+											},
+											"font": "Arial;13;0",
+											"left": 1098,
+											"top": 1090,
+											"width": 213,
+											"height": 13,
+											"text": "Make Flame_Alert Variable true",
+											"wordWrap": true
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 1088,
+									"top": 1080,
+									"width": 233,
+									"height": 33,
+									"nameLabel": {
+										"$ref": "AAAAAAF+ccWzMxgOcEg="
+									}
+								},
+								{
+									"_type": "FCProcessView",
+									"_id": "AAAAAAF+ccW1yRgVi5Y=",
+									"_parent": {
+										"$ref": "AAAAAAF+cU5OABLULds="
+									},
+									"model": {
+										"$ref": "AAAAAAF+ccW1yRgTNlo="
+									},
+									"subViews": [
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF+ccW1yRgWpeQ=",
+											"_parent": {
+												"$ref": "AAAAAAF+ccW1yRgVi5Y="
+											},
+											"font": "Arial;13;0",
+											"left": 234,
+											"top": 1010,
+											"width": 197,
+											"height": 13,
+											"text": "Make Flame_Alert Variable false",
+											"wordWrap": true
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 224,
+									"top": 1000,
+									"width": 217,
+									"height": 33,
+									"nameLabel": {
+										"$ref": "AAAAAAF+ccW1yRgWpeQ="
+									}
+								},
+								{
+									"_type": "FCFlowView",
+									"_id": "AAAAAAF+ccmEthglAzI=",
+									"_parent": {
+										"$ref": "AAAAAAF+cU5OABLULds="
+									},
+									"model": {
+										"$ref": "AAAAAAF+ccmEtRgj4iQ="
+									},
+									"subViews": [
+										{
+											"_type": "EdgeLabelView",
+											"_id": "AAAAAAF+ccmEthgmnTU=",
+											"_parent": {
+												"$ref": "AAAAAAF+ccmEthglAzI="
+											},
+											"model": {
+												"$ref": "AAAAAAF+ccmEtRgj4iQ="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": 782,
+											"top": 793,
+											"height": 13,
+											"alpha": 1.5707963267948966,
+											"distance": 15,
+											"hostEdge": {
+												"$ref": "AAAAAAF+ccmEthglAzI="
+											},
+											"edgePosition": 1
+										}
+									],
+									"font": "Arial;13;0",
+									"head": {
+										"$ref": "AAAAAAF+cX26dBN+nHk="
+									},
+									"tail": {
+										"$ref": "AAAAAAF+cbcurxclHEM="
+									},
+									"lineStyle": 2,
+									"points": "656:800;768:800;768:832",
+									"nameLabel": {
+										"$ref": "AAAAAAF+ccmEthgmnTU="
+									}
+								},
+								{
+									"_type": "FCFlowView",
+									"_id": "AAAAAAF+ccsu0xhLnXc=",
+									"_parent": {
+										"$ref": "AAAAAAF+cU5OABLULds="
+									},
+									"model": {
+										"$ref": "AAAAAAF+ccsu0xhJNds="
+									},
+									"subViews": [
+										{
+											"_type": "EdgeLabelView",
+											"_id": "AAAAAAF+ccsu0xhMM5Q=",
+											"_parent": {
+												"$ref": "AAAAAAF+ccsu0xhLnXc="
+											},
+											"model": {
+												"$ref": "AAAAAAF+ccsu0xhJNds="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": 1102,
+											"top": 770,
+											"height": 13,
+											"alpha": 1.5707963267948966,
+											"distance": 15,
+											"hostEdge": {
+												"$ref": "AAAAAAF+ccsu0xhLnXc="
+											},
+											"edgePosition": 1
+										}
+									],
+									"font": "Arial;13;0",
+									"head": {
+										"$ref": "AAAAAAF+ccWwfRgFykI="
+									},
+									"tail": {
+										"$ref": "AAAAAAF+cbr4dhdv3Bw="
+									},
+									"lineStyle": 2,
+									"points": "1088:690;1088:864",
+									"nameLabel": {
+										"$ref": "AAAAAAF+ccsu0xhMM5Q="
+									}
+								},
+								{
+									"_type": "FCFlowView",
+									"_id": "AAAAAAF+cctaZBhYIbQ=",
+									"_parent": {
+										"$ref": "AAAAAAF+cU5OABLULds="
+									},
+									"model": {
+										"$ref": "AAAAAAF+cctaZBhWV78="
+									},
+									"subViews": [
+										{
+											"_type": "EdgeLabelView",
+											"_id": "AAAAAAF+cctaZRhZ68I=",
+											"_parent": {
+												"$ref": "AAAAAAF+cctaZBhYIbQ="
+											},
+											"model": {
+												"$ref": "AAAAAAF+cctaZBhWV78="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": 868,
+											"top": 890,
+											"height": 13,
+											"alpha": 1.5707963267948966,
+											"distance": 15,
+											"hostEdge": {
+												"$ref": "AAAAAAF+cctaZBhYIbQ="
+											},
+											"edgePosition": 1
+										}
+									],
+									"font": "Arial;13;0",
+									"head": {
+										"$ref": "AAAAAAF+cX26dBN+nHk="
+									},
+									"tail": {
+										"$ref": "AAAAAAF+ccWwfRgFykI="
+									},
+									"lineStyle": 2,
+									"points": "912:881;827:881",
+									"nameLabel": {
+										"$ref": "AAAAAAF+cctaZRhZ68I="
+									}
+								},
+								{
+									"_type": "FCFlowView",
+									"_id": "AAAAAAF+ccvHPxhp1O8=",
+									"_parent": {
+										"$ref": "AAAAAAF+cU5OABLULds="
+									},
+									"model": {
+										"$ref": "AAAAAAF+ccvHPxhnwAY="
+									},
+									"subViews": [
+										{
+											"_type": "EdgeLabelView",
+											"_id": "AAAAAAF+ccvHPxhqoOQ=",
+											"_parent": {
+												"$ref": "AAAAAAF+ccvHPxhp1O8="
+											},
+											"model": {
+												"$ref": "AAAAAAF+ccvHPxhnwAY="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": 342,
+											"top": 897,
+											"height": 13,
+											"alpha": 1.5707963267948966,
+											"distance": 15,
+											"hostEdge": {
+												"$ref": "AAAAAAF+ccvHPxhp1O8="
+											},
+											"edgePosition": 1
+										}
+									],
+									"font": "Arial;13;0",
+									"head": {
+										"$ref": "AAAAAAF+ccWgRBf9Zgo="
+									},
+									"tail": {
+										"$ref": "AAAAAAF+cZXPhRSY76g="
+									},
+									"lineStyle": 2,
+									"points": "328:880;328:928",
+									"nameLabel": {
+										"$ref": "AAAAAAF+ccvHPxhqoOQ="
+									}
+								},
+								{
+									"_type": "FCFlowView",
+									"_id": "AAAAAAF+ccvbeRhz5Is=",
+									"_parent": {
+										"$ref": "AAAAAAF+cU5OABLULds="
+									},
+									"model": {
+										"$ref": "AAAAAAF+ccvbeRhxT08="
+									},
+									"subViews": [
+										{
+											"_type": "EdgeLabelView",
+											"_id": "AAAAAAF+ccvbeRh0Lqw=",
+											"_parent": {
+												"$ref": "AAAAAAF+ccvbeRhz5Is="
+											},
+											"model": {
+												"$ref": "AAAAAAF+ccvbeRhxT08="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": 342,
+											"top": 973,
+											"height": 13,
+											"alpha": 1.5707963267948966,
+											"distance": 15,
+											"hostEdge": {
+												"$ref": "AAAAAAF+ccvbeRhz5Is="
+											},
+											"edgePosition": 1
+										}
+									],
+									"font": "Arial;13;0",
+									"head": {
+										"$ref": "AAAAAAF+ccW1yRgVi5Y="
+									},
+									"tail": {
+										"$ref": "AAAAAAF+ccWgRBf9Zgo="
+									},
+									"lineStyle": 2,
+									"points": "328:960;328:1000",
+									"nameLabel": {
+										"$ref": "AAAAAAF+ccvbeRh0Lqw="
+									}
+								},
+								{
+									"_type": "FCFlowView",
+									"_id": "AAAAAAF+cc1j1xiO6SU=",
+									"_parent": {
+										"$ref": "AAAAAAF+cU5OABLULds="
+									},
+									"model": {
+										"$ref": "AAAAAAF+cc1j1hiM97U="
+									},
+									"subViews": [
+										{
+											"_type": "EdgeLabelView",
+											"_id": "AAAAAAF+cc1j1xiP+nE=",
+											"_parent": {
+												"$ref": "AAAAAAF+cc1j1xiO6SU="
+											},
+											"model": {
+												"$ref": "AAAAAAF+cc1j1hiM97U="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": 340,
+											"top": 1075,
+											"height": 13,
+											"alpha": 1.5707963267948966,
+											"distance": 15,
+											"hostEdge": {
+												"$ref": "AAAAAAF+cc1j1xiO6SU="
+											},
+											"edgePosition": 1
+										}
+									],
+									"font": "Arial;13;0",
+									"head": {
+										"$ref": "AAAAAAF+cZOKmRR8O+U="
+									},
+									"tail": {
+										"$ref": "AAAAAAF+ccW1yRgVi5Y="
+									},
+									"lineStyle": 2,
+									"points": "340:1032;340:1096;544:1096",
+									"nameLabel": {
+										"$ref": "AAAAAAF+cc1j1xiP+nE="
+									}
+								},
+								{
+									"_type": "FCFlowView",
+									"_id": "AAAAAAF+cc3L3RiZBSI=",
+									"_parent": {
+										"$ref": "AAAAAAF+cU5OABLULds="
+									},
+									"model": {
+										"$ref": "AAAAAAF+cc3L3RiXYmY="
+									},
+									"subViews": [
+										{
+											"_type": "EdgeLabelView",
+											"_id": "AAAAAAF+cc3L3RiaRv8=",
+											"_parent": {
+												"$ref": "AAAAAAF+cc3L3RiZBSI="
+											},
+											"model": {
+												"$ref": "AAAAAAF+cc3L3RiXYmY="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": 582,
+											"top": 1031,
+											"height": 13,
+											"alpha": 1.5707963267948966,
+											"distance": 15,
+											"hostEdge": {
+												"$ref": "AAAAAAF+cc3L3RiZBSI="
+											},
+											"edgePosition": 1
+										}
+									],
+									"font": "Arial;13;0",
+									"head": {
+										"$ref": "AAAAAAF+cZOKmRR8O+U="
+									},
+									"tail": {
+										"$ref": "AAAAAAF+cYd6RhO+ehQ="
+									},
+									"lineStyle": 2,
+									"points": "568:997;568:1080",
+									"nameLabel": {
+										"$ref": "AAAAAAF+cc3L3RiaRv8="
+									}
+								},
+								{
+									"_type": "FCDecisionView",
+									"_id": "AAAAAAF+cc7z4xitHiA=",
+									"_parent": {
+										"$ref": "AAAAAAF+cU5OABLULds="
+									},
+									"model": {
+										"$ref": "AAAAAAF+cc7z4xirNvc="
+									},
+									"subViews": [
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF+cc7z4xiujyU=",
+											"_parent": {
+												"$ref": "AAAAAAF+cc7z4xitHiA="
+											},
+											"font": "Arial;13;0",
+											"left": 955.0390625,
+											"top": 978,
+											"width": 70.078125,
+											"height": 52,
+											"text": "Check Flame_Alert Variable false",
+											"wordWrap": true
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 920,
+									"top": 952,
+									"width": 140.15625,
+									"height": 104,
+									"nameLabel": {
+										"$ref": "AAAAAAF+cc7z4xiujyU="
+									}
+								},
+								{
+									"_type": "FCFlowView",
+									"_id": "AAAAAAF+cdEcWxjGZN4=",
+									"_parent": {
+										"$ref": "AAAAAAF+cU5OABLULds="
+									},
+									"model": {
+										"$ref": "AAAAAAF+cdEcWxjE84I="
+									},
+									"subViews": [
+										{
+											"_type": "EdgeLabelView",
+											"_id": "AAAAAAF+cdEcXBjHLrs=",
+											"_parent": {
+												"$ref": "AAAAAAF+cdEcWxjGZN4="
+											},
+											"model": {
+												"$ref": "AAAAAAF+cdEcWxjE84I="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": 896,
+											"top": 979,
+											"height": 13,
+											"alpha": 1.5707963267948966,
+											"distance": 15,
+											"hostEdge": {
+												"$ref": "AAAAAAF+cdEcWxjGZN4="
+											},
+											"edgePosition": 1
+										}
+									],
+									"font": "Arial;13;0",
+									"head": {
+										"$ref": "AAAAAAF+cc7z4xitHiA="
+									},
+									"tail": {
+										"$ref": "AAAAAAF+cYeNPhPW+kQ="
+									},
+									"lineStyle": 2,
+									"points": "872:1000;920:1000",
+									"nameLabel": {
+										"$ref": "AAAAAAF+cdEcXBjHLrs="
+									}
+								},
+								{
+									"_type": "FCFlowView",
+									"_id": "AAAAAAF+cdXs2BjZJMo=",
+									"_parent": {
+										"$ref": "AAAAAAF+cU5OABLULds="
+									},
+									"model": {
+										"$ref": "AAAAAAF+cdXs2BjXNZI="
+									},
+									"subViews": [
+										{
+											"_type": "EdgeLabelView",
+											"_id": "AAAAAAF+cdXs2BjaTnE=",
+											"_parent": {
+												"$ref": "AAAAAAF+cdXs2BjZJMo="
+											},
+											"model": {
+												"$ref": "AAAAAAF+cdXs2BjXNZI="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": 859,
+											"top": 1105,
+											"height": 13,
+											"alpha": 1.5707963267948966,
+											"distance": 15,
+											"hostEdge": {
+												"$ref": "AAAAAAF+cdXs2BjZJMo="
+											},
+											"edgePosition": 1
+										}
+									],
+									"font": "Arial;13;0",
+									"head": {
+										"$ref": "AAAAAAF+cZOKmRR8O+U="
+									},
+									"tail": {
+										"$ref": "AAAAAAF+ccWzMxgN7kw="
+									},
+									"lineStyle": 2,
+									"points": "1088:1096;632:1096",
+									"nameLabel": {
+										"$ref": "AAAAAAF+cdXs2BjaTnE="
+									}
+								},
+								{
+									"_type": "FCFlowView",
+									"_id": "AAAAAAF+cdZN4xjoR58=",
+									"_parent": {
+										"$ref": "AAAAAAF+cU5OABLULds="
+									},
+									"model": {
+										"$ref": "AAAAAAF+cdZN4xjmPM0="
+									},
+									"subViews": [
+										{
+											"_type": "EdgeLabelView",
+											"_id": "AAAAAAF+cdZN4xjpol0=",
+											"_parent": {
+												"$ref": "AAAAAAF+cdZN4xjoR58="
+											},
+											"model": {
+												"$ref": "AAAAAAF+cdZN4xjmPM0="
+											},
+											"font": "Arial;13;0",
+											"left": 1083,
+											"top": 980,
+											"width": 21.20751953125,
+											"height": 13,
+											"alpha": 1.5707963267948966,
+											"distance": 15,
+											"hostEdge": {
+												"$ref": "AAAAAAF+cdZN4xjoR58="
+											},
+											"edgePosition": 1,
+											"text": "Yes"
+										}
+									],
+									"font": "Arial;13;0",
+									"head": {
+										"$ref": "AAAAAAF+cbzWuRePF6s="
+									},
+									"tail": {
+										"$ref": "AAAAAAF+cc7z4xitHiA="
+									},
+									"lineStyle": 2,
+									"points": "1059:1001;1128:1001",
+									"nameLabel": {
+										"$ref": "AAAAAAF+cdZN4xjpol0="
+									}
+								},
+								{
+									"_type": "FCFlowView",
+									"_id": "AAAAAAF+cdaBDxjyk40=",
+									"_parent": {
+										"$ref": "AAAAAAF+cU5OABLULds="
+									},
+									"model": {
+										"$ref": "AAAAAAF+cdaBDxjwv5g="
+									},
+									"subViews": [
+										{
+											"_type": "EdgeLabelView",
+											"_id": "AAAAAAF+cdaBEBjzOuw=",
+											"_parent": {
+												"$ref": "AAAAAAF+cdaBDxjyk40="
+											},
+											"model": {
+												"$ref": "AAAAAAF+cdaBDxjwv5g="
+											},
+											"font": "Arial;13;0",
+											"left": 960,
+											"top": 1054,
+											"width": 21.20751953125,
+											"height": 13,
+											"alpha": -1.0096331193046986,
+											"distance": 41.340053217188775,
+											"hostEdge": {
+												"$ref": "AAAAAAF+cdaBDxjyk40="
+											},
+											"edgePosition": 1,
+											"text": "No"
+										}
+									],
+									"font": "Arial;13;0",
+									"head": {
+										"$ref": "AAAAAAF+cZOKmRR8O+U="
+									},
+									"tail": {
+										"$ref": "AAAAAAF+cc7z4xitHiA="
+									},
+									"lineStyle": 2,
+									"points": "992:1055;992:1096;632:1096",
+									"nameLabel": {
+										"$ref": "AAAAAAF+cdaBEBjzOuw="
+									}
+								},
+								{
+									"_type": "FCFlowView",
+									"_id": "AAAAAAF+cdvktRkKRQk=",
+									"_parent": {
+										"$ref": "AAAAAAF+cU5OABLULds="
+									},
+									"model": {
+										"$ref": "AAAAAAF+cdvktRkI5bE="
+									},
+									"subViews": [
+										{
+											"_type": "EdgeLabelView",
+											"_id": "AAAAAAF+cdvktRkLq28=",
+											"_parent": {
+												"$ref": "AAAAAAF+cdvktRkKRQk="
+											},
+											"model": {
+												"$ref": "AAAAAAF+cdvktRkI5bE="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": 1238,
+											"top": 1046,
+											"height": 13,
+											"alpha": 1.5707963267948966,
+											"distance": 15,
+											"hostEdge": {
+												"$ref": "AAAAAAF+cdvktRkKRQk="
+											},
+											"edgePosition": 1
+										}
+									],
+									"font": "Arial;13;0",
+									"head": {
+										"$ref": "AAAAAAF+ccWzMxgN7kw="
+									},
+									"tail": {
+										"$ref": "AAAAAAF+cbzWuRePF6s="
+									},
+									"lineStyle": 2,
+									"points": "1224:1026;1224:1080",
+									"nameLabel": {
+										"$ref": "AAAAAAF+cdvktRkLq28="
+									}
+								}
+							]
+						},
+						{
+							"_type": "FCTerminator",
+							"_id": "AAAAAAF+cU+G4xLYCnQ=",
+							"_parent": {
+								"$ref": "AAAAAAF+cU5OABLTKAU="
+							},
+							"name": "Start",
+							"ownedElements": [
+								{
+									"_type": "FCFlow",
+									"_id": "AAAAAAF+ca6+pBaGyy0=",
+									"_parent": {
+										"$ref": "AAAAAAF+cU+G4xLYCnQ="
+									},
+									"source": {
+										"$ref": "AAAAAAF+cU+G4xLYCnQ="
+									},
+									"target": {
+										"$ref": "AAAAAAF+cXKffRMahu4="
+									}
+								},
+								{
+									"_type": "FCFlow",
+									"_id": "AAAAAAF+ca8EAxaeUcU=",
+									"_parent": {
+										"$ref": "AAAAAAF+cU+G4xLYCnQ="
+									},
+									"source": {
+										"$ref": "AAAAAAF+cU+G4xLYCnQ="
+									},
+									"target": {
+										"$ref": "AAAAAAF+cWTp6hL6MOc="
+									}
+								},
+								{
+									"_type": "FCFlow",
+									"_id": "AAAAAAF+ca+RFxa7XRY=",
+									"_parent": {
+										"$ref": "AAAAAAF+cU+G4xLYCnQ="
+									},
+									"source": {
+										"$ref": "AAAAAAF+cU+G4xLYCnQ="
+									},
+									"target": {
+										"$ref": "AAAAAAF+cXjoXBM7J1c="
+									}
+								}
+							]
+						},
+						{
+							"_type": "FCData",
+							"_id": "AAAAAAF+cWTp6hL6MOc=",
+							"_parent": {
+								"$ref": "AAAAAAF+cU5OABLTKAU="
+							},
+							"name": "Reading Gas Sensor ",
+							"ownedElements": [
+								{
+									"_type": "FCFlow",
+									"_id": "AAAAAAF+caDQNRT/lIg=",
+									"_parent": {
+										"$ref": "AAAAAAF+cWTp6hL6MOc="
+									},
+									"source": {
+										"$ref": "AAAAAAF+cWTp6hL6MOc="
+									},
+									"target": {
+										"$ref": "AAAAAAF+cY78IhQ2t8o="
+									}
+								}
+							]
+						},
+						{
+							"_type": "FCData",
+							"_id": "AAAAAAF+cXKffRMahu4=",
+							"_parent": {
+								"$ref": "AAAAAAF+cU5OABLTKAU="
+							},
+							"name": "Reading Flame Sensor",
+							"ownedElements": [
+								{
+									"_type": "FCFlow",
+									"_id": "AAAAAAF+cY93dRRFjLo=",
+									"_parent": {
+										"$ref": "AAAAAAF+cXKffRMahu4="
+									},
+									"source": {
+										"$ref": "AAAAAAF+cXKffRMahu4="
+									},
+									"target": {
+										"$ref": "AAAAAAF+cY78IhQ2t8o="
+									}
+								}
+							]
+						},
+						{
+							"_type": "FCData",
+							"_id": "AAAAAAF+cXjoXBM7J1c=",
+							"_parent": {
+								"$ref": "AAAAAAF+cU5OABLTKAU="
+							},
+							"name": "Reading Temperature Sensor",
+							"ownedElements": [
+								{
+									"_type": "FCFlow",
+									"_id": "AAAAAAF+caEH+xUKzpk=",
+									"_parent": {
+										"$ref": "AAAAAAF+cXjoXBM7J1c="
+									},
+									"source": {
+										"$ref": "AAAAAAF+cXjoXBM7J1c="
+									},
+									"target": {
+										"$ref": "AAAAAAF+cY78IhQ2t8o="
+									}
+								}
+							]
+						},
+						{
+							"_type": "FCDecision",
+							"_id": "AAAAAAF+cXwDwxNq6EY=",
+							"_parent": {
+								"$ref": "AAAAAAF+cU5OABLTKAU="
+							},
+							"name": "Gas Threshold Crossed",
+							"ownedElements": [
+								{
+									"_type": "FCFlow",
+									"_id": "AAAAAAF+cbYfDhcVIPE=",
+									"_parent": {
+										"$ref": "AAAAAAF+cXwDwxNq6EY="
+									},
+									"name": "Yes",
+									"source": {
+										"$ref": "AAAAAAF+cXwDwxNq6EY="
+									},
+									"target": {
+										"$ref": "AAAAAAF+cYeKcRPMfUM="
+									}
+								},
+								{
+									"_type": "FCFlow",
+									"_id": "AAAAAAF+cbg9Vhc8ung=",
+									"_parent": {
+										"$ref": "AAAAAAF+cXwDwxNq6EY="
+									},
+									"name": "No",
+									"source": {
+										"$ref": "AAAAAAF+cXwDwxNq6EY="
+									},
+									"target": {
+										"$ref": "AAAAAAF+cbcurxcjZsc="
+									}
+								}
+							]
+						},
+						{
+							"_type": "FCDecision",
+							"_id": "AAAAAAF+cX26cxN89FY=",
+							"_parent": {
+								"$ref": "AAAAAAF+cU5OABLTKAU="
+							},
+							"name": "Flame Threshold Crossed",
+							"ownedElements": [
+								{
+									"_type": "FCFlow",
+									"_id": "AAAAAAF+cbm3PhdXnhE=",
+									"_parent": {
+										"$ref": "AAAAAAF+cX26cxN89FY="
+									},
+									"name": "No",
+									"source": {
+										"$ref": "AAAAAAF+cX26cxN89FY="
+									},
+									"target": {
+										"$ref": "AAAAAAF+cYd6RhO86Xw="
+									}
+								},
+								{
+									"_type": "FCFlow",
+									"_id": "AAAAAAF+cbnlkRdip2M=",
+									"_parent": {
+										"$ref": "AAAAAAF+cX26cxN89FY="
+									},
+									"name": "Yes",
+									"source": {
+										"$ref": "AAAAAAF+cX26cxN89FY="
+									},
+									"target": {
+										"$ref": "AAAAAAF+cYeNPhPUcO0="
+									}
+								}
+							]
+						},
+						{
+							"_type": "FCData",
+							"_id": "AAAAAAF+cYd6RhO86Xw=",
+							"_parent": {
+								"$ref": "AAAAAAF+cU5OABLTKAU="
+							},
+							"name": "Turn Off Flame Detection Led",
+							"ownedElements": [
+								{
+									"_type": "FCFlow",
+									"_id": "AAAAAAF+cc3L3RiXYmY=",
+									"_parent": {
+										"$ref": "AAAAAAF+cYd6RhO86Xw="
+									},
+									"source": {
+										"$ref": "AAAAAAF+cYd6RhO86Xw="
+									},
+									"target": {
+										"$ref": "AAAAAAF+cZOKmBR6oU8="
+									}
+								}
+							]
+						},
+						{
+							"_type": "FCData",
+							"_id": "AAAAAAF+cYeGaxPEZwk=",
+							"_parent": {
+								"$ref": "AAAAAAF+cU5OABLTKAU="
+							},
+							"name": "Turn Power On",
+							"ownedElements": [
+								{
+									"_type": "FCFlow",
+									"_id": "AAAAAAF+cadoIBVbJm4=",
+									"_parent": {
+										"$ref": "AAAAAAF+cYeGaxPEZwk="
+									},
+									"source": {
+										"$ref": "AAAAAAF+cYeGaxPEZwk="
+									},
+									"target": {
+										"$ref": "AAAAAAF+cZXPhRSWJPE="
+									}
+								}
+							]
+						},
+						{
+							"_type": "FCData",
+							"_id": "AAAAAAF+cYeKcRPMfUM=",
+							"_parent": {
+								"$ref": "AAAAAAF+cU5OABLTKAU="
+							},
+							"name": "Turn On Gas Detection Led",
+							"ownedElements": [
+								{
+									"_type": "FCFlow",
+									"_id": "AAAAAAF+ccD9ghfN/kA=",
+									"_parent": {
+										"$ref": "AAAAAAF+cYeKcRPMfUM="
+									},
+									"source": {
+										"$ref": "AAAAAAF+cYeKcRPMfUM="
+									},
+									"target": {
+										"$ref": "AAAAAAF+cb3dJRep/RI="
+									}
+								}
+							]
+						},
+						{
+							"_type": "FCData",
+							"_id": "AAAAAAF+cYeNPhPUcO0=",
+							"_parent": {
+								"$ref": "AAAAAAF+cU5OABLTKAU="
+							},
+							"name": "Turn On Flame Detection Led",
+							"ownedElements": [
+								{
+									"_type": "FCFlow",
+									"_id": "AAAAAAF+cdEcWxjE84I=",
+									"_parent": {
+										"$ref": "AAAAAAF+cYeNPhPUcO0="
+									},
+									"source": {
+										"$ref": "AAAAAAF+cYeNPhPUcO0="
+									},
+									"target": {
+										"$ref": "AAAAAAF+cc7z4xirNvc="
+									}
+								}
+							]
+						},
+						{
+							"_type": "FCProcess",
+							"_id": "AAAAAAF+cY78IhQ2t8o=",
+							"_parent": {
+								"$ref": "AAAAAAF+cU5OABLTKAU="
+							},
+							"name": "Send Gas, Flame, Temperature Data To Blynk App",
+							"ownedElements": [
+								{
+									"_type": "FCFlow",
+									"_id": "AAAAAAF+cZ61XhTfjiU=",
+									"_parent": {
+										"$ref": "AAAAAAF+cY78IhQ2t8o="
+									},
+									"source": {
+										"$ref": "AAAAAAF+cY78IhQ2t8o="
+									},
+									"target": {
+										"$ref": "AAAAAAF+cZysdxTJeHw="
+									}
+								}
+							]
+						},
+						{
+							"_type": "FCTerminator",
+							"_id": "AAAAAAF+cZOKmBR6oU8=",
+							"_parent": {
+								"$ref": "AAAAAAF+cU5OABLTKAU="
+							},
+							"name": "End"
+						},
+						{
+							"_type": "FCData",
+							"_id": "AAAAAAF+cZU8LRSIFNU=",
+							"_parent": {
+								"$ref": "AAAAAAF+cU5OABLTKAU="
+							},
+							"name": "Buzzer On",
+							"ownedElements": [
+								{
+									"_type": "FCFlow",
+									"_id": "AAAAAAF+cbNjIRbk2/4=",
+									"_parent": {
+										"$ref": "AAAAAAF+cZU8LRSIFNU="
+									},
+									"source": {
+										"$ref": "AAAAAAF+cZU8LRSIFNU="
+									},
+									"target": {
+										"$ref": "AAAAAAF+cXwDwxNq6EY="
+									}
+								}
+							]
+						},
+						{
+							"_type": "FCData",
+							"_id": "AAAAAAF+cZXPhRSWJPE=",
+							"_parent": {
+								"$ref": "AAAAAAF+cU5OABLTKAU="
+							},
+							"name": "Buzzer Off",
+							"ownedElements": [
+								{
+									"_type": "FCFlow",
+									"_id": "AAAAAAF+ccvHPxhnwAY=",
+									"_parent": {
+										"$ref": "AAAAAAF+cZXPhRSWJPE="
+									},
+									"source": {
+										"$ref": "AAAAAAF+cZXPhRSWJPE="
+									},
+									"target": {
+										"$ref": "AAAAAAF+ccWgRBf74cg="
+									}
+								}
+							]
+						},
+						{
+							"_type": "FCDecision",
+							"_id": "AAAAAAF+cZysdxTJeHw=",
+							"_parent": {
+								"$ref": "AAAAAAF+cU5OABLTKAU="
+							},
+							"name": "Gas or Flame Detected",
+							"ownedElements": [
+								{
+									"_type": "FCFlow",
+									"_id": "AAAAAAF+caSCVBUo4JI=",
+									"_parent": {
+										"$ref": "AAAAAAF+cZysdxTJeHw="
+									},
+									"name": "Yes",
+									"source": {
+										"$ref": "AAAAAAF+cZysdxTJeHw="
+									},
+									"target": {
+										"$ref": "AAAAAAF+caQJchUb3kM="
+									}
+								},
+								{
+									"_type": "FCFlow",
+									"_id": "AAAAAAF+catJlRWtjWo=",
+									"_parent": {
+										"$ref": "AAAAAAF+cZysdxTJeHw="
+									},
+									"name": "No",
+									"source": {
+										"$ref": "AAAAAAF+cZysdxTJeHw="
+									},
+									"target": {
+										"$ref": "AAAAAAF+calgSxV5Rno="
+									}
+								}
+							]
+						},
+						{
+							"_type": "FCData",
+							"_id": "AAAAAAF+caQJchUb3kM=",
+							"_parent": {
+								"$ref": "AAAAAAF+cU5OABLTKAU="
+							},
+							"name": "Turn Power Off",
+							"ownedElements": [
+								{
+									"_type": "FCFlow",
+									"_id": "AAAAAAF+caUpgxU46Hc=",
+									"_parent": {
+										"$ref": "AAAAAAF+caQJchUb3kM="
+									},
+									"source": {
+										"$ref": "AAAAAAF+caQJchUb3kM="
+									},
+									"target": {
+										"$ref": "AAAAAAF+cZU8LRSIFNU="
+									}
+								}
+							]
+						},
+						{
+							"_type": "FCData",
+							"_id": "AAAAAAF+caiZihVlSmI=",
+							"_parent": {
+								"$ref": "AAAAAAF+cU5OABLTKAU="
+							},
+							"name": "Turn Off Flame Detection Led",
+							"ownedElements": [
+								{
+									"_type": "FCFlow",
+									"_id": "AAAAAAF+cawWfRXTwPw=",
+									"_parent": {
+										"$ref": "AAAAAAF+caiZihVlSmI="
+									},
+									"source": {
+										"$ref": "AAAAAAF+caiZihVlSmI="
+									},
+									"target": {
+										"$ref": "AAAAAAF+cYeGaxPEZwk="
+									}
+								}
+							]
+						},
+						{
+							"_type": "FCData",
+							"_id": "AAAAAAF+calgSxV5Rno=",
+							"_parent": {
+								"$ref": "AAAAAAF+cU5OABLTKAU="
+							},
+							"name": "Turn Off Gas Detection Led",
+							"ownedElements": [
+								{
+									"_type": "FCFlow",
+									"_id": "AAAAAAF+cavZXxXHBSM=",
+									"_parent": {
+										"$ref": "AAAAAAF+calgSxV5Rno="
+									},
+									"source": {
+										"$ref": "AAAAAAF+calgSxV5Rno="
+									},
+									"target": {
+										"$ref": "AAAAAAF+caiZihVlSmI="
+									}
+								}
+							]
+						},
+						{
+							"_type": "FCData",
+							"_id": "AAAAAAF+cbcurxcjZsc=",
+							"_parent": {
+								"$ref": "AAAAAAF+cU5OABLTKAU="
+							},
+							"name": "Turn Off Gas Detection Led",
+							"ownedElements": [
+								{
+									"_type": "FCFlow",
+									"_id": "AAAAAAF+ccmEtRgj4iQ=",
+									"_parent": {
+										"$ref": "AAAAAAF+cbcurxcjZsc="
+									},
+									"source": {
+										"$ref": "AAAAAAF+cbcurxcjZsc="
+									},
+									"target": {
+										"$ref": "AAAAAAF+cX26cxN89FY="
+									}
+								}
+							]
+						},
+						{
+							"_type": "FCData",
+							"_id": "AAAAAAF+cbr4dhdts/E=",
+							"_parent": {
+								"$ref": "AAAAAAF+cU5OABLTKAU="
+							},
+							"name": "Send Gas Detection Message To Mobile",
+							"ownedElements": [
+								{
+									"_type": "FCFlow",
+									"_id": "AAAAAAF+ccsu0xhJNds=",
+									"_parent": {
+										"$ref": "AAAAAAF+cbr4dhdts/E="
+									},
+									"source": {
+										"$ref": "AAAAAAF+cbr4dhdts/E="
+									},
+									"target": {
+										"$ref": "AAAAAAF+ccWwfRgDFpg="
+									}
+								}
+							]
+						},
+						{
+							"_type": "FCData",
+							"_id": "AAAAAAF+cbzWuReNvEA=",
+							"_parent": {
+								"$ref": "AAAAAAF+cU5OABLTKAU="
+							},
+							"name": "Send Flame Detection Message To Mobile",
+							"ownedElements": [
+								{
+									"_type": "FCFlow",
+									"_id": "AAAAAAF+cdvktRkI5bE=",
+									"_parent": {
+										"$ref": "AAAAAAF+cbzWuReNvEA="
+									},
+									"source": {
+										"$ref": "AAAAAAF+cbzWuReNvEA="
+									},
+									"target": {
+										"$ref": "AAAAAAF+ccWzMxgLZx4="
+									}
+								}
+							]
+						},
+						{
+							"_type": "FCDecision",
+							"_id": "AAAAAAF+cb3dJRep/RI=",
+							"_parent": {
+								"$ref": "AAAAAAF+cU5OABLTKAU="
+							},
+							"name": "Check Gas_Alert Variable false",
+							"ownedElements": [
+								{
+									"_type": "FCFlow",
+									"_id": "AAAAAAF+cb/FQxe3sqE=",
+									"_parent": {
+										"$ref": "AAAAAAF+cb3dJRep/RI="
+									},
+									"name": "Yes",
+									"source": {
+										"$ref": "AAAAAAF+cb3dJRep/RI="
+									},
+									"target": {
+										"$ref": "AAAAAAF+cbr4dhdts/E="
+									}
+								},
+								{
+									"_type": "FCFlow",
+									"_id": "AAAAAAF+ccC3/BfBVOw=",
+									"_parent": {
+										"$ref": "AAAAAAF+cb3dJRep/RI="
+									},
+									"name": "No",
+									"source": {
+										"$ref": "AAAAAAF+cb3dJRep/RI="
+									},
+									"target": {
+										"$ref": "AAAAAAF+cX26cxN89FY="
+									}
+								}
+							]
+						},
+						{
+							"_type": "FCProcess",
+							"_id": "AAAAAAF+ccWgRBf74cg=",
+							"_parent": {
+								"$ref": "AAAAAAF+cU5OABLTKAU="
+							},
+							"name": "Make Gas_Alert Variable false",
+							"ownedElements": [
+								{
+									"_type": "FCFlow",
+									"_id": "AAAAAAF+ccvbeRhxT08=",
+									"_parent": {
+										"$ref": "AAAAAAF+ccWgRBf74cg="
+									},
+									"source": {
+										"$ref": "AAAAAAF+ccWgRBf74cg="
+									},
+									"target": {
+										"$ref": "AAAAAAF+ccW1yRgTNlo="
+									}
+								}
+							]
+						},
+						{
+							"_type": "FCProcess",
+							"_id": "AAAAAAF+ccWwfRgDFpg=",
+							"_parent": {
+								"$ref": "AAAAAAF+cU5OABLTKAU="
+							},
+							"name": "Make Gas_Alert Variable true",
+							"ownedElements": [
+								{
+									"_type": "FCFlow",
+									"_id": "AAAAAAF+cctaZBhWV78=",
+									"_parent": {
+										"$ref": "AAAAAAF+ccWwfRgDFpg="
+									},
+									"source": {
+										"$ref": "AAAAAAF+ccWwfRgDFpg="
+									},
+									"target": {
+										"$ref": "AAAAAAF+cX26cxN89FY="
+									}
+								}
+							]
+						},
+						{
+							"_type": "FCProcess",
+							"_id": "AAAAAAF+ccWzMxgLZx4=",
+							"_parent": {
+								"$ref": "AAAAAAF+cU5OABLTKAU="
+							},
+							"name": "Make Flame_Alert Variable true",
+							"ownedElements": [
+								{
+									"_type": "FCFlow",
+									"_id": "AAAAAAF+cdXs2BjXNZI=",
+									"_parent": {
+										"$ref": "AAAAAAF+ccWzMxgLZx4="
+									},
+									"source": {
+										"$ref": "AAAAAAF+ccWzMxgLZx4="
+									},
+									"target": {
+										"$ref": "AAAAAAF+cZOKmBR6oU8="
+									}
+								}
+							]
+						},
+						{
+							"_type": "FCProcess",
+							"_id": "AAAAAAF+ccW1yRgTNlo=",
+							"_parent": {
+								"$ref": "AAAAAAF+cU5OABLTKAU="
+							},
+							"name": "Make Flame_Alert Variable false",
+							"ownedElements": [
+								{
+									"_type": "FCFlow",
+									"_id": "AAAAAAF+cc1j1hiM97U=",
+									"_parent": {
+										"$ref": "AAAAAAF+ccW1yRgTNlo="
+									},
+									"source": {
+										"$ref": "AAAAAAF+ccW1yRgTNlo="
+									},
+									"target": {
+										"$ref": "AAAAAAF+cZOKmBR6oU8="
+									}
+								}
+							]
+						},
+						{
+							"_type": "FCDecision",
+							"_id": "AAAAAAF+cc7z4xirNvc=",
+							"_parent": {
+								"$ref": "AAAAAAF+cU5OABLTKAU="
+							},
+							"name": "Check Flame_Alert Variable false",
+							"ownedElements": [
+								{
+									"_type": "FCFlow",
+									"_id": "AAAAAAF+cdZN4xjmPM0=",
+									"_parent": {
+										"$ref": "AAAAAAF+cc7z4xirNvc="
+									},
+									"name": "Yes",
+									"source": {
+										"$ref": "AAAAAAF+cc7z4xirNvc="
+									},
+									"target": {
+										"$ref": "AAAAAAF+cbzWuReNvEA="
+									}
+								},
+								{
+									"_type": "FCFlow",
+									"_id": "AAAAAAF+cdaBDxjwv5g=",
+									"_parent": {
+										"$ref": "AAAAAAF+cc7z4xirNvc="
+									},
+									"name": "No",
+									"source": {
+										"$ref": "AAAAAAF+cc7z4xirNvc="
+									},
+									"target": {
+										"$ref": "AAAAAAF+cZOKmBR6oU8="
+									}
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

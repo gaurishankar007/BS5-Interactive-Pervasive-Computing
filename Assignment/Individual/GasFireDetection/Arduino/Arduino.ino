@@ -1,5 +1,5 @@
 #include <SoftwareSerial.h>
-SoftwareSerial nodemcu(6, 7); // Connect Arduino digital pin 6 to RX and 7 to TX of NodeMCU
+SoftwareSerial nodemcu(6, 7); // 6=Rx & 7=Tx
 SoftwareSerial SIM900(4, 5);
 
 // Pins

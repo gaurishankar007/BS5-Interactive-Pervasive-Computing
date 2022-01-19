@@ -32,13 +32,12 @@ void setup() {
 void loop() {
   Blynk.run();
   
-  // Reading sensor values send from Arduino 
+  // Reading sensor values send from Arduino, don't use delay at arduinio if you use ArduinoJson
   StaticJsonDocument<1000> data;
   DeserializationError error = deserializeJson(data, nodemcu);
 
   if(error){
     Serial.println("Invlaid Json Object");
-    delay(1000);
   }
   String a = data["gas"];
   Serial.println("Data Received:-"+a);
