@@ -12,8 +12,8 @@ using namespace std;
 
 // Defining Blynk Auth, and Wifi SSID and Password for NodeMCU
 char auth[] = "iYqjF5GfliSVeQ-lxog6BBUvLznxrwBk";
-char ssid[] = "ritalimbu_wlink";
-char pass[] = "1a2b3c4d5e6f";
+char ssid[] = "1";
+char pass[] = "12345678";
 
 // Temperature values
 int curTemp, maxTemp, minTemp;

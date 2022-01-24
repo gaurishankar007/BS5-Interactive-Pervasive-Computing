@@ -98,17 +98,17 @@ void loop() {
 
 void sendMessage(String sensor) {
   String message = "Gas or Fire Detected.";
-  if(sensor = "gas") {
+  if(sensor == "gas") {
     message="Gas Detection Alert :(. Check the room or maybe you can run away and save your life.";
   }
-  if(sensor = "flame") {
+  if(sensor == "flame") {
     message="Fire Detection Alert :(. Check the room or maybe you can run away and save your life.";    
-  }
+  }  
   
   // AT command to set SIM900 to SMS mode
   SIM900.print("AT+CMGF=1\r"); 
   delay(100);
-
+  
   // REPLACE THE X's WITH THE RECIPIENT'S MOBILE NUMBER
   // USE INTERNATIONAL FORMAT CODE FOR MOBILE NUMBERS
   SIM900.println("AT+CMGS=\"+9779816349292\""); 
