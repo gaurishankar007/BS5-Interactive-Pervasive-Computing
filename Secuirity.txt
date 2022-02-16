@@ -1,0 +1,48 @@
+Types of cyber attack
+1. Active Attack
+{
+	Reading of data,
+	Can modify data,
+
+	types=> {
+			masquarade,
+			Relay,
+			DOS (Multiple request to the server, unnecessary rquests from one source, scripts or virus containing files is run on the brackground of a device), 
+			DDOS (Multiple request to the server, unnecessary rquests from more than one source, more storng than DOS Attack)
+		}		
+}
+
+2. Passive Attack
+{
+	Read only, 
+	traffic analysis (can know hosts, bytes, ),
+	Can not modify data
+}
+
+
+Machine to Machine Communication or M2M {
+	Different between machine to machine communication and IOT. Its architecture.
+	How big data and iot is related or connected.
+}
+
+AI {
+	
+}
+
+ML {
+	Machine learning falls under AI.
+	Algorithms => {Random Forest, Dicision tree, NetBase}	
+}
+
+DL {
+	Deep learning falls under ML.
+	RNN, STM
+}
+
+AI and then ML and then only DL.
+Difference between IOT and AI, ML, DL.
+
+Object detection architecture diagram. How it is done.
+for example architecture diagram of mask detection , emotion detection and what will be the challenges.
+Nepal ma agriculture related IOT ko k k kura cha.
+What will be challenges when a google car came into Nepal.

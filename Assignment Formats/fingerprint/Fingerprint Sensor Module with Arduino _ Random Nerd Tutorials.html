@@ -1,0 +1,2057 @@
+<!DOCTYPE html>
+<!-- saved from url=(0071)https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/ -->
+<html lang="en-US" prefix="og: http://ogp.me/ns#"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<title>Fingerprint Sensor Module with Arduino | Random Nerd Tutorials</title>
+
+<!-- All in One SEO Pack 2.12.1 by Michael Torbert of Semper Fi Web Designob_start_detected [-1,-1] -->
+<meta name="description" content="This post is an introductory guide on how to use the Fingerprint Sensor Module with the Arduino. We&#39;ll show you how to enroll a new fingerprint ID, and how to find a fingerprint match.These inexpensive fingerprint sensor modules made fingerprint recognition more accessible and easy to add to your projects.">
+
+<meta name="keywords" content="fingerprint sensor module with arduino,guide to fingerprint sensor module with arduino,fingerprint adafruit library arduino,fingerprint sensor tutorial explained,adafruit fingerprint sensor library arduino tutorial,adafruit fingerprint sensor library schematics,code and tutorial,how to use the adafruit fingerprint sensor library,fingerprint sensor module with arduino fpm10a">
+
+<link rel="canonical" href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/">
+<meta property="og:title" content="Fingerprint Sensor Module with Arduino | Random Nerd Tutorials">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/">
+<meta property="og:image" content="https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/01/thumbnail.jpg?fit=812%2C457&amp;ssl=1">
+<meta property="og:site_name" content="Random Nerd Tutorials">
+<meta property="og:description" content="This post is an introductory guide on how to use the Fingerprint Sensor Module with the Arduino. We&#39;ll show you how to enroll a new fingerprint ID, and how to find a fingerprint match.These inexpensive fingerprint sensor modules made fingerprint recognition more accessible and easy to add to your projects.">
+<meta property="article:published_time" content="2018-01-26T10:02:49Z">
+<meta property="article:modified_time" content="2019-04-02T10:23:24Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Fingerprint Sensor Module with Arduino | Random Nerd Tutorials">
+<meta name="twitter:description" content="This post is an introductory guide on how to use the Fingerprint Sensor Module with the Arduino. We&#39;ll show you how to enroll a new fingerprint ID, and how to find a fingerprint match.These inexpensive fingerprint sensor modules made fingerprint recognition more accessible and easy to add to your projects.">
+<meta name="twitter:image" content="https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/01/thumbnail.jpg?fit=812%2C457&amp;ssl=1">
+<meta itemprop="image" content="https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/01/thumbnail.jpg?fit=812%2C457&amp;ssl=1">
+<!-- /all in one seo pack -->
+<link rel="dns-prefetch" href="https://s0.wp.com/">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link href="https://fonts.gstatic.com/" crossorigin="" rel="preconnect">
+<link rel="alternate" type="application/rss+xml" title="Random Nerd Tutorials » Feed" href="https://randomnerdtutorials.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="Random Nerd Tutorials » Comments Feed" href="https://randomnerdtutorials.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Random Nerd Tutorials » Guide to Fingerprint Sensor Module with Arduino (FPM10A) Comments Feed" href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/feed/">
+		<script type="text/javascript" async="" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/analytics.js.download"></script><script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11.2.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11.2.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/randomnerdtutorials.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.1.1"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/wp-emoji-release.min.js.download" type="text/javascript" defer=""></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel="stylesheet" id="generate-fonts-css" href="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-block-library-css" href="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="generate-style-grid-css" href="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/unsemantic-grid.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="generate-style-css" href="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/style.min(1).css" type="text/css" media="all">
+<style id="generate-style-inline-css" type="text/css">
+.entry-header .entry-meta {display:none;}.post-navigation {display:none;}.single footer.entry-meta {display:none;}
+body{background-color:#fafafa;color:#3a3a3a;}a, a:visited{color:#1b78e2;}a:hover, a:focus, a:active{color:#000000;}body .grid-container{max-width:1160px;}body, button, input, select, textarea{font-family:"Open Sans", sans-serif;font-size:18px;}body{line-height:1.4;}p{margin-bottom:1.4em;}.entry-content > [class*="wp-block-"]:not(:last-child){margin-bottom:1.4em;}.main-navigation .main-nav ul ul li a{font-size:14px;}.widget-title{font-weight:600;}button:not(.menu-toggle),html input[type="button"],input[type="reset"],input[type="submit"],.button,.button:visited,.wp-block-button .wp-block-button__link{font-size:20px;}h1{font-weight:600;font-size:36px;line-height:1.1em;margin-bottom:14px;}h2{font-weight:600;font-size:36px;line-height:1.3em;margin-bottom:18px;}h3{font-weight:600;font-size:29px;line-height:1.3em;margin-bottom:10px;}h4{font-weight:600;font-size:20px;}@media (max-width:768px){.main-title{font-size:30px;}h1{font-size:27px;}h2{font-size:27px;}}.top-bar{background-color:#636363;color:#ffffff;}.top-bar a,.top-bar a:visited{color:#ffffff;}.top-bar a:hover{color:#303030;}.site-header{background-color:#ffffff;color:#3a3a3a;}.site-header a,.site-header a:visited{color:#3a3a3a;}.main-title a,.main-title a:hover,.main-title a:visited{color:#222222;}.site-description{color:#757575;}.main-navigation,.main-navigation ul ul{background-color:#2f4468;}.main-navigation .main-nav ul li a,.menu-toggle{color:#ffffff;}.main-navigation .main-nav ul li:hover > a,.main-navigation .main-nav ul li:focus > a, .main-navigation .main-nav ul li.sfHover > a{color:#dee5ed;background-color:#2f4468;}button.menu-toggle:hover,button.menu-toggle:focus,.main-navigation .mobile-bar-items a,.main-navigation .mobile-bar-items a:hover,.main-navigation .mobile-bar-items a:focus{color:#ffffff;}.main-navigation .main-nav ul li[class*="current-menu-"] > a{color:#ffffff;background-color:rgba(10,10,10,0.31);}.main-navigation .main-nav ul li[class*="current-menu-"] > a:hover,.main-navigation .main-nav ul li[class*="current-menu-"].sfHover > a{color:#ffffff;background-color:rgba(10,10,10,0.31);}.navigation-search input[type="search"],.navigation-search input[type="search"]:active{color:#2f4468;background-color:#2f4468;}.navigation-search input[type="search"]:focus{color:#dee5ed;background-color:#2f4468;}.main-navigation ul ul{background-color:#3f3f3f;}.main-navigation .main-nav ul ul li a{color:#ffffff;}.main-navigation .main-nav ul ul li:hover > a,.main-navigation .main-nav ul ul li:focus > a,.main-navigation .main-nav ul ul li.sfHover > a{color:#ffffff;background-color:#4f4f4f;}.main-navigation .main-nav ul ul li[class*="current-menu-"] > a{color:#ffffff;background-color:#4f4f4f;}.main-navigation .main-nav ul ul li[class*="current-menu-"] > a:hover,.main-navigation .main-nav ul ul li[class*="current-menu-"].sfHover > a{color:#ffffff;background-color:#4f4f4f;}.separate-containers .inside-article, .separate-containers .comments-area, .separate-containers .page-header, .one-container .container, .separate-containers .paging-navigation, .inside-page-header{background-color:#ffffff;}.entry-title a,.entry-title a:visited{color:#2f4468;}.entry-title a:hover{color:#0a0000;}.entry-meta{color:#878787;}.entry-meta a,.entry-meta a:visited{color:#727272;}.entry-meta a:hover{color:#0a0101;}.sidebar .widget{background-color:#ffffff;}.sidebar .widget .widget-title{color:#000000;}.footer-widgets{color:#ffffff;background-color:#2f4468;}.footer-widgets a,.footer-widgets a:visited{color:#ffffff;}.footer-widgets .widget-title{color:#ffffff;}.site-info{color:#2f4468;}.site-info a,.site-info a:visited{color:#2f4468;}.site-info a:hover{color:#0a0a0a;}.footer-bar .widget_nav_menu .current-menu-item a{color:#0a0a0a;}input[type="text"],input[type="email"],input[type="url"],input[type="password"],input[type="search"],input[type="tel"],input[type="number"],textarea,select{color:#666666;background-color:#fafafa;border-color:#cccccc;}input[type="text"]:focus,input[type="email"]:focus,input[type="url"]:focus,input[type="password"]:focus,input[type="search"]:focus,input[type="tel"]:focus,input[type="number"]:focus,textarea:focus,select:focus{color:#666666;background-color:#ffffff;border-color:#bfbfbf;}button,html input[type="button"],input[type="reset"],input[type="submit"],a.button,a.button:visited,a.wp-block-button__link:not(.has-background){color:#ffffff;background-color:#2f4468;}button:hover,html input[type="button"]:hover,input[type="reset"]:hover,input[type="submit"]:hover,a.button:hover,button:focus,html input[type="button"]:focus,input[type="reset"]:focus,input[type="submit"]:focus,a.button:focus,a.wp-block-button__link:not(.has-background):active,a.wp-block-button__link:not(.has-background):focus,a.wp-block-button__link:not(.has-background):hover{color:#ffffff;background-color:#0c2c68;}.generate-back-to-top,.generate-back-to-top:visited{background-color:rgba( 0,0,0,0.4 );color:#ffffff;}.generate-back-to-top:hover,.generate-back-to-top:focus{background-color:rgba( 0,0,0,0.6 );color:#ffffff;}.inside-header{padding:0px;}.entry-content .alignwide, body:not(.no-sidebar) .entry-content .alignfull{margin-left:-40px;width:calc(100% + 80px);max-width:calc(100% + 80px);}@media (max-width:768px){.separate-containers .inside-article, .separate-containers .comments-area, .separate-containers .page-header, .separate-containers .paging-navigation, .one-container .site-content, .inside-page-header{padding:30px;}.entry-content .alignwide, body:not(.no-sidebar) .entry-content .alignfull{margin-left:-30px;width:calc(100% + 60px);max-width:calc(100% + 60px);}}.separate-containers .widget, .separate-containers .site-main > *, .separate-containers .page-header, .widget-area .main-navigation{margin-bottom:10px;}.right-sidebar.separate-containers .site-main{margin:10px 10px 10px 0px;}.left-sidebar.separate-containers .site-main{margin:10px 0px 10px 10px;}.both-sidebars.separate-containers .site-main{margin:10px;}.both-right.separate-containers .site-main{margin:10px 10px 10px 0px;}.both-right.separate-containers .inside-left-sidebar{margin-right:5px;}.both-right.separate-containers .inside-right-sidebar{margin-left:5px;}.both-left.separate-containers .site-main{margin:10px 0px 10px 10px;}.both-left.separate-containers .inside-left-sidebar{margin-right:5px;}.both-left.separate-containers .inside-right-sidebar{margin-left:5px;}.separate-containers .site-main{margin-top:10px;margin-bottom:10px;}.separate-containers .page-header-image, .separate-containers .page-header-contained, .separate-containers .page-header-image-single, .separate-containers .page-header-content-single{margin-top:10px;}.separate-containers .inside-right-sidebar, .separate-containers .inside-left-sidebar{margin-top:10px;margin-bottom:10px;}.rtl .menu-item-has-children .dropdown-menu-toggle{padding-left:20px;}.rtl .main-navigation .main-nav ul li.menu-item-has-children > a{padding-right:20px;}.widget-area .widget{padding:25px 15px 25px 15px;}/* End cached CSS */
+.navigation-branding .main-title{font-weight:bold;text-transform:none;font-size:45px;}@media (max-width:768px){.navigation-branding .main-title{font-size:30px;}}
+.main-navigation .navigation-logo img {height:60px;}@media (max-width: 1170px) {.main-navigation .navigation-logo.site-logo {margin-left:0;}body.sticky-menu-logo.nav-float-left .main-navigation .site-logo.navigation-logo {margin-right:0;}}.main-navigation .main-nav ul li a,.menu-toggle,.main-navigation .mobile-bar-items a{transition: line-height 300ms ease}.main-navigation.toggled .main-nav > ul{background-color: #2f4468}
+</style>
+<link rel="stylesheet" id="generate-mobile-style-css" href="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/mobile.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="generate-child-css" href="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-icons-css" href="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/elementor-icons.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="font-awesome-css" href="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/font-awesome.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-animations-css" href="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/animations.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-frontend-css" href="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/frontend.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-pro-css" href="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/frontend.min(1).css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-post-83058-css" href="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/post-83058.css" type="text/css" media="all">
+<link rel="stylesheet" id="generate-blog-css" href="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/style-min.css" type="text/css" media="all">
+<link rel="stylesheet" id="generate-sticky-css" href="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/sticky.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="generate-menu-logo-css" href="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/menu-logo.min.css" type="text/css" media="all">
+<style id="generate-menu-logo-inline-css" type="text/css">
+@media (max-width: 768px){.sticky-menu-logo .navigation-stick:not(.mobile-header-navigation) .menu-toggle,.menu-logo .main-navigation:not(.mobile-header-navigation) .menu-toggle{display:inline-block;clear:none;width:auto;float:right;}.sticky-menu-logo .navigation-stick:not(.mobile-header-navigation) .mobile-bar-items,.menu-logo .main-navigation:not(.mobile-header-navigation) .mobile-bar-items{position:relative;float:right;}.regular-menu-logo .main-navigation:not(.navigation-stick):not(.mobile-header-navigation) .menu-toggle{display:inline-block;clear:none;width:auto;float:right;}.regular-menu-logo .main-navigation:not(.navigation-stick):not(.mobile-header-navigation) .mobile-bar-items{position:relative;float:right;}body[class*="nav-float-"].menu-logo-enabled:not(.sticky-menu-logo) .main-navigation .main-nav{display:block;}.sticky-menu-logo.nav-float-left .navigation-stick:not(.mobile-header-navigation) .menu-toggle,.menu-logo.nav-float-left .main-navigation:not(.mobile-header-navigation) .menu-toggle,.regular-menu-logo.nav-float-left .main-navigation:not(.navigation-stick):not(.mobile-header-navigation) .menu-toggle{float:left;}}
+</style>
+<link rel="stylesheet" id="jetpack_css-css" href="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/jetpack.css" type="text/css" media="all">
+<script>if (document.location.protocol != "https:") {document.location = document.URL.replace(/^http:/i, "https:");}</script><script type="text/javascript" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/jquery.js.download"></script>
+<script type="text/javascript" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/jquery-migrate.min.js.download"></script>
+<link rel="https://api.w.org/" href="https://randomnerdtutorials.com/wp-json/">
+<link rel="prev" title="ESP8266 Wi-Fi Button – DIY Amazon Dash Button Clone" href="https://randomnerdtutorials.com/esp8266-wi-fi-button-diy-amazon-dash-button-clone/">
+<link rel="next" title="Install MotionEyeOS on Raspberry Pi – Surveillance Camera System" href="https://randomnerdtutorials.com/install-motioneyeos-on-raspberry-pi-surveillance-camera-system/">
+<meta name="generator" content="WordPress 5.1.1">
+<link rel="shortlink" href="https://randomnerdtutorials.com/?p=48409">
+<link rel="alternate" type="application/json+oembed" href="https://randomnerdtutorials.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Frandomnerdtutorials.com%2Ffingerprint-sensor-module-with-arduino%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://randomnerdtutorials.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Frandomnerdtutorials.com%2Ffingerprint-sensor-module-with-arduino%2F&amp;format=xml">
+
+<link rel="dns-prefetch" href="https://v0.wordpress.com/">
+<link rel="dns-prefetch" href="https://i0.wp.com/">
+<link rel="dns-prefetch" href="https://i1.wp.com/">
+<link rel="dns-prefetch" href="https://i2.wp.com/">
+<meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/prism.min.css">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/js"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-41273278-2');
+</script>
+<link rel="icon" href="https://i2.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/03/n-favicon-2018.png?fit=16%2C16&amp;ssl=1" sizes="32x32">
+<link rel="icon" href="https://i2.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/03/n-favicon-2018.png?fit=16%2C16&amp;ssl=1" sizes="192x192">
+<link rel="apple-touch-icon-precomposed" href="https://i2.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/03/n-favicon-2018.png?fit=16%2C16&amp;ssl=1">
+<meta name="msapplication-TileImage" content="https://i2.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/03/n-favicon-2018.png?fit=16%2C16&amp;ssl=1">
+			<link rel="stylesheet" type="text/css" id="wp-custom-css" href="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/saved_resource">
+		</head>
+
+<body data-rsssl="1" class="post-template-default single single-post postid-48409 single-format-standard wp-embed-responsive post-image-above-header post-image-aligned-center sticky-menu-no-transition sticky-enabled menu-logo menu-logo-enabled both-sticky-menu right-sidebar nav-above-header fluid-header separate-containers active-footer-widgets-0 nav-search-enabled nav-aligned-center header-aligned-center dropdown-hover featured-image-active elementor-default elementor-page-82536 using-mouse" itemtype="https://schema.org/Blog" itemscope="" data-elementor-device-mode="desktop">
+	<a class="screen-reader-text skip-link" href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/#content" title="Skip to content">Skip to content</a>		<nav id="sticky-navigation" class="auto-hide-sticky main-navigation stuckElement is_stuck navigation-stick navigation-clone sticky-navigation-transition" itemtype="https://schema.org/SiteNavigationElement" itemscope="" style="z-index: 100; margin-top: 0px; position: fixed; top: 0px;">
+			<div class="inside-navigation grid-container grid-parent">
+				<div class="site-logo sticky-logo navigation-logo">
+				<a href="https://randomnerdtutorials.com/" title="Random Nerd Tutorials" rel="home">
+					<img src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/logornt.png" alt="Random Nerd Tutorials">
+				</a>
+			</div><form method="get" class="search-form navigation-search" action="https://randomnerdtutorials.com/">
+				<input type="search" class="search-field" value="" name="s" title="Search">
+			</form>		<div class="mobile-bar-items">
+						<span class="search-item" title="Search">
+				<a href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/#">
+					<span class="screen-reader-text">Search</span>
+				</a>
+			</span>
+		</div><!-- .mobile-bar-items -->
+						<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+										<span class="mobile-menu">Menu</span>
+				</button>
+				<div id="primary-menu" class="main-nav"><ul id="menu-newtop" class=" menu sf-menu"><li id="menu-item-20482" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-20482"><a href="https://randomnerdtutorials.com/">Home</a></li>
+<li id="menu-item-20487" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20487"><a href="https://randomnerdtutorials.com/download">Free eBooks</a></li>
+<li id="menu-item-20484" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20484"><a href="https://randomnerdtutorials.com/about">About</a></li>
+<li id="menu-item-20485" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20485"><a href="https://randomnerdtutorials.com/contact">Contact</a></li>
+<li id="menu-item-20498" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20498"><a href="https://randomnerdtutorials.com/projects/">Projects</a></li>
+<li id="menu-item-20486" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-20486"><a href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/#More">More<span role="presentation" class="dropdown-menu-toggle"></span></a>
+<ul class="sub-menu">
+	<li id="menu-item-43624" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-43624"><a target="_blank" href="https://makeradvisor.com/">MakerAdvisor.com</a></li>
+	<li id="menu-item-68854" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-68854"><a target="_blank" href="https://rntlab.com/login">Member Login</a></li>
+	<li id="menu-item-68853" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-68853"><a target="_blank" href="https://rntlab.com/">Join the RNT Lab</a></li>
+</ul>
+</li>
+<li id="menu-item-20483" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-20483"><a href="https://randomnerdtutorials.com/courses/">Get Courses<span role="presentation" class="dropdown-menu-toggle"></span></a>
+<ul class="sub-menu">
+	<li id="menu-item-40154" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-40154"><a href="https://randomnerdtutorials.com/courses/">All eBooks &amp; Courses</a></li>
+	<li id="menu-item-83302" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-83302"><a href="https://randomnerdtutorials.com/micropython-programming-with-esp32-and-esp8266/"><strong>MicroPython Programming with ESP32 and ESP8266</strong></a></li>
+	<li id="menu-item-69105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-69105"><a href="https://randomnerdtutorials.com/learn-esp32-with-arduino-ide/">Learn ESP32 with Arduino IDE</a></li>
+	<li id="menu-item-40149" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-40149"><a href="https://randomnerdtutorials.com/home-automation-using-esp8266/">Home Automation Using ESP8266</a></li>
+	<li id="menu-item-40150" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-40150"><a href="https://randomnerdtutorials.com/build-a-home-automation-system-for-100/">Build a Home Automation System for $100</a></li>
+	<li id="menu-item-40151" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-40151"><a href="https://randomnerdtutorials.com/arduino-step-by-step-projects/">Arduino Step-by-step Projects</a></li>
+	<li id="menu-item-40153" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-40153"><a href="https://randomnerdtutorials.com/android-apps-for-arduino-with-mit-app-inventor-2/">Android Apps For Arduino</a></li>
+	<li id="menu-item-40152" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-40152"><a href="https://randomnerdtutorials.com/electronics-for-beginners/">Electronics For Beginners</a></li>
+</ul>
+</li>
+<li class="search-item" title="Search"><a href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/#"><span class="screen-reader-text">Search</span></a></li></ul></div>			</div><!-- .inside-navigation -->
+		</nav><nav id="sticky-placeholder" class="auto-hide-sticky main-navigation is_stuck navigation-stick navigation-clone sticky-navigation-transition" style="visibility: hidden; display: block;">
+			<div class="inside-navigation grid-container grid-parent">
+				<div class="site-logo sticky-logo navigation-logo">
+				<a href="https://randomnerdtutorials.com/" title="Random Nerd Tutorials" rel="home">
+					<img src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/logornt.png" alt="Random Nerd Tutorials">
+				</a>
+			</div><form method="get" class="search-form navigation-search" action="https://randomnerdtutorials.com/">
+				<input type="search" class="search-field" value="" name="s" title="Search">
+			</form>		<div class="mobile-bar-items">
+						<span class="search-item" title="Search">
+				<a href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/#">
+					<span class="screen-reader-text">Search</span>
+				</a>
+			</span>
+		</div><!-- .mobile-bar-items -->
+						<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+										<span class="mobile-menu">Menu</span>
+				</button>
+				<div id="primary-menu" class="main-nav"><ul id="menu-newtop" class=" menu sf-menu"><li id="menu-item-20482" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-20482"><a href="https://randomnerdtutorials.com/">Home</a></li>
+<li id="menu-item-20487" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20487"><a href="https://randomnerdtutorials.com/download">Free eBooks</a></li>
+<li id="menu-item-20484" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20484"><a href="https://randomnerdtutorials.com/about">About</a></li>
+<li id="menu-item-20485" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20485"><a href="https://randomnerdtutorials.com/contact">Contact</a></li>
+<li id="menu-item-20498" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20498"><a href="https://randomnerdtutorials.com/projects/">Projects</a></li>
+<li id="menu-item-20486" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-20486"><a href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/#More">More<span role="presentation" class="dropdown-menu-toggle"></span></a>
+<ul class="sub-menu">
+	<li id="menu-item-43624" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-43624"><a target="_blank" href="https://makeradvisor.com/">MakerAdvisor.com</a></li>
+	<li id="menu-item-68854" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-68854"><a target="_blank" href="https://rntlab.com/login">Member Login</a></li>
+	<li id="menu-item-68853" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-68853"><a target="_blank" href="https://rntlab.com/">Join the RNT Lab</a></li>
+</ul>
+</li>
+<li id="menu-item-20483" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-20483"><a href="https://randomnerdtutorials.com/courses/">Get Courses<span role="presentation" class="dropdown-menu-toggle"></span></a>
+<ul class="sub-menu">
+	<li id="menu-item-40154" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-40154"><a href="https://randomnerdtutorials.com/courses/">All eBooks &amp; Courses</a></li>
+	<li id="menu-item-83302" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-83302"><a href="https://randomnerdtutorials.com/micropython-programming-with-esp32-and-esp8266/"><strong>MicroPython Programming with ESP32 and ESP8266</strong></a></li>
+	<li id="menu-item-69105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-69105"><a href="https://randomnerdtutorials.com/learn-esp32-with-arduino-ide/">Learn ESP32 with Arduino IDE</a></li>
+	<li id="menu-item-40149" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-40149"><a href="https://randomnerdtutorials.com/home-automation-using-esp8266/">Home Automation Using ESP8266</a></li>
+	<li id="menu-item-40150" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-40150"><a href="https://randomnerdtutorials.com/build-a-home-automation-system-for-100/">Build a Home Automation System for $100</a></li>
+	<li id="menu-item-40151" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-40151"><a href="https://randomnerdtutorials.com/arduino-step-by-step-projects/">Arduino Step-by-step Projects</a></li>
+	<li id="menu-item-40153" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-40153"><a href="https://randomnerdtutorials.com/android-apps-for-arduino-with-mit-app-inventor-2/">Android Apps For Arduino</a></li>
+	<li id="menu-item-40152" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-40152"><a href="https://randomnerdtutorials.com/electronics-for-beginners/">Electronics For Beginners</a></li>
+</ul>
+</li>
+<li class="search-item" title="Search"><a href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/#"><span class="screen-reader-text">Search</span></a></li></ul></div>			</div><!-- .inside-navigation -->
+		</nav><!-- #site-navigation -->
+				<header id="masthead" class="site-header" itemtype="https://schema.org/WPHeader" itemscope="">
+			<div class="inside-header">
+							</div><!-- .inside-header -->
+		</header><!-- #masthead -->
+		
+	<div id="page" class="hfeed site grid-container container grid-parent">
+		<div id="content" class="site-content">
+			
+	<div id="primary" class="content-area grid-parent mobile-grid-100 grid-70 tablet-grid-70">
+		<main id="main" class="site-main">
+			
+<article id="post-48409" class="post-48409 post type-post status-publish format-standard has-post-thumbnail hentry category-arduino category-arduino-project category-0-guide category-guide-project category-project category-a-tutorials" itemtype="https://schema.org/CreativeWork" itemscope="">
+	<div class="inside-article">
+		
+		<header class="entry-header">
+			<h1 class="entry-title" itemprop="headline">Guide to Fingerprint Sensor Module with Arduino (FPM10A)</h1>			<div class="entry-meta">
+							</div><!-- .entry-meta -->
+				</header><!-- .entry-header -->
+
+		
+		<div class="entry-content" itemprop="text">
+			<p>This post is an introductory guide on how to use the Fingerprint Sensor Module with the Arduino. We’ll show you how to enroll a new fingerprint ID, and how to find a fingerprint match.<span id="more-48409"></span></p>
+<h2>Watch the Video Demonstration</h2>
+<p style="text-align:center"><iframe width="720" height="405" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/r-opSIx66TE.html" frameborder="0" allowfullscreen=""></iframe></p>
+<h2>Introducing the Fingerprint Sensor Module</h2>
+<p><a href="https://makeradvisor.com/tools/fingerprint-sensor-module/" target="_blank" rel="noopener noreferrer">Fingerprint sensor modules</a>, like the one in the following figure, made fingerprint recognition more accessible and easy to add to your projects. This means that is is super easy to make fingerprint collection, registration, comparison and search.</p>
+<p><a href="https://makeradvisor.com/tools/fingerprint-sensor-module/" target="_blank" rel="noopener noreferrer"><img class="aligncenter size-full wp-image-48426" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/fingerprint-sensor-module-f.jpg" alt="" width="429" height="389" srcset="https://i2.wp.com/randomnerdtutorials.com/wp-content/uploads/2017/12/fingerprint-sensor-module-f.jpg?w=429&amp;ssl=1 429w, https://i2.wp.com/randomnerdtutorials.com/wp-content/uploads/2017/12/fingerprint-sensor-module-f.jpg?resize=300%2C272&amp;ssl=1 300w" sizes="(max-width: 429px) 100vw, 429px"></a></p>
+<p>These modules come with FLASH memory to store the fingerprints and work with any microcontroller or system with TTL serial. These modules can be added to security systems, door locks, time attendance systems, and much more.</p>
+<p>Prices for this sensor greatly vary from $10 to $50. We recommend checking the <a href="https://makeradvisor.com/fingerprint-sensor-module/" target="_blank" rel="noopener noreferrer">Fingerprint sensor module on Maker Advisor</a> that compares the price in different stores. The fingerprint sensor modules featured on Maker Advisor should be compatible with this guide.</p>
+<h3>Specifications</h3>
+<p>Here’s the specifications of the <a href="https://makeradvisor.com/tools/fingerprint-sensor-module/" target="_blank" rel="noopener noreferrer">fingerprint sensor module</a> we’re using (you should check your sensor datasheet or the specifications provided by your supplier – they shouldn’t be much different than these):</p>
+<ul>
+<li>Voltage supply: DC 3.6 to 6.0V</li>
+<li>Current supply: &lt;120mA</li>
+<li>Backlight color: green</li>
+<li>Interface: UART</li>
+<li>Bad rate: 9600</li>
+<li>Safety level: five (from low to high: 1,2,3,4,5)</li>
+<li>False Accept Rate (FAR): &lt;0.001% (security level 3)</li>
+<li>False Reject Rate (FRR): &lt;1.0% (security level 3)</li>
+<li>Able to store 127 different fingerprints</li>
+</ul>
+<h3>Sensor Pinout</h3>
+<p>The sensor has six pins that are labeled in the figure below.</p>
+<p><img class="aligncenter wp-image-51264 size-full" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/arduino-fingerprint-pins-labeled-1.jpg" alt="" width="720" height="433" srcset="https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/01/arduino-fingerprint-pins-labeled-1.jpg?w=750&amp;ssl=1 750w, https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/01/arduino-fingerprint-pins-labeled-1.jpg?resize=300%2C180&amp;ssl=1 300w" sizes="(max-width: 750px) 100vw, 750px"></p>
+<p>The fingerprint sensor module used in this project came with really thin wires, so soldering breadboard-friendly wires was needed. We recommend using different colors according to the pin function. In our case:</p>
+<ul>
+<li>DNC – white wires</li>
+<li>VCC – red wire</li>
+<li>TX – blue wire</li>
+<li>RX – green wire</li>
+<li>GND – black wire</li>
+</ul>
+<p><img class="aligncenter wp-image-51265 size-full" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/wires-soldered.jpg" alt="" width="720" height="403" srcset="https://i2.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/01/wires-soldered.jpg?w=750&amp;ssl=1 750w, https://i2.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/01/wires-soldered.jpg?resize=300%2C168&amp;ssl=1 300w" sizes="(max-width: 750px) 100vw, 750px"></p>
+<p>The following table shows how to wire the sensor to the Arduino.</p>
+<table style="height: 238px;" width="382">
+<tbody>
+<tr>
+<td><strong>Fingerprint Sensor</strong></td>
+<td><strong>Arduino</strong></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">VCC</span></td>
+<td><span style="font-weight: 400;">5V (it also works with 3.3V)</span></td>
+</tr>
+<tr>
+<td>TX</td>
+<td>RX (digital pin 2, software serial)</td>
+</tr>
+<tr>
+<td>RX</td>
+<td>TX (digital pin 3, software serial)</td>
+</tr>
+<tr>
+<td>GND</td>
+<td>GND</td>
+</tr>
+</tbody>
+</table>
+<h2>Installing the Adafruit Fingerprint Sensor Library</h2>
+<p>The easiest way to control the fingerprint sensor module with the Arduino is by using the Adafruit library for this sensor. Follow the next instructions to install the library:</p>
+<ol>
+<li>Click here to download the <a href="https://github.com/adafruit/Adafruit-Fingerprint-Sensor-Library/archive/master.zip" target="_blank" rel="noopener noreferrer">Adafruit Fingerprint Sensor library</a>. You should have a .zip folder in your Downloads folder</li>
+<li>Unzip the .zip folder and you should get Adafruit-Fingerprint-Sensor-Library-master folder</li>
+<li>Rename your folder from &nbsp;<del>Adafruit-Fingerprint-Sensor-Library-master</del> folder to&nbsp; <strong>Adafruit_Fingerprint_Sensor_Library folder</strong></li>
+<li>Move the folder to your Arduino IDE installation libraries folder</li>
+<li>Finally, re-open your Arduino IDE</li>
+</ol>
+<h2>Enroll a New Fingerprint</h2>
+<p>Having the fingerprint sensor module wired to the Arduino, follow the next steps to enroll a new fingerprint. Make sure you’ve installed the Adafruit Fingerprint Sensor library previously.</p>
+<p><strong>1.</strong> In the Arduino IDE, go to <strong>File</strong> &gt; <strong>Examples</strong> &gt; <strong>Adafruit</strong> <strong>Fingerprint</strong> <strong>Sensor</strong> <strong>Library</strong> &gt; <a href="https://raw.githubusercontent.com/RuiSantosdotme/Random-Nerd-Tutorials/master/Projects/Fingerprint/enroll.ino" target="_blank" rel="noopener noreferrer"><strong>Enroll</strong></a>.</p>
+<p><strong>2.</strong> Upload the code, and open the serial monitor at a baud rate of 9600.</p>
+<p><strong>3.</strong> You should enter an ID for the fingerprint. As this is your first fingerprint, type 1 at the top left corner, and then, click the <strong>Send</strong> button.</p>
+<p><img class="aligncenter size-full wp-image-48430" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/enroll-serial-monitor.jpg" alt="" width="720" height="246" srcset="https://i1.wp.com/randomnerdtutorials.com/wp-content/uploads/2017/12/enroll-serial-monitor.jpg?w=761&amp;ssl=1 761w, https://i1.wp.com/randomnerdtutorials.com/wp-content/uploads/2017/12/enroll-serial-monitor.jpg?resize=300%2C102&amp;ssl=1 300w" sizes="(max-width: 761px) 100vw, 761px"></p>
+<p><strong>4.</strong> Place your finger on the scanner and follow the instructions on the serial monitor.</p>
+<p><a href="https://i2.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/01/enroll-finger.jpg?ssl=1"><img class="aligncenter size-full wp-image-51266" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/enroll-finger.jpg" alt="" width="720" height="404" srcset="https://i2.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/01/enroll-finger.jpg?w=750&amp;ssl=1 750w, https://i2.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/01/enroll-finger.jpg?resize=300%2C168&amp;ssl=1 300w" sizes="(max-width: 750px) 100vw, 750px"></a></p>
+<p>You’ll be asked to place the same finger twice on the scanner. If you get the “<strong>Prints matched!</strong>” message, as shown below, your fingerprint was successfully stored. If not, repeat the process, until you succeed.</p>
+<p><img class="aligncenter size-full wp-image-48432" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/enroll-serial-monitor-match-f.jpg" alt="" width="587" height="344" srcset="https://i1.wp.com/randomnerdtutorials.com/wp-content/uploads/2017/12/enroll-serial-monitor-match-f.jpg?w=587&amp;ssl=1 587w, https://i1.wp.com/randomnerdtutorials.com/wp-content/uploads/2017/12/enroll-serial-monitor-match-f.jpg?resize=300%2C176&amp;ssl=1 300w" sizes="(max-width: 587px) 100vw, 587px"></p>
+<p>Store as many fingerprints you want using this method.</p>
+<h2>Finding a Match</h2>
+<p>You now should have several fingerprints saved on different IDs. To find a match with the fingerprint sensor, follow the next instructions.</p>
+<p><strong>1.</strong> In the Arduino IDE, go to <strong>File</strong> &gt; <strong>Examples</strong> &gt; <strong>Adafruit</strong> <strong>Fingerprint</strong> <strong>Sensor</strong> <strong>Library</strong> &gt; <a href="https://raw.githubusercontent.com/RuiSantosdotme/Random-Nerd-Tutorials/master/Projects/Fingerprint/fingerprint_match.ino" target="_blank" rel="noopener noreferrer"><strong>Fingerprint </strong></a>and upload the code to your Arduino board.</p>
+<p><strong>2.&nbsp;</strong>Open the Serial Monitor at a baud rate of 9600. You should see the following message:</p>
+<p><img class="aligncenter size-full wp-image-48436" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/fingerprint-match-1.jpg" alt="" width="589" height="338" srcset="https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2017/12/fingerprint-match-1.jpg?w=589&amp;ssl=1 589w, https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2017/12/fingerprint-match-1.jpg?resize=300%2C172&amp;ssl=1 300w" sizes="(max-width: 589px) 100vw, 589px"></p>
+<p><strong>3.&nbsp;</strong>Place the finger to be identified on the scan.</p>
+<p><strong>4.</strong> On the serial monitor, you can see the ID that matches the fingerprint. It also shows the confidence – the higher the confidence, the similar the fingerprint is with the stored fingerprint.</p>
+<p><img class="aligncenter size-full wp-image-48437" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/fingerprint-match-2.jpg" alt="" width="589" height="341" srcset="https://i2.wp.com/randomnerdtutorials.com/wp-content/uploads/2017/12/fingerprint-match-2.jpg?w=589&amp;ssl=1 589w, https://i2.wp.com/randomnerdtutorials.com/wp-content/uploads/2017/12/fingerprint-match-2.jpg?resize=300%2C174&amp;ssl=1 300w" sizes="(max-width: 589px) 100vw, 589px"></p>
+<h2>Project Example – Show Fingerprint Match on OLED display</h2>
+<p>In this project example, we’ll enroll two fingerprints from two different persons. Then, we’ll display a greeting message accordingly to the match found, on an OLED display.</p>
+<p>To learn more about the OLED display read: <a href="https://randomnerdtutorials.com/guide-for-oled-display-with-arduino/" target="_blank" rel="noopener noreferrer">Guide for OLED Display with Arduino</a></p>
+<h3>Parts required</h3>
+<p>For this example you’ll need the following parts:</p>
+<p><a href="https://i2.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/01/parts-required.jpg?ssl=1"><img class="aligncenter size-full wp-image-51267" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/parts-required.jpg" alt="" width="720" height="361" srcset="https://i2.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/01/parts-required.jpg?w=750&amp;ssl=1 750w, https://i2.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/01/parts-required.jpg?resize=300%2C150&amp;ssl=1 300w" sizes="(max-width: 750px) 100vw, 750px"></a></p>
+<ul>
+<li><a href="https://makeradvisor.com/tools/compatible-arduino-uno-r3-board/" target="_blank" rel="noopener noreferrer">Arduino UNO</a>&nbsp;– read&nbsp;<a href="https://makeradvisor.com/best-arduino-starter-kits/" target="_blank" rel="noopener noreferrer">Best Arduino Starter Kits</a></li>
+<li><a href="https://makeradvisor.com/fingerprint-sensor-module/" target="_blank" rel="noopener noreferrer">Fingerprint sensor module</a></li>
+<li><a href="https://makeradvisor.com/tools/oled-display-128x64-0-96-inch/" target="_blank" rel="noopener noreferrer">0.96 inch OLED display</a></li>
+<li><a href="https://makeradvisor.com/tools/mb-102-solderless-breadboard-830-points/" target="_blank" rel="noopener noreferrer">Breadboard</a></li>
+<li><a href="https://makeradvisor.com/tools/jumper-wires-kit-120-pieces/" target="_blank" rel="noopener noreferrer">Jumper Wires</a></li>
+</ul>
+<p>You can use the preceding links or go directly to <a href="https://makeradvisor.com/tools/?utm_source=rnt&amp;utm_medium=post&amp;utm_campaign=post" target="_blank">MakerAdvisor.com/tools</a> to find all the parts for your projects at the best price!</p><p style="text-align:center;"><a href="https://makeradvisor.com/tools/?utm_source=rnt&amp;utm_medium=post&amp;utm_campaign=post" target="_blank"><img src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/header-200.png" width="200" height="56"></a></p>
+<h3>Schematics</h3>
+<p>Here’s the wiring diagram you should follow to make the circuit for this project.</p>
+<p><a href="https://i2.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/01/fingerprint_OLED_schematic_bb.png?ssl=1"><img class="aligncenter wp-image-51269" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/fingerprint_OLED_schematic_bb.png" alt="" width="700" height="453" srcset="https://i2.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/01/fingerprint_OLED_schematic_bb.png?w=1428&amp;ssl=1 1428w, https://i2.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/01/fingerprint_OLED_schematic_bb.png?resize=300%2C194&amp;ssl=1 300w, https://i2.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/01/fingerprint_OLED_schematic_bb.png?resize=768%2C497&amp;ssl=1 768w, https://i2.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/01/fingerprint_OLED_schematic_bb.png?resize=1024%2C663&amp;ssl=1 1024w" sizes="(max-width: 700px) 100vw, 700px"></a></p>
+<h3>Installing the 0.96 inch OLED libraries</h3>
+<p>To control the OLED display you need the “Adafruit_GFX.h” library and “Adafruit_SSD1306.h” library. Follow the next steps to install those libraries:</p>
+<h4>Installing the Adafruit_GFX library</h4>
+<ol>
+<li><a href="https://github.com/adafruit/Adafruit-GFX-Library/archive/master.zip" target="_blank" rel="noopener noreferrer">Click here to download the Adafruit GFX library</a>. You should have a .zip folder in your Downloads folder</li>
+<li>Unzip the .zip folder and you should get&nbsp;<strong>Adafruit-GFX-Library-master</strong>&nbsp;folder</li>
+<li>Rename your folder from&nbsp;<del><strong>Adafruit-GFX-Library-master</strong></del>&nbsp;to&nbsp;<strong>Adafruit_GFX_Library</strong>&nbsp;(you really need ro replace those “-” by “_”)</li>
+<li>Move the&nbsp;<strong>Adafruit_GFX_Library</strong>&nbsp;folder to your Arduino IDE installation libraries folder</li>
+<li>Finally, re-open your Arduino IDE</li>
+</ol>
+<h4>Installing the adafruit_SSD1306 library</h4>
+<ol>
+<li><a href="https://github.com/adafruit/Adafruit_SSD1306/archive/master.zip" target="_blank" rel="noopener noreferrer">Click here to download the Adafruit_SSD1306 library</a>. You should have a .zip folder in your Downloads folder</li>
+<li>Unzip the .zip folder and you should get&nbsp;<strong>Adafruit-GFX-Library-master</strong>&nbsp;folder</li>
+<li>Rename your folder from<del><strong>&nbsp;Adafruit_SSD1306-master</strong></del>&nbsp;to&nbsp;<strong>Adafruit_SSD1306</strong></li>
+<li>Move the&nbsp;<strong>Adafruit_SSD1306</strong>&nbsp;folder to your Arduino IDE installation libraries folder</li>
+<li>Finally, re-open your Arduino IDE</li>
+</ol>
+<h3>Code</h3>
+<p>Before uploading the code, you need to enroll different fingerprints from different persons. Go to “<strong>Enroll a New Fingerprint”</strong> section above, upload the given code and follow the instructions to enroll two fingerprints.</p>
+<p>Then, modify the code so that the fingerprint IDs match the name of the persons enrolled – scroll down to page for an explanation of the code. Finally, you can upload the code provided.</p>
+<pre style="max-height: 40em; margin-bottom: 20px;" class=" language-c"><code class=" language-c"><span class="token comment">/*********
+  Rui Santos
+  Complete project details at https://randomnerdtutorials.com  
+*********/</span>
+
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;Wire.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;Adafruit_GFX.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;Adafruit_SSD1306.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">define</span> OLED_RESET 4</span>
+Adafruit_SSD1306 <span class="token function">display</span><span class="token punctuation">(</span>OLED_RESET<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;Adafruit_Fingerprint.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;SoftwareSerial.h&gt;</span></span>
+SoftwareSerial <span class="token function">mySerial</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+Adafruit_Fingerprint finger <span class="token operator">=</span> <span class="token function">Adafruit_Fingerprint</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>mySerial<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> fingerprintID <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+String IDname<span class="token punctuation">;</span>
+
+<span class="token keyword">void</span> <span class="token function">setup</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token comment">//Fingerprint sensor module setup</span>
+  Serial<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token number">9600</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// set the data rate for the sensor serial port</span>
+  finger<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token number">57600</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>finger<span class="token punctuation">.</span><span class="token function">verifyPassword</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    Serial<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Found fingerprint sensor!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> 
+  <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    Serial<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Did not find fingerprint sensor :("</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">//OLED display setup</span>
+  Wire<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  display<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span>SSD1306_SWITCHCAPVCC<span class="token punctuation">,</span> <span class="token number">0x3C</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">//displays main screen</span>
+  <span class="token function">displayMainScreen</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token function">loop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token function">displayMainScreen</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  fingerprintID <span class="token operator">=</span> <span class="token function">getFingerprintIDez</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span>fingerprintID <span class="token operator">==</span> <span class="token number">1</span> <span class="token operator">||</span> fingerprintID <span class="token operator">==</span> <span class="token number">3</span> <span class="token operator">||</span> fingerprintID <span class="token operator">==</span> <span class="token number">4</span> <span class="token operator">||</span> fingerprintID <span class="token operator">==</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    IDname <span class="token operator">=</span> <span class="token string">"Sara"</span><span class="token punctuation">;</span>
+    <span class="token function">displayUserGreeting</span><span class="token punctuation">(</span>IDname<span class="token punctuation">)</span><span class="token punctuation">;</span>            
+  <span class="token punctuation">}</span>  
+  <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>fingerprintID <span class="token operator">==</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    IDname <span class="token operator">=</span> <span class="token string">"Rui"</span><span class="token punctuation">;</span>  
+    <span class="token function">displayUserGreeting</span><span class="token punctuation">(</span>IDname<span class="token punctuation">)</span><span class="token punctuation">;</span>            
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// returns -1 if failed, otherwise returns ID #</span>
+<span class="token keyword">int</span> <span class="token function">getFingerprintIDez</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  uint8_t p <span class="token operator">=</span> finger<span class="token punctuation">.</span><span class="token function">getImage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>p <span class="token operator">!=</span> FINGERPRINT_OK<span class="token punctuation">)</span>  <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+
+  p <span class="token operator">=</span> finger<span class="token punctuation">.</span><span class="token function">image2Tz</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>p <span class="token operator">!=</span> FINGERPRINT_OK<span class="token punctuation">)</span>  <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+
+  p <span class="token operator">=</span> finger<span class="token punctuation">.</span><span class="token function">fingerFastSearch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>p <span class="token operator">!=</span> FINGERPRINT_OK<span class="token punctuation">)</span>  <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+  
+  <span class="token comment">// found a match!</span>
+  Serial<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"Found ID #"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+  Serial<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>finger<span class="token punctuation">.</span>fingerID<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+  Serial<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">" with confidence of "</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+  Serial<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>finger<span class="token punctuation">.</span>confidence<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> finger<span class="token punctuation">.</span>fingerID<span class="token punctuation">;</span> 
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token function">displayMainScreen</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  display<span class="token punctuation">.</span><span class="token function">clearDisplay</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  display<span class="token punctuation">.</span><span class="token function">setTextSize</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  display<span class="token punctuation">.</span><span class="token function">setTextColor</span><span class="token punctuation">(</span>WHITE<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  display<span class="token punctuation">.</span><span class="token function">setCursor</span><span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  display<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Waiting fingerprint"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  display<span class="token punctuation">.</span><span class="token function">setTextSize</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  display<span class="token punctuation">.</span><span class="token function">setTextColor</span><span class="token punctuation">(</span>WHITE<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  display<span class="token punctuation">.</span><span class="token function">setCursor</span><span class="token punctuation">(</span><span class="token number">52</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  display<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"..."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+  display<span class="token punctuation">.</span><span class="token function">display</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">2000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token function">displayUserGreeting</span><span class="token punctuation">(</span>String Name<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  display<span class="token punctuation">.</span><span class="token function">clearDisplay</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  display<span class="token punctuation">.</span><span class="token function">setTextColor</span><span class="token punctuation">(</span>WHITE<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  display<span class="token punctuation">.</span><span class="token function">setTextSize</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  display<span class="token punctuation">.</span><span class="token function">setCursor</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  display<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"Hello"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  display<span class="token punctuation">.</span><span class="token function">setCursor</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">15</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  display<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>Name<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+  display<span class="token punctuation">.</span><span class="token function">display</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">5000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  fingerprintID <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> 
+<span class="token punctuation">}</span>
+</code></pre>
+	<p style="text-align:center"><a class="rntwhite" href="https://github.com/RuiSantosdotme/Random-Nerd-Tutorials/raw/master/Projects/Fingerprint/Fingerprint_oled.ino" target="_blank">View raw code</a></p>
+<h3>Importing libraries</h3>
+<p>The code starts by importing the needed libraries to write in the OLED display, and creates an Adafruit_SSD1306 object called display.</p>
+<pre>#include &lt;Wire.h&gt;
+#include &lt;Adafruit_GFX.h&gt;
+#include &lt;Adafruit_SSD1306.h&gt;
+#define OLED_RESET 4
+Adafruit_SSD1306 display(OLED_RESET);</pre>
+<p>We also need to import the libraries needed for the fingerprint sensor: <em>Adafruit_Fingerprint.h</em> and <em>SoftwareSerial.h</em>.</p>
+<pre>#include &lt;Adafruit_Fingerprint.h&gt;
+#include &lt;SoftwareSerial.h&gt;
+SoftwareSerial mySerial(2, 3);</pre>
+<p>The following line&nbsp;sets software serial on pins 2 and 3. Pin 2 as RX, and Pin 3 as TX.</p>
+<pre>SoftwareSerial mySerial(2, 3);</pre>
+<p>Then, we create a an <em>Adafruit_Fingerprint</em> object called <em>finger</em> on the serial pins we’ve set previously.</p>
+<pre>Adafruit_Fingerprint finger = Adafruit_Fingerprint(&amp;mySerial);</pre>
+<p>The next two lines create variables to hold the fingerprint ID and the IDname.</p>
+<pre>int fingerprintID = 0;
+String IDname;</pre>
+<h3>setup()</h3>
+<p>In the setup(), both the fingerprint sensor and the OLED display are initialized. We also print a message on the serial monitor so that we know if the fingerprint sensor was found successfully.</p>
+<pre>void setup(){
+ //Fingerprint sensor module setup
+ Serial.begin(9600);
+ // set the data rate for the sensor serial port
+ finger.begin(57600);
+ 
+ if (finger.verifyPassword()) {
+   Serial.println("Found fingerprint sensor!");
+ } 
+ else {
+   Serial.println("Did not find fingerprint sensor :(");
+   while (1) { delay(1); }
+ }
+
+//OLED display setup
+ Wire.begin();
+ display.begin(SSD1306_SWITCHCAPVCC, 0x3C);
+ //displays main screen
+ displayMainScreen();
+}</pre>
+<h3>loop()</h3>
+<p>In the loop(), the code displays the main screen on the OLED display – this is done in the <em>displayMainScreen()</em> function. Then, the code is continuously checking for incoming fingerprints. If the sensor founds a saved fingerprint, the Arduino saves the corresponding ID in the <em>fingerprintID</em> variable.</p>
+<p>Then, the code has an if/else statement to check the ID the fingerprint corresponds to. You should edit the following lines of code with the corresponding IDs and names.</p>
+<pre> if(<strong>fingerprintID == 1 || fingerprintID == 3 || fingerprintID == 4 || fingerprintID == 5</strong>){
+&nbsp; IDname = "<strong>Sara</strong>";
+&nbsp; displayUserGreeting(IDname); 
+ } 
+ else if(<strong>fingerprintID == 2</strong>){
+&nbsp; IDname = "<strong>Rui</strong>";</pre>
+<p>Sometimes, the sensor will recognize a fingerprint better if it is saved several times in different IDs. After identifying the ID name, the OLED displays a greeting – this is done in the <em>displayUserGreeting()</em> function,</p>
+<h2>Demonstration</h2>
+<p>Now, when a person with a saved fingerprint places the finger on the sensor, it displays a greeting message.</p>
+<p><a href="https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/01/demonstration.jpg?ssl=1"><img class="aligncenter size-full wp-image-51272" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/demonstration.jpg" alt="" width="720" height="438" srcset="https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/01/demonstration.jpg?w=750&amp;ssl=1 750w, https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/01/demonstration.jpg?resize=300%2C182&amp;ssl=1 300w" sizes="(max-width: 750px) 100vw, 750px"></a></p>
+<h2>Wrapping Up</h2>
+<p>In this post we’ve shown you how to use the fingerprint sensor module: enroll fingerprints and find a match.</p>
+<p><span style="font-weight: 400;">Sometimes the sensor has a hard time identifying the fingerprint if you don’t place your finger very similarly to when you’ve saved it – specially women’s fingerprints (we have no idea why this happens). We’ve noticed that the sensor works better if you place your finger slowly on the scanner.</span></p>
+<p><span style="font-weight: 400;">In our opinion, the fingerprint sensor module works quite well, and it is an affordable way to add biometrics recognition to your projects.</span></p>
+<p>You may also like the following projects:</p>
+<ul>
+<li><a href="https://randomnerdtutorials.com/arduino-mini-course/" target="_blank" rel="noopener noreferrer">Free Arduino Mini Course</a></li>
+<li><a href="https://randomnerdtutorials.com/nextion-display-with-arduino-getting-started/" target="_blank" rel="noopener noreferrer">Nextion Display with Arduino – Getting Started</a></li>
+<li><a href="https://randomnerdtutorials.com/guide-to-neo-6m-gps-module-with-arduino/" target="_blank" rel="noopener noreferrer">Guide to NEO-6M GPS Module with Arduino</a></li>
+<li><a href="https://randomnerdtutorials.com/arduino-step-by-step-projects/">Arduino Step-by-step Projects Course</a></li>
+</ul>
+<p>Thanks for reading.</p>
+		</div><!-- .entry-content -->
+
+					<footer class="entry-meta">
+						<nav id="nav-below" class="post-navigation">
+			<span class="screen-reader-text">Post navigation</span>
+
+					</nav><!-- #nav-below -->
+					</footer><!-- .entry-meta -->
+		<br>
+		<div data-elementor-type="section" data-elementor-id="83032" class="elementor elementor-83032" data-elementor-settings="[]">
+			<div class="elementor-inner">
+				<div class="elementor-section-wrap">
+							<section class="elementor-element elementor-element-2d8a9105 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="2d8a9105" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-2280806f elementor-column elementor-col-100 elementor-top-column" data-id="2280806f" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<section class="elementor-element elementor-element-4a840dd4 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section" data-id="4a840dd4" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-3497580 elementor-column elementor-col-50 elementor-inner-column" data-id="3497580" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-7b0162e9 elementor-widget elementor-widget-image" data-id="7b0162e9" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+											<a href="https://randomnerdtutorials.com/micropython-programming-with-esp32-and-esp8266/" data-elementor-open-lightbox="">
+							<img width="500" height="500" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/micropython-cover-ebook-1-1f.jpg" class="attachment-full size-full" alt="" srcset="https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/12/micropython-cover-ebook-1-1f.jpg?w=500&amp;ssl=1 500w, https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/12/micropython-cover-ebook-1-1f.jpg?resize=150%2C150&amp;ssl=1 150w, https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/12/micropython-cover-ebook-1-1f.jpg?resize=300%2C300&amp;ssl=1 300w, https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/12/micropython-cover-ebook-1-1f.jpg?resize=80%2C80&amp;ssl=1 80w, https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/12/micropython-cover-ebook-1-1f.jpg?resize=220%2C220&amp;ssl=1 220w" sizes="(max-width: 500px) 100vw, 500px">								</a>
+											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-45a69540 elementor-column elementor-col-50 elementor-inner-column" data-id="45a69540" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-d7f411a elementor-widget elementor-widget-heading" data-id="d7f411a" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default"><a href="https://randomnerdtutorials.com/micropython-programming-with-esp32-and-esp8266/">[eBook] MicroPython Programming with ESP32 and ESP8266</a></h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-5dc4402f elementor-hidden-phone elementor-widget elementor-widget-text-editor" data-id="5dc4402f" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p>Learn how to program and build projects with the ESP32 and ESP8266 using MicroPython firmware&nbsp;<strong><a href="https://randomnerdtutorials.com/micropython-programming-with-esp32-and-esp8266/" rel="noopener">DOWNLOAD »</a></strong></p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<div class="elementor-element elementor-element-4de314b8 elementor-hidden-desktop elementor-hidden-tablet elementor-widget elementor-widget-text-editor" data-id="4de314b8" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p>Learn how to program and build projects with the ESP32 and ESP8266 using MicroPython firmware&nbsp;<strong><a href="https://randomnerdtutorials.com/micropython-programming-with-esp32-and-esp8266/" rel="noopener">DOWNLOAD »</a></strong></p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+						</div>
+			</div>
+		</div>
+		
+		<div data-elementor-type="section" data-elementor-id="82533" class="elementor elementor-82533" data-elementor-settings="[]">
+			<div class="elementor-inner">
+				<div class="elementor-section-wrap">
+							<section class="elementor-element elementor-element-31c9920 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="31c9920" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-e6bec81 elementor-column elementor-col-100 elementor-top-column" data-id="e6bec81" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-ae5f36f elementor-widget elementor-widget-text-editor" data-id="ae5f36f" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><h3>Recommended Resources</h3></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-df31b19 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="df31b19" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-f988f78 elementor-column elementor-col-33 elementor-top-column" data-id="f988f78" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-ea4ffd5 elementor-widget elementor-widget-image" data-id="ea4ffd5" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+											<a href="https://randomnerdtutorials.com/build-a-home-automation-system-for-100/" data-elementor-open-lightbox="">
+							<img width="400" height="225" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/home-automation-sb-img.jpg" class="attachment-full size-full" alt="" srcset="https://i1.wp.com/randomnerdtutorials.com/wp-content/uploads/2017/10/home-automation-sb-img.jpg?w=400&amp;ssl=1 400w, https://i1.wp.com/randomnerdtutorials.com/wp-content/uploads/2017/10/home-automation-sb-img.jpg?resize=300%2C169&amp;ssl=1 300w" sizes="(max-width: 400px) 100vw, 400px">								</a>
+											</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-1d03956 elementor-widget elementor-widget-text-editor" data-id="1d03956" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p><strong><a href="https://randomnerdtutorials.com/build-a-home-automation-system-for-100/">Build a Home Automation System from Scratch »</a>&nbsp;</strong>With Raspberry Pi, ESP8266, Arduino, and Node-RED.</p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-c804b9b elementor-column elementor-col-33 elementor-top-column" data-id="c804b9b" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-caff517 elementor-widget elementor-widget-image" data-id="caff517" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+											<a href="https://randomnerdtutorials.com/home-automation-using-esp8266/" data-elementor-open-lightbox="">
+							<img width="400" height="225" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/esp8266-sb-img.jpg" class="attachment-full size-full" alt="" srcset="https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2017/10/esp8266-sb-img.jpg?w=400&amp;ssl=1 400w, https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2017/10/esp8266-sb-img.jpg?resize=300%2C169&amp;ssl=1 300w" sizes="(max-width: 400px) 100vw, 400px">								</a>
+											</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-7bc712f elementor-widget elementor-widget-text-editor" data-id="7bc712f" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p><strong><a href="https://randomnerdtutorials.com/home-automation-using-esp8266/">Home Automation using ESP8266 eBook and video course »</a>&nbsp;</strong>Build IoT and home automation projects.</p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-9487535 elementor-column elementor-col-33 elementor-top-column" data-id="9487535" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-330785f elementor-widget elementor-widget-image" data-id="330785f" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+											<a href="https://randomnerdtutorials.com/arduino-step-by-step-projects/" data-elementor-open-lightbox="">
+							<img width="400" height="225" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/arduino-sb-img.jpg" class="attachment-full size-full" alt="" srcset="https://i1.wp.com/randomnerdtutorials.com/wp-content/uploads/2017/10/arduino-sb-img.jpg?w=400&amp;ssl=1 400w, https://i1.wp.com/randomnerdtutorials.com/wp-content/uploads/2017/10/arduino-sb-img.jpg?resize=300%2C169&amp;ssl=1 300w" sizes="(max-width: 400px) 100vw, 400px">								</a>
+											</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-e9540a9 elementor-widget elementor-widget-text-editor" data-id="e9540a9" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p><strong><a href="https://randomnerdtutorials.com/arduino-step-by-step-projects/">Arduino Step-by-Step Projects »</a> </strong>Build 25 Arduino projects with our course, even with no prior experience!</p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-a9e9c13 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="a9e9c13" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-25cf7ca elementor-column elementor-col-100 elementor-top-column" data-id="25cf7ca" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-88fc6c0 elementor-widget elementor-widget-text-editor" data-id="88fc6c0" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><h3>What to Read Next…</h3></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-d68ef93 elementor-section-height-min-height elementor-section-boxed elementor-section-height-default elementor-section-items-middle elementor-section elementor-top-section" data-id="d68ef93" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-no">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-4ab337a elementor-column elementor-col-100 elementor-top-column" data-id="4ab337a" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-efac60e elementor-grid-3 elementor-grid-tablet-2 elementor-grid-mobile-1 elementor-posts--thumbnail-top elementor-card-shadow-yes elementor-posts__hover-gradient elementor-widget elementor-widget-posts" data-id="efac60e" data-element_type="widget" data-settings="{&quot;cards_row_gap&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:16,&quot;sizes&quot;:[]},&quot;cards_columns&quot;:&quot;3&quot;,&quot;cards_columns_tablet&quot;:&quot;2&quot;,&quot;cards_columns_mobile&quot;:&quot;1&quot;}" data-widget_type="posts.cards">
+				<div class="elementor-widget-container">
+					<div class="elementor-posts-container elementor-posts elementor-grid elementor-posts--skin-cards elementor-has-item-ratio">
+				<article class="elementor-post elementor-grid-item post-74753 post type-post status-publish format-standard has-post-thumbnail hentry category-esp32-project category-esp8266-project category-micropython category-0-esp32-micropython category-project">
+			<div class="elementor-post__card">
+				<a class="elementor-post__thumbnail__link" href="https://randomnerdtutorials.com/micropython-programming-basics-esp32-esp8266/">
+			<div class="elementor-post__thumbnail elementor-fit-height"><img width="1280" height="720" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/programming-micropython-esp32-esp8266.jpg" class="attachment-full size-full" alt="" srcset="https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/10/programming-micropython-esp32-esp8266.jpg?w=1280&amp;ssl=1 1280w, https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/10/programming-micropython-esp32-esp8266.jpg?resize=300%2C169&amp;ssl=1 300w, https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/10/programming-micropython-esp32-esp8266.jpg?resize=768%2C432&amp;ssl=1 768w, https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/10/programming-micropython-esp32-esp8266.jpg?resize=1024%2C576&amp;ssl=1 1024w" sizes="(max-width: 1280px) 100vw, 1280px"></div>
+		</a>
+				<div class="elementor-post__text">
+				<h3 class="elementor-post__title">
+			<a href="https://randomnerdtutorials.com/micropython-programming-basics-esp32-esp8266/">
+				MicroPython Programming Basics with ESP32 and ESP8266			</a>
+		</h3>
+				</div>
+					</div>
+		</article>
+				<article class="elementor-post elementor-grid-item post-33293 post type-post status-publish format-standard has-post-thumbnail hentry category-esp8266 category-esp8266-projects category-0-esp8266 category-mqtt category-mqtt-broker category-mqtt-client category-raspberry-pi category-r-tutorials">
+			<div class="elementor-post__card">
+				<a class="elementor-post__thumbnail__link" href="https://randomnerdtutorials.com/raspberry-pi-publishing-mqtt-messages-to-esp8266/">
+			<div class="elementor-post__thumbnail elementor-fit-height"><img width="1280" height="720" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/featured-image-raspberry-pi-esp8266-mqtt-output.jpg" class="attachment-full size-full" alt="" srcset="https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2017/02/featured-image-raspberry-pi-esp8266-mqtt-output.jpg?w=1280&amp;ssl=1 1280w, https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2017/02/featured-image-raspberry-pi-esp8266-mqtt-output.jpg?resize=150%2C84&amp;ssl=1 150w, https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2017/02/featured-image-raspberry-pi-esp8266-mqtt-output.jpg?resize=300%2C169&amp;ssl=1 300w, https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2017/02/featured-image-raspberry-pi-esp8266-mqtt-output.jpg?resize=768%2C432&amp;ssl=1 768w, https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2017/02/featured-image-raspberry-pi-esp8266-mqtt-output.jpg?resize=1024%2C576&amp;ssl=1 1024w, https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2017/02/featured-image-raspberry-pi-esp8266-mqtt-output.jpg?resize=80%2C45&amp;ssl=1 80w, https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2017/02/featured-image-raspberry-pi-esp8266-mqtt-output.jpg?resize=220%2C124&amp;ssl=1 220w, https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2017/02/featured-image-raspberry-pi-esp8266-mqtt-output.jpg?resize=178%2C100&amp;ssl=1 178w, https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2017/02/featured-image-raspberry-pi-esp8266-mqtt-output.jpg?resize=267%2C150&amp;ssl=1 267w, https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2017/02/featured-image-raspberry-pi-esp8266-mqtt-output.jpg?resize=423%2C238&amp;ssl=1 423w, https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2017/02/featured-image-raspberry-pi-esp8266-mqtt-output.jpg?resize=738%2C415&amp;ssl=1 738w, https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2017/02/featured-image-raspberry-pi-esp8266-mqtt-output.jpg?resize=866%2C487&amp;ssl=1 866w, https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2017/02/featured-image-raspberry-pi-esp8266-mqtt-output.jpg?resize=1058%2C595&amp;ssl=1 1058w" sizes="(max-width: 1280px) 100vw, 1280px"></div>
+		</a>
+				<div class="elementor-post__text">
+				<h3 class="elementor-post__title">
+			<a href="https://randomnerdtutorials.com/raspberry-pi-publishing-mqtt-messages-to-esp8266/">
+				Raspberry Pi Publishing MQTT Messages to ESP8266			</a>
+		</h3>
+				</div>
+					</div>
+		</article>
+				<article class="elementor-post elementor-grid-item post-73704 post type-post status-publish format-standard has-post-thumbnail hentry category-arduino-project category-circuits category-esp32-project category-0-esp32 category-esp8266-project category-guide-project category-project category-c-tutorials">
+			<div class="elementor-post__card">
+				<a class="elementor-post__thumbnail__link" href="https://randomnerdtutorials.com/latching-power-switch-circuit-auto-power-off-circuit-esp32-esp8266-arduino/">
+			<div class="elementor-post__thumbnail elementor-fit-height"><img width="1280" height="720" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/auto-power-off-circuit-thumbnail.jpg" class="attachment-full size-full" alt="" srcset="https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/09/auto-power-off-circuit-thumbnail.jpg?w=1280&amp;ssl=1 1280w, https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/09/auto-power-off-circuit-thumbnail.jpg?resize=300%2C169&amp;ssl=1 300w, https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/09/auto-power-off-circuit-thumbnail.jpg?resize=768%2C432&amp;ssl=1 768w, https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/09/auto-power-off-circuit-thumbnail.jpg?resize=1024%2C576&amp;ssl=1 1024w" sizes="(max-width: 1280px) 100vw, 1280px"></div>
+		</a>
+				<div class="elementor-post__text">
+				<h3 class="elementor-post__title">
+			<a href="https://randomnerdtutorials.com/latching-power-switch-circuit-auto-power-off-circuit-esp32-esp8266-arduino/">
+				Latching Power Switch Circuit (Auto Power Off Circuit) for ESP32, ESP8266, Arduino			</a>
+		</h3>
+				</div>
+					</div>
+		</article>
+				<article class="elementor-post elementor-grid-item post-78606 post type-post status-publish format-standard has-post-thumbnail hentry category-esp8266 category-esp8266-project category-esp8266-arduino-ide category-esp8266-projects category-0-esp8266 category-project">
+			<div class="elementor-post__card">
+				<a class="elementor-post__thumbnail__link" href="https://randomnerdtutorials.com/esp8266-hi-link-hlk-pm03/">
+			<div class="elementor-post__thumbnail elementor-fit-height"><img width="1280" height="720" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/hlk-pm03-esp8266-01.jpg" class="attachment-full size-full" alt="" srcset="https://i1.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/12/hlk-pm03-esp8266-01.jpg?w=1280&amp;ssl=1 1280w, https://i1.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/12/hlk-pm03-esp8266-01.jpg?resize=300%2C169&amp;ssl=1 300w, https://i1.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/12/hlk-pm03-esp8266-01.jpg?resize=768%2C432&amp;ssl=1 768w, https://i1.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/12/hlk-pm03-esp8266-01.jpg?resize=1024%2C576&amp;ssl=1 1024w" sizes="(max-width: 1280px) 100vw, 1280px"></div>
+		</a>
+				<div class="elementor-post__text">
+				<h3 class="elementor-post__title">
+			<a href="https://randomnerdtutorials.com/esp8266-hi-link-hlk-pm03/">
+				Power ESP8266 with Mains Voltage using Hi-Link HLK-PM03 Converter			</a>
+		</h3>
+				</div>
+					</div>
+		</article>
+				<article class="elementor-post elementor-grid-item post-74509 post type-post status-publish format-standard has-post-thumbnail hentry category-esp32-project category-esp8266-project category-micropython category-0-esp32-micropython category-project">
+			<div class="elementor-post__card">
+				<a class="elementor-post__thumbnail__link" href="https://randomnerdtutorials.com/getting-started-micropython-esp32-esp8266/">
+			<div class="elementor-post__thumbnail elementor-fit-height"><img width="1280" height="720" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/getting-started-esp32-esp8266-micropython-firmware.jpg" class="attachment-full size-full" alt="" srcset="https://i2.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/10/getting-started-esp32-esp8266-micropython-firmware.jpg?w=1280&amp;ssl=1 1280w, https://i2.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/10/getting-started-esp32-esp8266-micropython-firmware.jpg?resize=300%2C169&amp;ssl=1 300w, https://i2.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/10/getting-started-esp32-esp8266-micropython-firmware.jpg?resize=768%2C432&amp;ssl=1 768w, https://i2.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/10/getting-started-esp32-esp8266-micropython-firmware.jpg?resize=1024%2C576&amp;ssl=1 1024w" sizes="(max-width: 1280px) 100vw, 1280px"></div>
+		</a>
+				<div class="elementor-post__text">
+				<h3 class="elementor-post__title">
+			<a href="https://randomnerdtutorials.com/getting-started-micropython-esp32-esp8266/">
+				Getting Started with MicroPython on ESP32 and ESP8266			</a>
+		</h3>
+				</div>
+					</div>
+		</article>
+				<article class="elementor-post elementor-grid-item post-83379 post type-post status-publish format-standard has-post-thumbnail hentry category-esp32 category-esp32-project category-esp32-arduino-ide category-0-esp32 category-home-assistant category-project category-raspberry-pi-project">
+			<div class="elementor-post__card">
+				<a class="elementor-post__thumbnail__link" href="https://randomnerdtutorials.com/esp32-cam-video-streaming-web-server-camera-home-assistant/">
+			<div class="elementor-post__thumbnail elementor-fit-height"><img width="1280" height="720" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/featured-image-esp32-cam-video-streaming-web-server-s.jpg" class="attachment-full size-full" alt="" srcset="https://i2.wp.com/randomnerdtutorials.com/wp-content/uploads/2019/03/featured-image-esp32-cam-video-streaming-web-server-s.jpg?w=1280&amp;ssl=1 1280w, https://i2.wp.com/randomnerdtutorials.com/wp-content/uploads/2019/03/featured-image-esp32-cam-video-streaming-web-server-s.jpg?resize=300%2C169&amp;ssl=1 300w, https://i2.wp.com/randomnerdtutorials.com/wp-content/uploads/2019/03/featured-image-esp32-cam-video-streaming-web-server-s.jpg?resize=768%2C432&amp;ssl=1 768w, https://i2.wp.com/randomnerdtutorials.com/wp-content/uploads/2019/03/featured-image-esp32-cam-video-streaming-web-server-s.jpg?resize=1024%2C576&amp;ssl=1 1024w" sizes="(max-width: 1280px) 100vw, 1280px"></div>
+		</a>
+				<div class="elementor-post__text">
+				<h3 class="elementor-post__title">
+			<a href="https://randomnerdtutorials.com/esp32-cam-video-streaming-web-server-camera-home-assistant/">
+				ESP32-CAM Video Streaming Web Server (works with Home Assistant)			</a>
+		</h3>
+				</div>
+					</div>
+		</article>
+				</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+						</div>
+			</div>
+		</div>
+		
+<br>
+		<div data-elementor-type="section" data-elementor-id="82829" class="elementor elementor-82829" data-elementor-settings="[]">
+			<div class="elementor-inner">
+				<div class="elementor-section-wrap">
+							<section class="elementor-element elementor-element-1e028b5e elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="1e028b5e" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-69628243 elementor-column elementor-col-100 elementor-top-column" data-id="69628243" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<section class="elementor-element elementor-element-4a02bbce elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section" data-id="4a02bbce" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-3a76ce22 elementor-column elementor-col-100 elementor-inner-column" data-id="3a76ce22" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-d86fe9d elementor-widget elementor-widget-heading" data-id="d86fe9d" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h3 class="elementor-heading-title elementor-size-default">Enjoyed this project? Stay updated by subscribing our weekly newsletter!</h3>		</div>
+				</div>
+				<div class="elementor-element elementor-element-93ef837 elementor-button-align-stretch elementor-widget elementor-widget-form" data-id="93ef837" data-element_type="widget" data-widget_type="form.default">
+				<div class="elementor-widget-container">
+					<form class="elementor-form" method="post" name="New Form">
+			<input type="hidden" name="post_id" value="82829">
+			<input type="hidden" name="form_id" value="93ef837">
+
+			<div class="elementor-form-fields-wrapper elementor-labels-">
+								<div class="elementor-field-type-email elementor-field-group elementor-column elementor-field-group-email elementor-col-66 elementor-field-required">
+					<label for="form-field-email" class="elementor-field-label elementor-screen-only">Email</label><input size="1" type="email" name="form_fields[email]" id="form-field-email" class="elementor-field elementor-size-sm  elementor-field-textual" placeholder="Your Email Address" required="required" aria-required="true">				</div>
+								<div class="elementor-field-group elementor-column elementor-field-type-submit elementor-col-33">
+					<button type="submit" class="elementor-button elementor-size-sm">
+						<span>
+															<span class="elementor-align-icon-left elementor-button-icon">
+									<i class="fa fa-envelope-o" aria-hidden="true"></i>
+																	</span>
+																						<span class="elementor-button-text">SUBSCRIBE</span>
+													</span>
+					</button>
+				</div>
+			</div>
+		</form>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+						</div>
+			</div>
+		</div>
+			</div><!-- .inside-article -->
+</article><!-- #post-## -->
+
+					<div class="comments-area">
+						<div id="comments">
+
+			<h3 class="comments-title">
+			33 thoughts on “Guide to Fingerprint Sensor Module with Arduino (FPM10A)”		</h3>
+
+		
+		<ol class="comment-list">
+			
+		<li id="comment-315673" class="comment even thread-even depth-1 parent">
+			<article id="div-comment-315673" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/f23d66192517b744e3c7d80aef0423f3.png" srcset="https://secure.gravatar.com/avatar/f23d66192517b744e3c7d80aef0423f3?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn"><a href="http://physicsteacher.in/" rel="external nofollow" class="url">PhysicsBLOGforK12</a></cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/#comment-315673">
+								<time datetime="2018-01-26T16:26:20+00:00" itemprop="datePublished">
+									January 26, 2018 at 4:26 pm								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/?replytocom=315673#respond" data-commentid="315673" data-postid="48409" data-belowelement="div-comment-315673" data-respondelement="respond" aria-label="Reply to PhysicsBLOGforK12">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>Awesome project! Everytime you surprise me!</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		<ul class="children">
+
+		<li id="comment-315766" class="comment byuser comment-author-sara-santos bypostauthor odd alt depth-2">
+			<article id="div-comment-315766" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/25e3da92f25bc3fde695d9c0d92207b0.png" srcset="https://secure.gravatar.com/avatar/25e3da92f25bc3fde695d9c0d92207b0?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn">Sara Santos</cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/#comment-315766">
+								<time datetime="2018-01-29T11:44:37+00:00" itemprop="datePublished">
+									January 29, 2018 at 11:44 am								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/?replytocom=315766#respond" data-commentid="315766" data-postid="48409" data-belowelement="div-comment-315766" data-respondelement="respond" aria-label="Reply to Sara Santos">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>Thank you <img draggable="false" class="emoji" alt="🙂" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/1f642.svg"></p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+		<li id="comment-315674" class="comment even thread-odd thread-alt depth-1 parent">
+			<article id="div-comment-315674" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/741bba9fb481b4dd8bc8a03bbd38d9ce.png" srcset="https://secure.gravatar.com/avatar/741bba9fb481b4dd8bc8a03bbd38d9ce?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn">ori</cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/#comment-315674">
+								<time datetime="2018-01-26T17:00:07+00:00" itemprop="datePublished">
+									January 26, 2018 at 5:00 pm								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/?replytocom=315674#respond" data-commentid="315674" data-postid="48409" data-belowelement="div-comment-315674" data-respondelement="respond" aria-label="Reply to ori">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>hi, is it possible to turn on the computer with this sensor<br>
+if it’s how do you do it ?</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		<ul class="children">
+
+		<li id="comment-315767" class="comment byuser comment-author-sara-santos bypostauthor odd alt depth-2 parent">
+			<article id="div-comment-315767" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/25e3da92f25bc3fde695d9c0d92207b0.png" srcset="https://secure.gravatar.com/avatar/25e3da92f25bc3fde695d9c0d92207b0?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn">Sara Santos</cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/#comment-315767">
+								<time datetime="2018-01-29T11:47:04+00:00" itemprop="datePublished">
+									January 29, 2018 at 11:47 am								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/?replytocom=315767#respond" data-commentid="315767" data-postid="48409" data-belowelement="div-comment-315767" data-respondelement="respond" aria-label="Reply to Sara Santos">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>Hi.<br>
+Yes, you can do that.<br>
+For that, you need to use a development board that can act as a keyboard like an Arduino Leonardo or a Teensy.<br>
+Regards,<br>
+Sara</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		<ul class="children">
+
+		<li id="comment-340087" class="comment even depth-3 parent">
+			<article id="div-comment-340087" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/f91d6181c856ec6661c4cf3f46d4ce50.png" srcset="https://secure.gravatar.com/avatar/f91d6181c856ec6661c4cf3f46d4ce50?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn">peter</cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/#comment-340087">
+								<time datetime="2018-10-21T01:19:38+00:00" itemprop="datePublished">
+									October 21, 2018 at 1:19 am								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/?replytocom=340087#respond" data-commentid="340087" data-postid="48409" data-belowelement="div-comment-340087" data-respondelement="respond" aria-label="Reply to peter">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>Hi Sarah, can you pls help me convert this code into matlab simulink block.</p>
+<p>#include<br>
+String value;<br>
+int TxD = 11;<br>
+int RxD = 10;<br>
+int servoposition;<br>
+SoftwareSerial bluetooth(TxD, RxD);</p>
+<p>void setup() {<br>
+  pinMode(2, OUTPUT);<br>
+  pinMode(3, OUTPUT);<br>
+  pinMode(4,OUTPUT);<br>
+  Serial.begin(9600);       // start serial communication at 9600bps<br>
+  bluetooth.begin(9600);<br>
+}</p>
+<p>void loop() {<br>
+  Serial.println(value);<br>
+ if (bluetooth.available())<br>
+   {<br>
+    value = bluetooth.readString();</p>
+<p>    if (value == “all led turn on”){<br>
+    digitalWrite(2, HIGH);<br>
+    digitalWrite(3, HIGH);<br>
+    digitalWrite(4, HIGH);<br>
+      }</p>
+<p>    if (value == “all led turn off”){<br>
+      digitalWrite(2, LOW);<br>
+      digitalWrite(3, LOW);<br>
+      digitalWrite(4, HIGH);<br>
+      }</p>
+<p>    if (value == “turn on red led”){<br>
+    digitalWrite(2, HIGH);<br>
+      }</p>
+<p>    if (value == “turn on the fan”){<br>
+      digitalWrite(3, HIGH);<br>
+      }</p>
+<p>    if (value == “turn off red led”){<br>
+    digitalWrite(2, LOW);<br>
+      }<br>
+      if (value == “turn on blue led”){<br>
+    digitalWrite(4, HIGH);<br>
+      }<br>
+      if (value == “turn off red led”){<br>
+    digitalWrite(4, LOW);<br>
+      }</p>
+<p>    if (value == “turn off the fan”){<br>
+      digitalWrite(3, LOW);<br>
+      }</p>
+<p> }</p>
+<p>}</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		<ul class="children">
+
+		<li id="comment-340184" class="comment byuser comment-author-sara-santos bypostauthor odd alt depth-4">
+			<article id="div-comment-340184" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/25e3da92f25bc3fde695d9c0d92207b0.png" srcset="https://secure.gravatar.com/avatar/25e3da92f25bc3fde695d9c0d92207b0?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn">Sara Santos</cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/#comment-340184">
+								<time datetime="2018-10-21T15:50:19+00:00" itemprop="datePublished">
+									October 21, 2018 at 3:50 pm								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/?replytocom=340184#respond" data-commentid="340184" data-postid="48409" data-belowelement="div-comment-340184" data-respondelement="respond" aria-label="Reply to Sara Santos">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>Hi Peter.<br>
+Unfortunately, I’m not familiar with simulink.<br>
+Regards,<br>
+Sara <img draggable="false" class="emoji" alt="🙂" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/1f642.svg"></p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+		<li id="comment-316323" class="comment even thread-even depth-1 parent">
+			<article id="div-comment-316323" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/a1410a306d98f4713512c3b58c749489.png" srcset="https://secure.gravatar.com/avatar/a1410a306d98f4713512c3b58c749489?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn">Arun Sharma</cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/#comment-316323">
+								<time datetime="2018-02-10T04:11:18+00:00" itemprop="datePublished">
+									February 10, 2018 at 4:11 am								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/?replytocom=316323#respond" data-commentid="316323" data-postid="48409" data-belowelement="div-comment-316323" data-respondelement="respond" aria-label="Reply to Arun Sharma">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>Thanks for this tutorial.<br>
+Actually this doesn’t works for me.<br>
+Even the SFG demo program doesn’t work.<br>
+My sensor is not responding to the commands sent by Arduino.<br>
+Plus when i power up the sensor I didn’t see any led blinking, does this means that my sensor is faulty??<br>
+I assume that whenever the power js supplied the red led will blink, but u haven’t seen that for a single time.</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		<ul class="children">
+
+		<li id="comment-317701" class="comment byuser comment-author-rui-santos odd alt depth-2">
+			<article id="div-comment-317701" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/9461558a0e334e14711e74f60647f31f.jpeg" srcset="https://secure.gravatar.com/avatar/9461558a0e334e14711e74f60647f31f?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn"><a href="https://randomnerdtutorials.com/" rel="external nofollow" class="url">Rui Santos</a></cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/#comment-317701">
+								<time datetime="2018-03-14T18:28:04+00:00" itemprop="datePublished">
+									March 14, 2018 at 6:28 pm								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/?replytocom=317701#respond" data-commentid="317701" data-postid="48409" data-belowelement="div-comment-317701" data-respondelement="respond" aria-label="Reply to Rui Santos">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>Arun,<br>
+It definitely sounds like your sensor is broken. I had a sensor that was broken when it arrived…</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+		<li id="comment-323908" class="comment even thread-odd thread-alt depth-1 parent">
+			<article id="div-comment-323908" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/cecd02e0f98a0d52a1f4d4f1e7c7f139.png" srcset="https://secure.gravatar.com/avatar/cecd02e0f98a0d52a1f4d4f1e7c7f139?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn">pietro</cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/#comment-323908">
+								<time datetime="2018-05-23T19:25:05+00:00" itemprop="datePublished">
+									May 23, 2018 at 7:25 pm								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/?replytocom=323908#respond" data-commentid="323908" data-postid="48409" data-belowelement="div-comment-323908" data-respondelement="respond" aria-label="Reply to pietro">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>hi, my name is peter<br>
+I am a hobbysta of the arduino<br>
+I wanted to make a project using the print finger sensor<br>
+ I bought one that matches his showing in the tutorial<br>
+ I also followed the link the library but nothing<br>
+ the light does not turn on in the reader<br>
+the light is activated as soon as it is true tension<br>
+I also respected the order of the cables but nothing<br>
+DY50 reader model<br>
+I ask the courtesy if you could help me thank you in advance</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		<ul class="children">
+
+		<li id="comment-324853" class="comment byuser comment-author-rui-santos odd alt depth-2">
+			<article id="div-comment-324853" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/9461558a0e334e14711e74f60647f31f.jpeg" srcset="https://secure.gravatar.com/avatar/9461558a0e334e14711e74f60647f31f?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn"><a href="https://randomnerdtutorials.com/" rel="external nofollow" class="url">Rui Santos</a></cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/#comment-324853">
+								<time datetime="2018-06-11T16:55:01+00:00" itemprop="datePublished">
+									June 11, 2018 at 4:55 pm								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/?replytocom=324853#respond" data-commentid="324853" data-postid="48409" data-belowelement="div-comment-324853" data-respondelement="respond" aria-label="Reply to Rui Santos">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>Hello Pietro, it sounds like your fingerprint sensor might be broken or defective. The first module that I’ve ordered was broken and it also didn’t light up…<br>
+Regards,<br>
+Rui</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+		<li id="comment-329099" class="comment even thread-even depth-1 parent">
+			<article id="div-comment-329099" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/95e1f1e61103101f0814afb3ab55528b.png" srcset="https://secure.gravatar.com/avatar/95e1f1e61103101f0814afb3ab55528b?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn">Jane</cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/#comment-329099">
+								<time datetime="2018-07-20T06:48:38+00:00" itemprop="datePublished">
+									July 20, 2018 at 6:48 am								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/?replytocom=329099#respond" data-commentid="329099" data-postid="48409" data-belowelement="div-comment-329099" data-respondelement="respond" aria-label="Reply to Jane">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>Do you have arduino code for print 1000pcs fringerprit?<br>
+Thanks</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		<ul class="children">
+
+		<li id="comment-329548" class="comment byuser comment-author-sara-santos bypostauthor odd alt depth-2">
+			<article id="div-comment-329548" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/25e3da92f25bc3fde695d9c0d92207b0.png" srcset="https://secure.gravatar.com/avatar/25e3da92f25bc3fde695d9c0d92207b0?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn">Sara Santos</cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/#comment-329548">
+								<time datetime="2018-07-30T09:13:06+00:00" itemprop="datePublished">
+									July 30, 2018 at 9:13 am								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/?replytocom=329548#respond" data-commentid="329548" data-postid="48409" data-belowelement="div-comment-329548" data-respondelement="respond" aria-label="Reply to Sara Santos">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>Hi Jane.<br>
+We don’t have the code that.<br>
+Regards,<br>
+Sara-</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+
+		<li id="comment-355429" class="comment even depth-2">
+			<article id="div-comment-355429" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/e0ea327232ca8af1a5bf50ad0d22ee86.png" srcset="https://secure.gravatar.com/avatar/e0ea327232ca8af1a5bf50ad0d22ee86?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn">BA</cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/#comment-355429">
+								<time datetime="2019-02-09T09:32:10+00:00" itemprop="datePublished">
+									February 9, 2019 at 9:32 am								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/?replytocom=355429#respond" data-commentid="355429" data-postid="48409" data-belowelement="div-comment-355429" data-respondelement="respond" aria-label="Reply to BA">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>Hi Jane,<br>
+The original Adafruit Code and sub libraries are defined for “uint8_t” that means “up to 255 fingerprints. If the files are modified as below, it will handle the fingerprints up to 0x03E8” (1000 fingerprints). But keep in mind that if the sensor can’t handle that more, the code returned after calling STORE will be “0bH – addressing PageID is beyond the finger library”. If it’s triggered you can modify the max values accordingly :</p>
+<p>1. In “AdaFruit_FingerPrint.cpp”, modify the following line as below:<br>
+     GET_CMD_PACKET(FINGERPRINT_HISPEEDSEARCH, 0x01, 0x00, 0x00, 0x03, 0xE7);<br>
+    //The last 2 bytes defines the Page Number which is used for the maximum fingerprints the sensor can store.</p>
+<p>2. In “Enroll.ino” covered in the examples, modify the following lines to store “uint16_t” type as Word:</p>
+<p>uint16_t readnumber(void) {<br>
+  uint16_t num = 0;<br>
+//The original data type is uint_8 which can only store 0-255. However, you would like to handle the fingerprints up to 1000 or 0xFFFF.</p>
+<p>If you have any further questions, feel free to e-mail me.</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+
+		<li id="comment-355469" class="comment odd alt depth-2 parent">
+			<article id="div-comment-355469" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/e0ea327232ca8af1a5bf50ad0d22ee86.png" srcset="https://secure.gravatar.com/avatar/e0ea327232ca8af1a5bf50ad0d22ee86?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn">BA</cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/#comment-355469">
+								<time datetime="2019-02-10T00:47:18+00:00" itemprop="datePublished">
+									February 10, 2019 at 12:47 am								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/?replytocom=355469#respond" data-commentid="355469" data-postid="48409" data-belowelement="div-comment-355469" data-respondelement="respond" aria-label="Reply to BA">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>To be able to determine how many fingerprints the sensor can handle, you can modify the files as below. I hope you know how to add a procedure to a file. Because below changes don’t define the relevant changes that need to be done in the whole library :<br>
+1. Adafruit_Fingerprint.cpp – add the following Procedure:</p>
+<p>uint8_t Adafruit_Fingerprint::getMaxPageNumber(void) {<br>
+  GET_CMD_PACKET(FINGERPRINT_MAXPAGENUMBER);<br>
+  maxPageNumber = packet.data[5];<br>
+  maxPageNumber &lt;<br>
+  //Build BA – Modified<br>
+  Serial.print(“Please type in the ID # (from 1 to “); Serial.print(finger.maxPageNumber); Serial.println(“) you want to save this finger as…”);<br>
+  //-&gt;</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		<ul class="children">
+
+		<li id="comment-355471" class="comment even depth-3 parent">
+			<article id="div-comment-355471" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/e0ea327232ca8af1a5bf50ad0d22ee86.png" srcset="https://secure.gravatar.com/avatar/e0ea327232ca8af1a5bf50ad0d22ee86?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn">BA</cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/#comment-355471">
+								<time datetime="2019-02-10T00:53:20+00:00" itemprop="datePublished">
+									February 10, 2019 at 12:53 am								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/?replytocom=355471#respond" data-commentid="355471" data-postid="48409" data-belowelement="div-comment-355471" data-respondelement="respond" aria-label="Reply to BA">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>Some parts of my comment are removed somehow?</p>
+<p>Here is the all changes:<br>
+1. Adafruit_Fingerprint.cpp – add the following Procedure:<br>
+     //Build BA – Added to get maximum Page Number that the sensor can store (Finger Library Size)<br>
+uint8_t Adafruit_Fingerprint::getMaxPageNumber(void) {<br>
+  GET_CMD_PACKET(FINGERPRINT_MAXPAGENUMBER);<br>
+  maxPageNumber = packet.data[5];<br>
+  maxPageNumber &lt;<br>
+  //Build BA – Modified<br>
+  Serial.print(“Please type in the ID # (from 1 to “);Serial.print(finger.maxPageNumber);Serial.println(“) you want to save this finger as…”);<br>
+  //-&gt;</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		<ul class="children">
+
+		<li id="comment-355472" class="comment odd alt depth-4 parent">
+			<article id="div-comment-355472" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/e0ea327232ca8af1a5bf50ad0d22ee86.png" srcset="https://secure.gravatar.com/avatar/e0ea327232ca8af1a5bf50ad0d22ee86?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn">BA</cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/#comment-355472">
+								<time datetime="2019-02-10T00:56:31+00:00" itemprop="datePublished">
+									February 10, 2019 at 12:56 am								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/?replytocom=355472#respond" data-commentid="355472" data-postid="48409" data-belowelement="div-comment-355472" data-respondelement="respond" aria-label="Reply to BA">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>???? I didn’t understand why my comments are cropped? Later, i’ll link the files</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		<ul class="children">
+
+		<li id="comment-355474" class="comment even depth-5">
+			<article id="div-comment-355474" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/e0ea327232ca8af1a5bf50ad0d22ee86.png" srcset="https://secure.gravatar.com/avatar/e0ea327232ca8af1a5bf50ad0d22ee86?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn">ba</cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/#comment-355474">
+								<time datetime="2019-02-10T01:19:13+00:00" itemprop="datePublished">
+									February 10, 2019 at 1:19 am								</time>
+							</a>
+																				</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>Here is the link covering all the changes:<br>
+<a href="https://github.com/Coder-BA/AdaFruit_Fingerprint" rel="nofollow">https://github.com/Coder-BA/AdaFruit_Fingerprint</a></p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+		<li id="comment-329750" class="comment odd alt thread-odd thread-alt depth-1 parent">
+			<article id="div-comment-329750" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/7aded614b710a6e924096a52e78008db.png" srcset="https://secure.gravatar.com/avatar/7aded614b710a6e924096a52e78008db?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn">Fauzi</cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/#comment-329750">
+								<time datetime="2018-08-03T14:56:20+00:00" itemprop="datePublished">
+									August 3, 2018 at 2:56 pm								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/?replytocom=329750#respond" data-commentid="329750" data-postid="48409" data-belowelement="div-comment-329750" data-respondelement="respond" aria-label="Reply to Fauzi">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>nice project ! but i wanna ask , is there a way to save new fingerprints not in FLASH memory fingerprint ?</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		<ul class="children">
+
+		<li id="comment-329808" class="comment byuser comment-author-rui-santos even depth-2">
+			<article id="div-comment-329808" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/9461558a0e334e14711e74f60647f31f.jpeg" srcset="https://secure.gravatar.com/avatar/9461558a0e334e14711e74f60647f31f?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn"><a href="https://randomnerdtutorials.com/" rel="external nofollow" class="url">Rui Santos</a></cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/#comment-329808">
+								<time datetime="2018-08-04T16:14:26+00:00" itemprop="datePublished">
+									August 4, 2018 at 4:14 pm								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/?replytocom=329808#respond" data-commentid="329808" data-postid="48409" data-belowelement="div-comment-329808" data-respondelement="respond" aria-label="Reply to Rui Santos">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>You probably can store it in another place, but by default I think the library only supports this method.</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+
+		<li id="comment-355431" class="comment odd alt depth-2 parent">
+			<article id="div-comment-355431" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/e0ea327232ca8af1a5bf50ad0d22ee86.png" srcset="https://secure.gravatar.com/avatar/e0ea327232ca8af1a5bf50ad0d22ee86?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn">BA</cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/#comment-355431">
+								<time datetime="2019-02-09T11:27:01+00:00" itemprop="datePublished">
+									February 9, 2019 at 11:27 am								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/?replytocom=355431#respond" data-commentid="355431" data-postid="48409" data-belowelement="div-comment-355431" data-respondelement="respond" aria-label="Reply to BA">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>Sure. But as Santos mentioned by using default library, you can only store it in Flash memory.<br>
+However, if DownChar/UpChar commands are used, the templates in Sensor Buffers (CharBuffer1 or CharBuffer2) can be downloaded/uploaded to an external computer. And those templates can be utilized to be transfered to the other sensors connected to the other arduinos.<br>
+This method can handle the process for an environment using multiple fingerprint sensors in different locations, and the data upload/download can be done over network using a ethernet module.</p>
+<p>If you need the code, i can send it after i develop and test it.<br>
+Regards,</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		<ul class="children">
+
+		<li id="comment-359874" class="comment even depth-3">
+			<article id="div-comment-359874" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/6606790f0495b4bda0ac3438afb41e48.png" srcset="https://secure.gravatar.com/avatar/6606790f0495b4bda0ac3438afb41e48?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn">juanfran</cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/#comment-359874">
+								<time datetime="2019-03-27T18:18:29+00:00" itemprop="datePublished">
+									March 27, 2019 at 6:18 pm								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/?replytocom=359874#respond" data-commentid="359874" data-postid="48409" data-belowelement="div-comment-359874" data-respondelement="respond" aria-label="Reply to juanfran">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>Hi. I am very interested in that modification to save the data in a memory other than the internal one to display it in several arduino. Could you indicate how to do it ?. Thank you</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+		<li id="comment-336387" class="comment odd alt thread-even depth-1">
+			<article id="div-comment-336387" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/0530c6e2004bbfc3adb7b674bf70dea6.png" srcset="https://secure.gravatar.com/avatar/0530c6e2004bbfc3adb7b674bf70dea6?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn"><a href="http://non/" rel="external nofollow" class="url">ROYCE ENRIQUE RODRIGUEZ</a></cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/#comment-336387">
+								<time datetime="2018-09-27T23:31:56+00:00" itemprop="datePublished">
+									September 27, 2018 at 11:31 pm								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/?replytocom=336387#respond" data-commentid="336387" data-postid="48409" data-belowelement="div-comment-336387" data-respondelement="respond" aria-label="Reply to ROYCE ENRIQUE RODRIGUEZ">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>maravilloso trabajo…muchas gracias por todos sus comentarios y ayudas</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+
+		<li id="comment-339509" class="comment even thread-odd thread-alt depth-1 parent">
+			<article id="div-comment-339509" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/35b7338bea1e2703489c35cffeb02cd4.png" srcset="https://secure.gravatar.com/avatar/35b7338bea1e2703489c35cffeb02cd4?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn">Côme Larroque</cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/#comment-339509">
+								<time datetime="2018-10-17T09:07:54+00:00" itemprop="datePublished">
+									October 17, 2018 at 9:07 am								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/?replytocom=339509#respond" data-commentid="339509" data-postid="48409" data-belowelement="div-comment-339509" data-respondelement="respond" aria-label="Reply to Côme Larroque">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>Thank you for this awesome tutorial, however I don’t understand this part of the sketch :<br>
+SoftwareSerial mySerial(2, 3); // don’t understand this<br>
+Adafruit_Fingerprint finger = Adafruit_Fingerprint(&amp;mySerial); // don’t understand this</p>
+<p>what does it mean ?</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		<ul class="children">
+
+		<li id="comment-339544" class="comment byuser comment-author-sara-santos bypostauthor odd alt depth-2">
+			<article id="div-comment-339544" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/25e3da92f25bc3fde695d9c0d92207b0.png" srcset="https://secure.gravatar.com/avatar/25e3da92f25bc3fde695d9c0d92207b0?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn">Sara Santos</cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/#comment-339544">
+								<time datetime="2018-10-17T13:25:37+00:00" itemprop="datePublished">
+									October 17, 2018 at 1:25 pm								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/?replytocom=339544#respond" data-commentid="339544" data-postid="48409" data-belowelement="div-comment-339544" data-respondelement="respond" aria-label="Reply to Sara Santos">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>Hi.<br>
+The SoftwareSerial library allows serial communication on other digital pins of the Arduino (the default pins are 0 and 1). That first line creates a SoftwareSerial object called mySerial that will create an RX pin on Pin 2, and a TX Pin on Pin 3. Basically, that means that Pin 2 and Pin 3 will be able to communicate via serial.<br>
+The next line creates an Adafruit_Fringerprint object called finger that contains properties and methods to handle the fingerprint sensor. The “&amp;mySerial” means that you want to instantiate your fingerprint sensor on the software serial pins you’ve defined earlier.<br>
+I hope this helps.<br>
+Regards,<br>
+Sara <img draggable="false" class="emoji" alt="🙂" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/1f642.svg"></p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+		<li id="comment-339549" class="comment even thread-even depth-1 parent">
+			<article id="div-comment-339549" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/35b7338bea1e2703489c35cffeb02cd4.png" srcset="https://secure.gravatar.com/avatar/35b7338bea1e2703489c35cffeb02cd4?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn">Côme Larroque</cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/#comment-339549">
+								<time datetime="2018-10-17T13:57:33+00:00" itemprop="datePublished">
+									October 17, 2018 at 1:57 pm								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/?replytocom=339549#respond" data-commentid="339549" data-postid="48409" data-belowelement="div-comment-339549" data-respondelement="respond" aria-label="Reply to Côme Larroque">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>Hi, thanks for your response.</p>
+<p>So basically this code is useful when we set up the fingerprint sensor, if I understand well.<br>
+So it is not like the sketch to run when the arduino is already set up and disconnected from the laptop, is it ?</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		<ul class="children">
+
+		<li id="comment-339874" class="comment byuser comment-author-sara-santos bypostauthor odd alt depth-2">
+			<article id="div-comment-339874" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/25e3da92f25bc3fde695d9c0d92207b0.png" srcset="https://secure.gravatar.com/avatar/25e3da92f25bc3fde695d9c0d92207b0?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn">Sara Santos</cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/#comment-339874">
+								<time datetime="2018-10-19T16:14:06+00:00" itemprop="datePublished">
+									October 19, 2018 at 4:14 pm								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/?replytocom=339874#respond" data-commentid="339874" data-postid="48409" data-belowelement="div-comment-339874" data-respondelement="respond" aria-label="Reply to Sara Santos">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>You can run this code when the Arduino is already set up without any problem.</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+
+		<li id="comment-355432" class="comment even depth-2">
+			<article id="div-comment-355432" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/e0ea327232ca8af1a5bf50ad0d22ee86.png" srcset="https://secure.gravatar.com/avatar/e0ea327232ca8af1a5bf50ad0d22ee86?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn">BA</cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/#comment-355432">
+								<time datetime="2019-02-09T11:33:14+00:00" itemprop="datePublished">
+									February 9, 2019 at 11:33 am								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/?replytocom=355432#respond" data-commentid="355432" data-postid="48409" data-belowelement="div-comment-355432" data-respondelement="respond" aria-label="Reply to BA">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>Partially true. The code has a portion using Serial communication to connect to the computer and get the commands (Id, delete, etc.). Additionally the responses are visible to the user over this serial connection.<br>
+If you like to use it offline (without Computer), you can add the keypad and LCD screen modules to the project.</p>
+<p>Kind Regards,<br>
+BA</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+		<li id="comment-343989" class="comment odd alt thread-odd thread-alt depth-1 parent">
+			<article id="div-comment-343989" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/1e564a474300ffa10869d2a3d5c2176b.png" srcset="https://secure.gravatar.com/avatar/1e564a474300ffa10869d2a3d5c2176b?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn">David</cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/#comment-343989">
+								<time datetime="2018-11-15T20:31:22+00:00" itemprop="datePublished">
+									November 15, 2018 at 8:31 pm								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/?replytocom=343989#respond" data-commentid="343989" data-postid="48409" data-belowelement="div-comment-343989" data-respondelement="respond" aria-label="Reply to David">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>For my sensor, it comes with a red six wire connector, but it is too thin to be connected, is there any converter I can buy to connect from this small conector to a much big connector, then I can wire it to Arduino board. Thanks.</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		<ul class="children">
+
+		<li id="comment-344076" class="comment byuser comment-author-sara-santos bypostauthor even depth-2">
+			<article id="div-comment-344076" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/25e3da92f25bc3fde695d9c0d92207b0.png" srcset="https://secure.gravatar.com/avatar/25e3da92f25bc3fde695d9c0d92207b0?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn">Sara Santos</cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/#comment-344076">
+								<time datetime="2018-11-16T10:23:17+00:00" itemprop="datePublished">
+									November 16, 2018 at 10:23 am								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/?replytocom=344076#respond" data-commentid="344076" data-postid="48409" data-belowelement="div-comment-344076" data-respondelement="respond" aria-label="Reply to Sara Santos">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>Hi David.<br>
+Our fingerprint sensor was the same.<br>
+A very thin connector that can’t fit anywhere. We’ve just cut the connector and solder breadboard friendly wires.<br>
+I don’t know any connector to convert to a bigger connector.<br>
+If you find a solution just let us know.<br>
+Regards,<br>
+Sara <img draggable="false" class="emoji" alt="🙂" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/1f642.svg"></p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+		<li id="comment-345665" class="comment odd alt thread-even depth-1 parent">
+			<article id="div-comment-345665" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/cdd4353b84568aadfc2ac3e7cf35778c.png" srcset="https://secure.gravatar.com/avatar/cdd4353b84568aadfc2ac3e7cf35778c?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn">Simon Wang</cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/#comment-345665">
+								<time datetime="2018-11-28T01:11:38+00:00" itemprop="datePublished">
+									November 28, 2018 at 1:11 am								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/?replytocom=345665#respond" data-commentid="345665" data-postid="48409" data-belowelement="div-comment-345665" data-respondelement="respond" aria-label="Reply to Simon Wang">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>hello, I can’t find “displayMainScreen();”and”displayUserGreeting(IDname)” function. where can i get the code.</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		<ul class="children">
+
+		<li id="comment-345734" class="comment byuser comment-author-sara-santos bypostauthor even depth-2">
+			<article id="div-comment-345734" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/25e3da92f25bc3fde695d9c0d92207b0.png" srcset="https://secure.gravatar.com/avatar/25e3da92f25bc3fde695d9c0d92207b0?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn">Sara Santos</cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/#comment-345734">
+								<time datetime="2018-11-28T10:02:31+00:00" itemprop="datePublished">
+									November 28, 2018 at 10:02 am								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/?replytocom=345734#respond" data-commentid="345734" data-postid="48409" data-belowelement="div-comment-345734" data-respondelement="respond" aria-label="Reply to Sara Santos">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>Hi Simon.<br>
+You can find the code here: <a href="https://raw.githubusercontent.com/RuiSantosdotme/Random-Nerd-Tutorials/master/Projects/Fingerprint/Fingerprint_oled.ino" rel="nofollow">https://raw.githubusercontent.com/RuiSantosdotme/Random-Nerd-Tutorials/master/Projects/Fingerprint/Fingerprint_oled.ino</a><br>
+What browser are you using? We have the code on the blog post, you should be able to see it.<br>
+Regards,<br>
+Sara.</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+		<li id="comment-346888" class="comment odd alt thread-odd thread-alt depth-1 parent">
+			<article id="div-comment-346888" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/2a4586dcfb24a02fb7df75d50662da60.png" srcset="https://secure.gravatar.com/avatar/2a4586dcfb24a02fb7df75d50662da60?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn">Urvashi</cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/#comment-346888">
+								<time datetime="2018-12-05T17:09:44+00:00" itemprop="datePublished">
+									December 5, 2018 at 5:09 pm								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/?replytocom=346888#respond" data-commentid="346888" data-postid="48409" data-belowelement="div-comment-346888" data-respondelement="respond" aria-label="Reply to Urvashi">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>the project is good.<br>
+Can you please recommend that from where can I buy and search fingerprint sensor online?</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		<ul class="children">
+
+		<li id="comment-346893" class="comment byuser comment-author-sara-santos bypostauthor even depth-2">
+			<article id="div-comment-346893" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/25e3da92f25bc3fde695d9c0d92207b0.png" srcset="https://secure.gravatar.com/avatar/25e3da92f25bc3fde695d9c0d92207b0?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn">Sara Santos</cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/#comment-346893">
+								<time datetime="2018-12-05T17:46:18+00:00" itemprop="datePublished">
+									December 5, 2018 at 5:46 pm								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/?replytocom=346893#respond" data-commentid="346893" data-postid="48409" data-belowelement="div-comment-346893" data-respondelement="respond" aria-label="Reply to Sara Santos">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>Hi.<br>
+You can go to maker advisor where we give you options to buy in different stores:<br>
+<a href="https://makeradvisor.com/tools/fingerprint-sensor-module/" rel="nofollow">https://makeradvisor.com/tools/fingerprint-sensor-module/</a><br>
+We bought ours from eBay.<br>
+Regards<br>
+Sara</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		</ol><!-- .comment-list -->
+
+			<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Comment <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://randomnerdtutorials.com/fingerprint-sensor-module-with-arduino/#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://randomnerdtutorials.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate="">
+				<p class="comment-form-comment"><label for="comment" class="screen-reader-text">Comment</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p><label for="author" class="screen-reader-text">Name</label><input placeholder="Name *" id="author" name="author" type="text" value="" size="30">
+<label for="email" class="screen-reader-text">Email</label><input placeholder="Email *" id="email" name="email" type="email" value="" size="30">
+<label for="url" class="screen-reader-text">Website</label><input placeholder="Website" id="url" name="url" type="url" value="" size="30">
+<p class="form-submit"></p><p class="comment-subscription-form"><input type="checkbox" name="subscribe_comments" id="subscribe_comments" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;"> <label class="subscribe-label" id="subscribe-label" for="subscribe_comments">Notify me of follow-up comments by email.</label></p><p class="comment-subscription-form"><input type="checkbox" name="subscribe_blog" id="subscribe_blog" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;"> <label class="subscribe-label" id="subscribe-blog-label" for="subscribe_blog">Notify me of new posts by email.</label></p><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="48409" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+<p></p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="2cc14a3ce9"></p><p style="display: none;"></p>			<input type="hidden" id="ak_js" name="ak_js" value="1557131601852"></form>
+			</div><!-- #respond -->
+	
+</div><!-- #comments -->
+					</div>
+
+							</main><!-- #main -->
+	</div><!-- #primary -->
+
+	<div id="right-sidebar" class="widget-area grid-30 tablet-grid-30 grid-parent sidebar" itemtype="https://schema.org/WPSideBar" itemscope="">
+	<div class="inside-right-sidebar">
+		<aside id="text-48" class="widget inner-padding widget_text">			<div class="textwidget"><p><a href="https://randomnerdtutorials.com/arduino-step-by-step-projects/"><img class="aligncenter" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/arduino-sb-img(1).jpg" width="316" height="178"></a><br>
+<strong><a href="https://randomnerdtutorials.com/arduino-step-by-step-projects/">Arduino Step-by-Step Projects »</a><br>
+</strong>Build 25 cool Arduino projects with our course even with no prior experience!</p>
+</div>
+		</aside><aside id="text-53" class="widget inner-padding widget_text">			<div class="textwidget"><p><a href="https://makeradvisor.com/jlcpcb" target="_blank" rel="noopener"><img class="aligncenter size-full wp-image-6681" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/jlcpcb.jpg" alt="" width="316" height="263"></a></p>
+</div>
+		</aside><aside id="elementor-library-3" class="widget inner-padding widget_elementor-library"><h2 class="widget-title">Find Awesome Deals For Makers @ MakerAdvisor.com</h2>		<div data-elementor-type="section" data-elementor-id="83242" class="elementor elementor-83242" data-elementor-settings="[]">
+			<div class="elementor-inner">
+				<div class="elementor-section-wrap">
+							<section class="elementor-element elementor-element-a59145b elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="a59145b" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-84708e2 elementor-column elementor-col-33 elementor-top-column" data-id="84708e2" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-3a6accc elementor-widget elementor-widget-image" data-id="3a6accc" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+											<a href="https://makeradvisor.com/aneng-an8002-an8008-multimeter-review/" data-elementor-open-lightbox="" target="_blank">
+							<img width="300" height="184" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/multimeter-featured-image-300x184.jpg" class="attachment-large size-large" alt="">								</a>
+											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-fe47b6d elementor-column elementor-col-66 elementor-top-column" data-id="fe47b6d" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-f8c0aec elementor-widget elementor-widget-text-editor" data-id="f8c0aec" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><h4><span style="color: #3a3a3a;"><a style="color: #3a3a3a;" href="https://makeradvisor.com/aneng-an8002-an8008-multimeter-review/" target="_blank" rel="noopener">Best Low Cost Multimeter?</a></span></h4></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-2dcf748 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="2dcf748" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-da219e1 elementor-column elementor-col-33 elementor-top-column" data-id="da219e1" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-f98dc01 elementor-widget elementor-widget-image" data-id="f98dc01" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+											<a href="https://makeradvisor.com/best-bench-power-supply/" data-elementor-open-lightbox="" target="_blank">
+							<img width="300" height="168" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/best-bench-power-supplies-featured-image300.jpg" class="attachment-large size-large" alt="">								</a>
+											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-407012c elementor-column elementor-col-66 elementor-top-column" data-id="407012c" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-0da50d6 elementor-widget elementor-widget-text-editor" data-id="0da50d6" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><h4><span style="color: #3a3a3a;"><a style="color: #3a3a3a;" href="https://makeradvisor.com/best-bench-power-supply/" target="_blank" rel="noopener">Best Bench Power Supply</a></span></h4></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-cca19e3 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="cca19e3" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-2b912e7 elementor-column elementor-col-33 elementor-top-column" data-id="2b912e7" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-fac1923 elementor-widget elementor-widget-image" data-id="fac1923" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+											<a href="https://makeradvisor.com/best-raspberry-pi-3-starter-kits/" data-elementor-open-lightbox="" target="_blank">
+							<img width="300" height="194" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/raspberry-pi-3-model-b-plus-300.jpg" class="attachment-large size-large" alt="">								</a>
+											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-80eeeea elementor-column elementor-col-66 elementor-top-column" data-id="80eeeea" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-6dbd5c2 elementor-widget elementor-widget-text-editor" data-id="6dbd5c2" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><h4><span style="color: #3a3a3a;"><a style="color: #3a3a3a;" href="https://makeradvisor.com/best-raspberry-pi-3-starter-kits/" target="_blank" rel="noopener">Best Raspberry Pi Starter Kits</a></span></h4></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+						</div>
+			</div>
+		</div>
+		</aside><aside id="elementor-library-2" class="widget inner-padding widget_elementor-library">		<div data-elementor-type="section" data-elementor-id="82648" class="elementor elementor-82648" data-elementor-settings="[]">
+			<div class="elementor-inner">
+				<div class="elementor-section-wrap">
+							<section class="elementor-element elementor-element-e5b3ca7 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="e5b3ca7" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-d913468 elementor-column elementor-col-100 elementor-top-column" data-id="d913468" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-a9017d2 elementor-grid-1 elementor-grid-tablet-1 elementor-posts--thumbnail-left elementor-posts--align-left elementor-hidden-phone elementor-grid-mobile-1 elementor-widget elementor-widget-posts" data-id="a9017d2" data-element_type="widget" data-settings="{&quot;classic_columns&quot;:&quot;1&quot;,&quot;classic_columns_tablet&quot;:&quot;1&quot;,&quot;classic_row_gap&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:20,&quot;sizes&quot;:[]},&quot;_animation&quot;:&quot;none&quot;,&quot;classic_columns_mobile&quot;:&quot;1&quot;}" data-widget_type="posts.classic">
+				<div class="elementor-widget-container">
+					<div class="elementor-posts-container elementor-posts elementor-grid elementor-posts--skin-classic elementor-has-item-ratio">
+				<article class="elementor-post elementor-grid-item post-61995 post type-post status-publish format-standard has-post-thumbnail hentry category-esp32 category-esp32-project category-esp32-arduino-ide category-0-esp32 category-project">
+				<a class="elementor-post__thumbnail__link" href="https://randomnerdtutorials.com/esp32-dc-motor-l298n-motor-driver-control-speed-direction/">
+			<div class="elementor-post__thumbnail"><img width="1280" height="720" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/esp32-dc-motor-l298n.jpg" class="attachment-full size-full" alt="" srcset="https://i2.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/05/esp32-dc-motor-l298n.jpg?w=1280&amp;ssl=1 1280w, https://i2.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/05/esp32-dc-motor-l298n.jpg?resize=300%2C169&amp;ssl=1 300w, https://i2.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/05/esp32-dc-motor-l298n.jpg?resize=768%2C432&amp;ssl=1 768w, https://i2.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/05/esp32-dc-motor-l298n.jpg?resize=1024%2C576&amp;ssl=1 1024w" sizes="(max-width: 1280px) 100vw, 1280px"></div>
+		</a>
+				<div class="elementor-post__text">
+				<h3 class="elementor-post__title">
+			<a href="https://randomnerdtutorials.com/esp32-dc-motor-l298n-motor-driver-control-speed-direction/">
+				ESP32 with DC Motor and L298N Motor Driver – Control Speed and Direction			</a>
+		</h3>
+				</div>
+				</article>
+				<article class="elementor-post elementor-grid-item post-30772 post type-post status-publish format-standard has-post-thumbnail hentry category-arduino-ide category-esp32 category-esp32-project category-esp32-arduino-ide category-0-esp32 category-guide-project category-project category-windows">
+				<a class="elementor-post__thumbnail__link" href="https://randomnerdtutorials.com/installing-the-esp32-board-in-arduino-ide-windows-instructions/">
+			<div class="elementor-post__thumbnail"><img width="1280" height="720" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/Install-ESP32-video-thumbnail.jpg" class="attachment-full size-full" alt="" srcset="https://i2.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/08/Install-ESP32-video-thumbnail.jpg?w=1280&amp;ssl=1 1280w, https://i2.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/08/Install-ESP32-video-thumbnail.jpg?resize=300%2C169&amp;ssl=1 300w, https://i2.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/08/Install-ESP32-video-thumbnail.jpg?resize=768%2C432&amp;ssl=1 768w, https://i2.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/08/Install-ESP32-video-thumbnail.jpg?resize=1024%2C576&amp;ssl=1 1024w" sizes="(max-width: 1280px) 100vw, 1280px"></div>
+		</a>
+				<div class="elementor-post__text">
+				<h3 class="elementor-post__title">
+			<a href="https://randomnerdtutorials.com/installing-the-esp32-board-in-arduino-ide-windows-instructions/">
+				Installing the ESP32 Board in Arduino IDE (Windows instructions)			</a>
+		</h3>
+				</div>
+				</article>
+				<article class="elementor-post elementor-grid-item post-10150 post type-post status-publish format-standard has-post-thumbnail hentry category-esp8266 category-esp8266-project category-esp8266-projects category-0-esp8266 category-http-client category-project">
+				<a class="elementor-post__thumbnail__link" href="https://randomnerdtutorials.com/posting-a-tweet-with-the-esp8266/">
+			<div class="elementor-post__thumbnail"><img width="700" height="525" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/featured-image.png" class="attachment-full size-full" alt="" srcset="https://i1.wp.com/randomnerdtutorials.com/wp-content/uploads/2015/08/featured-image.png?w=700&amp;ssl=1 700w, https://i1.wp.com/randomnerdtutorials.com/wp-content/uploads/2015/08/featured-image.png?resize=300%2C225&amp;ssl=1 300w" sizes="(max-width: 700px) 100vw, 700px"></div>
+		</a>
+				<div class="elementor-post__text">
+				<h3 class="elementor-post__title">
+			<a href="https://randomnerdtutorials.com/posting-a-tweet-with-the-esp8266/">
+				Posting a Tweet with the ESP8266			</a>
+		</h3>
+				</div>
+				</article>
+				<article class="elementor-post elementor-grid-item post-5286 post type-post status-publish format-standard has-post-thumbnail hentry category-esp8266 category-0-esp8266 category-lists category-nerd-news category-updates">
+				<a class="elementor-post__thumbnail__link" href="https://randomnerdtutorials.com/7-weekend-projectstutorials-for-the-esp8266-wifi-module/">
+			<div class="elementor-post__thumbnail"><img width="700" height="700" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/ESP01v0.jpg" class="attachment-full size-full" alt="" srcset="https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2015/01/ESP01v0.jpg?w=700&amp;ssl=1 700w, https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2015/01/ESP01v0.jpg?resize=150%2C150&amp;ssl=1 150w, https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2015/01/ESP01v0.jpg?resize=300%2C300&amp;ssl=1 300w" sizes="(max-width: 700px) 100vw, 700px"></div>
+		</a>
+				<div class="elementor-post__text">
+				<h3 class="elementor-post__title">
+			<a href="https://randomnerdtutorials.com/7-weekend-projectstutorials-for-the-esp8266-wifi-module/">
+				7 Weekend Projects/Tutorials For the ESP8266 WiFi Module			</a>
+		</h3>
+				</div>
+				</article>
+				<article class="elementor-post elementor-grid-item post-77038 post type-post status-publish format-standard has-post-thumbnail hentry category-esp32 category-esp32-project category-esp32-arduino-ide category-0-esp32 category-project">
+				<a class="elementor-post__thumbnail__link" href="https://randomnerdtutorials.com/esp32-flash-memory/">
+			<div class="elementor-post__thumbnail"><img width="1280" height="720" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/esp32-flash-memory-thumbnail.jpg" class="attachment-full size-full" alt="Save permanent data on the ESP32 flash memory" srcset="https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/11/esp32-flash-memory-thumbnail.jpg?w=1280&amp;ssl=1 1280w, https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/11/esp32-flash-memory-thumbnail.jpg?resize=300%2C169&amp;ssl=1 300w, https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/11/esp32-flash-memory-thumbnail.jpg?resize=768%2C432&amp;ssl=1 768w, https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/11/esp32-flash-memory-thumbnail.jpg?resize=1024%2C576&amp;ssl=1 1024w" sizes="(max-width: 1280px) 100vw, 1280px"></div>
+		</a>
+				<div class="elementor-post__text">
+				<h3 class="elementor-post__title">
+			<a href="https://randomnerdtutorials.com/esp32-flash-memory/">
+				ESP32 Flash Memory – Store Permanent Data (Write and Read)			</a>
+		</h3>
+				</div>
+				</article>
+				</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+						</div>
+			</div>
+		</div>
+		</aside><aside id="text-49" class="widget inner-padding widget_text">			<div class="textwidget"><p><a href="https://makeradvisor.com/?utm_source=rnt&amp;utm_medium=sb&amp;utm_campaign=sb" target="_blank" rel="noopener"><img class="aligncenter" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/lab-sb-img.jpg" width="316" height="178"></a><br>
+<strong><a href="https://makeradvisor.com/?utm_source=rnt&amp;utm_medium=sb&amp;utm_campaign=sb" target="_blank" rel="noopener">Visit Maker Advisor – Tools and Gear for makers, hobbyists and DIYers »</a></strong></p>
+</div>
+		</aside><aside id="text-47" class="widget inner-padding widget_text">			<div class="textwidget"><p><a href="https://randomnerdtutorials.com/home-automation-using-esp8266/"><img class="aligncenter" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/esp8266-sb-img(1).jpg" width="316" height="178"></a><br>
+<strong><a href="https://randomnerdtutorials.com/home-automation-using-esp8266/">Home Automation using ESP8266 eBook and video course »</a> </strong>Build IoT and home automation projects.</p>
+</div>
+		</aside><aside id="text-46" class="widget inner-padding widget_text">			<div class="textwidget"><p><a href="https://randomnerdtutorials.com/build-a-home-automation-system-for-100/"><img class="aligncenter" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/home-automation-sb-img(1).jpg" width="316" height="178"></a><br>
+<strong><a href="https://randomnerdtutorials.com/build-a-home-automation-system-for-100/">Build a Home Automation System from Scratch »</a>&nbsp;</strong>With Raspberry Pi, ESP8266, Arduino, and Node-RED.</p>
+</div>
+		</aside>	</div><!-- .inside-right-sidebar -->
+</div><!-- #secondary -->
+
+	</div><!-- #content -->
+</div><!-- #page -->
+
+
+<div class="site-footer footer-bar-active footer-bar-align-center">
+			<footer class="site-info" itemtype="https://schema.org/WPFooter" itemscope="">
+			<div class="inside-site-info grid-container grid-parent">
+						<div class="footer-bar">
+			<aside id="nav_menu-10" class="widget inner-padding widget_nav_menu"><div class="menu-footer-disclaimer-container"><ul id="menu-footer-disclaimer" class="menu"><li id="menu-item-82503" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-82503"><a href="https://randomnerdtutorials.com/about/">About</a></li>
+<li id="menu-item-20492" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20492"><a href="https://randomnerdtutorials.com/support">Support</a></li>
+<li id="menu-item-20493" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20493"><a href="https://randomnerdtutorials.com/terms">Terms</a></li>
+<li id="menu-item-20495" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20495"><a href="https://randomnerdtutorials.com/privacy">Privacy</a></li>
+<li id="menu-item-20494" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20494"><a href="https://randomnerdtutorials.com/returns-and-refunds/">Refunds</a></li>
+<li id="menu-item-43625" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-43625"><a target="_blank" href="https://makeradvisor.com/">MakerAdvisor.com</a></li>
+<li id="menu-item-20496" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20496"><a target="_blank" href="https://rntlab.com/">Join the Lab</a></li>
+</ul></div></aside>		</div>
+						<div class="copyright-bar">
+					Copyright © 2013-2019 · RandomNerdTutorials.com · All Rights Reserved				</div>
+			</div>
+		</footer><!-- .site-info -->
+		</div><!-- .site-footer -->
+
+		
+		<script src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/prism.min.js.download"></script>
+<script src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/prism-c.min.js.download"></script>
+<script src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/prism-python.min.js.download"></script><link rel="stylesheet" id="elementor-post-83032-css" href="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/post-83032.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-post-82533-css" href="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/post-82533.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-post-82829-css" href="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/post-82829.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-post-83242-css" href="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/post-83242.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-post-82648-css" href="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/post-82648.css" type="text/css" media="all">
+<script type="text/javascript" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/sticky.min.js.download"></script>
+<script type="text/javascript" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/photon.min.js.download"></script>
+<script type="text/javascript" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/devicepx-jetpack.js.download"></script>
+<!--[if lte IE 11]>
+<script type='text/javascript' src='https://randomnerdtutorials.com/wp-content/themes/generatepress/js/classList.min.js?ver=2.2.2'></script>
+<![endif]-->
+<script type="text/javascript" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/menu.min.js.download"></script>
+<script type="text/javascript" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/a11y.min.js.download"></script>
+<script type="text/javascript" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/navigation-search.min.js.download"></script>
+<script type="text/javascript" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/comment-reply.min.js.download"></script>
+<script type="text/javascript" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/wp-embed.min.js.download"></script>
+<script type="text/javascript" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/imagesloaded.min.js.download"></script>
+<script async="async" type="text/javascript" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/form.js.download"></script>
+<script type="text/javascript" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/frontend-modules.min.js.download"></script>
+<script type="text/javascript" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/jquery.sticky.min.js.download"></script>
+<script type="text/javascript">
+var ElementorProFrontendConfig = {"ajaxurl":"https:\/\/randomnerdtutorials.com\/wp-admin\/admin-ajax.php","nonce":"546bde07cd","shareButtonsNetworks":{"facebook":{"title":"Facebook","has_counter":true},"twitter":{"title":"Twitter"},"google":{"title":"Google+","has_counter":true},"linkedin":{"title":"LinkedIn","has_counter":true},"pinterest":{"title":"Pinterest","has_counter":true},"reddit":{"title":"Reddit","has_counter":true},"vk":{"title":"VK","has_counter":true},"odnoklassniki":{"title":"OK","has_counter":true},"tumblr":{"title":"Tumblr"},"delicious":{"title":"Delicious"},"digg":{"title":"Digg"},"skype":{"title":"Skype"},"stumbleupon":{"title":"StumbleUpon","has_counter":true},"telegram":{"title":"Telegram"},"pocket":{"title":"Pocket","has_counter":true},"xing":{"title":"XING","has_counter":true},"whatsapp":{"title":"WhatsApp"},"email":{"title":"Email"},"print":{"title":"Print"}},"facebook_sdk":{"lang":"en_US","app_id":""}};
+</script>
+<script type="text/javascript" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/frontend.min.js.download"></script>
+<script type="text/javascript" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/position.min.js.download"></script>
+<script type="text/javascript" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/dialog.min.js.download"></script>
+<script type="text/javascript" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/waypoints.min.js.download"></script>
+<script type="text/javascript" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/swiper.min.js.download"></script>
+<script type="text/javascript">
+var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"version":"2.5.14","urls":{"assets":"https:\/\/randomnerdtutorials.com\/wp-content\/plugins\/elementor\/assets\/"},"settings":{"page":[],"general":{"elementor_global_image_lightbox":"yes","elementor_enable_lightbox_in_editor":"yes"}},"post":{"id":48409,"title":"Guide to Fingerprint Sensor Module with Arduino (FPM10A)","excerpt":""}};
+</script>
+<script type="text/javascript" src="./Fingerprint Sensor Module with Arduino _ Random Nerd Tutorials_files/frontend.min.js(1).download"></script><span id="elementor-device-mode" class="elementor-screen-only"></span>
+
+
+
+
+<!-- Dynamic page generated in 0.826 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2019-05-06 08:25:50 -->
+
+<!-- super cache --></body></html>
